@@ -26,6 +26,37 @@ function speak(text) {
   speechSynthesis.speak(u);
 }
 
+// Microfone — Web Speech API (es-ES). Retorna a instância para parar manualmente.
+function usarMicrofone(lang, onResult, onError, onEnd) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) { onError('Microfone não suportado. Use Chrome ou Edge.'); return null; }
+  const rec = new SR();
+  rec.lang = lang || 'es-ES';
+  rec.interimResults = false;
+  rec.maxAlternatives = 3;
+  rec.onresult = (e) => {
+    const r = e.results[0][0];
+    onResult(r.transcript, r.confidence);
+  };
+  rec.onerror = (e) => onError(
+    e.error === 'not-allowed' ? 'Permissão de microfone negada. Autorize nas configurações do browser.' :
+    e.error === 'no-speech'   ? 'Nenhuma fala detectada. Tenta de novo.' : `Erro: ${e.error}`
+  );
+  rec.onend = () => onEnd && onEnd();
+  rec.start();
+  return rec;
+}
+
+// Avalia fluência word-by-word comparando transcrição com esperado.
+function avaliarFluencia(falado, esperado) {
+  const wordsExp = norm(esperado).split(' ').filter(Boolean);
+  const wordsFal = new Set(norm(falado).split(' ').filter(Boolean));
+  const corretas = wordsExp.filter(w => wordsFal.has(w));
+  const erradas  = wordsExp.filter(w => !wordsFal.has(w));
+  const score = wordsExp.length ? Math.round((corretas.length / wordsExp.length) * 100) : 0;
+  return { score, corretas, erradas, wordsExp };
+}
+
 /* ---------- 2) estado (localStorage) ----------------------------------- */
 const DB_KEY = 'es-sobrevivencia:v1';
 const estado = {
@@ -108,6 +139,7 @@ function Flashcard(cards, onDone) {
           <div class="flash__face flash__back"><div><small>ES</small><p>${c.verso}</p></div></div>
         </div>
         <p class="flash__hint">${i + 1} / ${cards.length} &nbsp;·&nbsp; <kbd>Espaço</kbd> vira &nbsp;·&nbsp; <kbd>←</kbd><kbd>→</kbd> navega</p>
+        <p class="flash__swipe-hint">← desliza para navegar · toca para virar →</p>
       </div>
       <div class="btn-row">
         <button class="btn btn--ghost" data-prev>← Anterior</button>
@@ -120,6 +152,14 @@ function Flashcard(cards, onDone) {
       if (e.code === 'ArrowRight') next();
       if (e.code === 'ArrowLeft') prev();
     });
+    // Swipe touch
+    let _tx = 0, _ty = 0;
+    card.addEventListener('touchstart', (e) => { _tx = e.touches[0].clientX; _ty = e.touches[0].clientY; }, { passive: true });
+    card.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - _tx;
+      const dy = e.changedTouches[0].clientY - _ty;
+      if (Math.abs(dx) > 50 && Math.abs(dy) < 80) { dx < 0 ? next() : prev(); }
+    }, { passive: true });
     $('[data-next]', box).addEventListener('click', next);
     $('[data-prev]', box).addEventListener('click', prev);
     $('#fc', box).focus();
@@ -139,14 +179,15 @@ function Ditado(frases) {
     const alvo = frases[i];
     box.innerHTML = `
       <p class="eyebrow">Ditado ${i + 1}/${frases.length}</p>
-      <p>Ouça e escreva o que entender.</p>
+      <p>Ouça, depois escreva ou fale.</p>
       <div class="btn-row">
         <button class="btn" data-play>🔊 Tocar</button>
+        <button class="mic-btn" data-mic-dit><span class="mic-dot"></span> 🎤 Falar</button>
         <button class="btn btn--ghost" data-show aria-expanded="false">Ver resposta</button>
       </div>
       <p id="alvo" class="frase__mark" hidden style="font-size:var(--fs-md);margin-top:var(--s3)">${alvo}</p>
       <label class="sr-only" for="dit-in">Sua resposta do ditado</label>
-      <input id="dit-in" class="input" style="margin-top:var(--s4)" autocomplete="off" placeholder="Escreva o que ouviu…" />
+      <input id="dit-in" class="input" style="margin-top:var(--s4)" autocomplete="off" placeholder="Escreva ou fale o que ouviu…" />
       <div class="btn-row">
         <button class="btn" data-check>Verificar</button>
         <button class="btn btn--ghost" data-next hidden>Próximo →</button>
@@ -157,6 +198,21 @@ function Ditado(frases) {
     $('[data-show]', box).addEventListener('click', (e) => {
       const p = $('#alvo', box); const open = p.hidden;
       p.hidden = !open; e.target.setAttribute('aria-expanded', String(open));
+    });
+    let _recDit = null;
+    const micDit = $('[data-mic-dit]', box);
+    micDit.addEventListener('click', () => {
+      if (_recDit) { _recDit.stop(); _recDit = null; return; }
+      micDit.classList.add('is-recording'); micDit.innerHTML = '<span class="mic-dot"></span> A ouvir…';
+      _recDit = usarMicrofone('es-ES',
+        (t) => { inp.value = t; },
+        (err) => { live(err); },
+        () => {
+          micDit.classList.remove('is-recording'); micDit.innerHTML = '<span class="mic-dot"></span> 🎤 Falar';
+          _recDit = null;
+          if (inp.value.trim()) $('[data-check]', box).click();
+        }
+      );
     });
     $('[data-check]', box).addEventListener('click', () => {
       const ok = norm(inp.value) === norm(alvo);
@@ -224,6 +280,7 @@ function RolePlay(rp) {
     <input id="rp-in" class="input" autocomplete="off" placeholder="Responda em espanhol…" />
     <div class="btn-row">
       <button class="btn" data-send>Enviar</button>
+      <button class="mic-btn" data-mic-rp><span class="mic-dot"></span> 🎤 Falar</button>
       <button class="btn btn--ghost" data-restart>↺ Recomeçar</button>
     </div>`;
   const chat = $('#chat', box), inp = $('#rp-in', box), send = $('[data-send]', box);
@@ -249,7 +306,97 @@ function RolePlay(rp) {
   send.addEventListener('click', enviar);
   inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') enviar(); });
   $('[data-restart]', box).addEventListener('click', () => { passo = 0; chat.innerHTML = ''; pedirPasso(); });
+  // Mic no simulador
+  let _recRp = null;
+  const micRp = $('[data-mic-rp]', box);
+  micRp.addEventListener('click', () => {
+    if (_recRp) { _recRp.stop(); _recRp = null; return; }
+    micRp.classList.add('is-recording'); micRp.innerHTML = '<span class="mic-dot"></span> A ouvir…';
+    _recRp = usarMicrofone('es-ES',
+      (t) => { inp.value = t; },
+      (err) => { live(err); },
+      () => {
+        micRp.classList.remove('is-recording'); micRp.innerHTML = '<span class="mic-dot"></span> 🎤 Falar';
+        _recRp = null;
+        if (inp.value.trim()) enviar();
+      }
+    );
+  });
   pedirPasso();
+  return box;
+}
+
+// 4.5 Fluência — microfone + avaliação palavra a palavra.
+function Fluencia(frases) {
+  let idx = 0, rec = null;
+  const box = document.createElement('div');
+
+  const render = () => {
+    const f = frases[idx];
+    box.innerHTML = `
+      <div class="flu-frase">
+        <p class="flu-frase__es">${f.es}</p>
+        <p class="flu-frase__pt">${f.pt}</p>
+        <p class="flu-frase__pron">${f.pronuncia}</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--ghost" data-speak>🔊 Ouvir modelo</button>
+        <button class="mic-btn" data-mic><span class="mic-dot"></span> 🎤 Falar agora</button>
+      </div>
+      <div id="flu-res" hidden></div>
+      <div class="flu-nav">
+        <button class="btn btn--ghost" data-prev ${idx === 0 ? 'disabled' : ''}>← Anterior</button>
+        <span class="flu-nav__count">${idx + 1} / ${frases.length}</span>
+        <button class="btn btn--ghost" data-next ${idx === frases.length - 1 ? 'disabled' : ''}>Próxima →</button>
+      </div>`;
+
+    $('[data-speak]', box).addEventListener('click', () => speak(f.es));
+    $('[data-prev]', box).addEventListener('click', () => { if (idx > 0) { idx--; rec = null; render(); } });
+    $('[data-next]', box).addEventListener('click', () => { if (idx < frases.length - 1) { idx++; rec = null; render(); } });
+
+    const micBtn = $('[data-mic]', box);
+    const resDiv = $('#flu-res', box);
+
+    micBtn.addEventListener('click', () => {
+      if (rec) { rec.stop(); rec = null; return; }
+      micBtn.classList.add('is-recording');
+      micBtn.innerHTML = '<span class="mic-dot"></span> A ouvir… (fale agora)';
+      rec = usarMicrofone('es-ES',
+        (transcrito, confianca) => {
+          const r = avaliarFluencia(transcrito, f.es);
+          const emoji = r.score >= 85 ? '🟢' : r.score >= 55 ? '🟡' : '🔴';
+          const msg   = r.score >= 85 ? '¡Muy bien! Excelente pronúncia.' :
+                        r.score >= 55 ? 'Bom esforço — algumas palavras a melhorar.' :
+                        'Tenta de novo, devagar, sílaba a sílaba.';
+          resDiv.hidden = false;
+          resDiv.innerHTML = `
+            <div class="flu-result">
+              <div class="flu-score">${emoji} ${r.score}%</div>
+              <p style="font-size:var(--fs-sm);margin-bottom:var(--s2)">${msg}</p>
+              <div class="flu-words">
+                ${r.wordsExp.map(w =>
+                  `<span class="flu-word ${r.corretas.includes(w) ? 'flu-word--ok' : 'flu-word--err'}">${w}</span>`
+                ).join('')}
+              </div>
+              ${r.erradas.length ? `<p class="flu-dica">💡 Pratica: <b>${r.erradas.join(' · ')}</b></p>` : ''}
+              <p class="flu-transcrito">Reconhecido: "${transcrito}"${confianca ? ` · confiança ${Math.round(confianca * 100)}%` : ''}</p>
+            </div>`;
+          live(r.score >= 85 ? 'Excelente pronúncia' : r.score >= 55 ? 'Bom, continua a praticar' : 'Tenta de novo');
+        },
+        (err) => {
+          resDiv.hidden = false;
+          resDiv.innerHTML = `<div class="feedback is-error" style="margin-top:var(--s3)">${err}</div>`;
+        },
+        () => {
+          micBtn.classList.remove('is-recording');
+          micBtn.innerHTML = '<span class="mic-dot"></span> 🎤 Falar de novo';
+          rec = null;
+        }
+      );
+    });
+  };
+
+  render();
   return box;
 }
 
@@ -307,6 +454,19 @@ const Views = {
     return v;
   },
 
+  fluencia() {
+    const m = modulo();
+    const v = document.createElement('div');
+    v.innerHTML = `
+      <div class="view-head">
+        <p class="eyebrow">${m.modulo}</p>
+        <h1>Fluência</h1>
+        <p>Fala cada frase — o app reconhece e avalia palavra a palavra.</p>
+      </div>`;
+    v.appendChild(Fluencia(m.frases_chave));
+    return v;
+  },
+
   revisao() {
     const m = modulo();
     const v = document.createElement('div');
@@ -339,7 +499,7 @@ function sec(titulo, node) {
 }
 
 /* ---------- 6) roteador ------------------------------------------------ */
-const ROTAS = ['estudar', 'praticar', 'simulador', 'revisao'];
+const ROTAS = ['estudar', 'praticar', 'fluencia', 'simulador', 'revisao'];
 function rotaAtual() { const r = location.hash.replace('#/', ''); return ROTAS.includes(r) ? r : 'estudar'; }
 function navegar() {
   const rota = rotaAtual();

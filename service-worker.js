@@ -1,7 +1,7 @@
 /* Espanhol de Sobrevivência · service-worker.js
    Estratégia: precache do shell na instalação; runtime "stale-while-revalidate".
    Suba o número da versão para invalidar o cache antigo. */
-const VERSAO = 'es-sobrevivencia-v2';
+const VERSAO = 'es-sobrevivencia-v3';
 const SHELL = [
   './',
   './index.html',
