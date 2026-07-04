@@ -1,0 +1,2620 @@
+{
+  "meta": {
+    "fonte": "material adicional em lote (não altera conteudo.json)",
+    "convencao": "ditado_extra: sílabas separadas por hífen; sílaba TÔNICA em MAIÚSCULA.",
+    "lotes": "4 lotes de 25 por módulo — lotes 1-2: pt→es; lotes 3-4: es→pt.",
+    "registro": "espanhol peninsular neutro"
+  },
+  "modulos": [
+    {
+      "modulo": "Saudações e cortesias",
+      "flashcards_lote": [
+        [
+          {
+            "frente": "oi",
+            "verso": "hola"
+          },
+          {
+            "frente": "como vai você",
+            "verso": "qué tal está"
+          },
+          {
+            "frente": "muito prazer",
+            "verso": "encantado de conocerle"
+          },
+          {
+            "frente": "sou brasileiro",
+            "verso": "soy brasileño"
+          },
+          {
+            "frente": "sou português",
+            "verso": "soy portugués"
+          },
+          {
+            "frente": "venho do Brasil",
+            "verso": "vengo de Brasil"
+          },
+          {
+            "frente": "moro em Portugal",
+            "verso": "vivo en Portugal"
+          },
+          {
+            "frente": "estou de férias",
+            "verso": "estoy de vacaciones"
+          },
+          {
+            "frente": "estou viajando",
+            "verso": "estoy de viaje"
+          },
+          {
+            "frente": "não falo espanhol bem",
+            "verso": "no hablo bien español"
+          },
+          {
+            "frente": "falo um pouco",
+            "verso": "hablo un poco"
+          },
+          {
+            "frente": "pode repetir",
+            "verso": "puede repetir"
+          },
+          {
+            "frente": "mais devagar",
+            "verso": "más despacio"
+          },
+          {
+            "frente": "entendi",
+            "verso": "entendido"
+          },
+          {
+            "frente": "não entendi",
+            "verso": "no he entendido"
+          },
+          {
+            "frente": "o que significa",
+            "verso": "qué significa"
+          },
+          {
+            "frente": "como se diz",
+            "verso": "cómo se dice"
+          },
+          {
+            "frente": "pode escrever",
+            "verso": "puede escribirlo"
+          },
+          {
+            "frente": "sem problema",
+            "verso": "sin problema"
+          },
+          {
+            "frente": "tudo certo",
+            "verso": "todo correcto"
+          },
+          {
+            "frente": "com prazer",
+            "verso": "con mucho gusto"
+          },
+          {
+            "frente": "desculpe o atraso",
+            "verso": "perdón por el retraso"
+          },
+          {
+            "frente": "obrigado pela ajuda",
+            "verso": "gracias por la ayuda"
+          },
+          {
+            "frente": "foi um prazer",
+            "verso": "ha sido un placer"
+          },
+          {
+            "frente": "tenha um bom dia",
+            "verso": "que tenga un buen día"
+          }
+        ],
+        [
+          {
+            "frente": "boa viagem",
+            "verso": "buen viaje"
+          },
+          {
+            "frente": "boa sorte",
+            "verso": "buena suerte"
+          },
+          {
+            "frente": "parabéns",
+            "verso": "enhorabuena"
+          },
+          {
+            "frente": "feliz aniversário",
+            "verso": "feliz cumpleaños"
+          },
+          {
+            "frente": "bom fim de semana",
+            "verso": "buen fin de semana"
+          },
+          {
+            "frente": "até já",
+            "verso": "hasta ahora"
+          },
+          {
+            "frente": "até a próxima",
+            "verso": "hasta la próxima"
+          },
+          {
+            "frente": "nos falamos",
+            "verso": "hablamos"
+          },
+          {
+            "frente": "um momento",
+            "verso": "un momento"
+          },
+          {
+            "frente": "espere um pouco",
+            "verso": "espere un poco"
+          },
+          {
+            "frente": "pois não?",
+            "verso": "¿dígame?"
+          },
+          {
+            "frente": "posso ajudar",
+            "verso": "puedo ayudar"
+          },
+          {
+            "frente": "preciso de informação",
+            "verso": "necesito información"
+          },
+          {
+            "frente": "é muito gentil",
+            "verso": "es muy amable"
+          },
+          {
+            "frente": "igualmente para você",
+            "verso": "igualmente para usted"
+          },
+          {
+            "frente": "fique à vontade",
+            "verso": "póngase cómodo"
+          },
+          {
+            "frente": "tudo bem por aqui",
+            "verso": "todo bien por aquí"
+          },
+          {
+            "frente": "estou com pressa",
+            "verso": "tengo prisa"
+          },
+          {
+            "frente": "sem pressa",
+            "verso": "sin prisa"
+          },
+          {
+            "frente": "claro",
+            "verso": "claro"
+          },
+          {
+            "frente": "talvez",
+            "verso": "quizás"
+          },
+          {
+            "frente": "depende",
+            "verso": "depende"
+          },
+          {
+            "frente": "não sei",
+            "verso": "no lo sé"
+          },
+          {
+            "frente": "acho que sim",
+            "verso": "creo que sí"
+          },
+          {
+            "frente": "acho que não",
+            "verso": "creo que no"
+          }
+        ],
+        [
+          {
+            "frente": "¿de dónde es usted?",
+            "verso": "de onde o senhor é?"
+          },
+          {
+            "frente": "¿cuánto tiempo se queda?",
+            "verso": "quanto tempo vai ficar?"
+          },
+          {
+            "frente": "bienvenidos a España",
+            "verso": "bem-vindos à Espanha"
+          },
+          {
+            "frente": "¿primera vez aquí?",
+            "verso": "primeira vez aqui?"
+          },
+          {
+            "frente": "que vaya bien",
+            "verso": "que corra tudo bem"
+          },
+          {
+            "frente": "¡qué bien!",
+            "verso": "que bom!"
+          },
+          {
+            "frente": "¡qué pena!",
+            "verso": "que pena!"
+          },
+          {
+            "frente": "de acuerdo",
+            "verso": "de acordo / combinado"
+          },
+          {
+            "frente": "desde luego",
+            "verso": "sem dúvida"
+          },
+          {
+            "frente": "ahora mismo",
+            "verso": "agora mesmo"
+          },
+          {
+            "frente": "en seguida",
+            "verso": "em seguida / já já"
+          },
+          {
+            "frente": "¿me permite?",
+            "verso": "me permite?"
+          },
+          {
+            "frente": "pase, pase",
+            "verso": "entre, entre"
+          },
+          {
+            "frente": "siéntese",
+            "verso": "sente-se"
+          },
+          {
+            "frente": "¿qué desea?",
+            "verso": "o que deseja?"
+          },
+          {
+            "frente": "a su servicio",
+            "verso": "às suas ordens"
+          },
+          {
+            "frente": "no se preocupe",
+            "verso": "não se preocupe"
+          },
+          {
+            "frente": "tranquilo",
+            "verso": "fique tranquilo"
+          },
+          {
+            "frente": "¡ojo!",
+            "verso": "atenção!"
+          },
+          {
+            "frente": "¡cuidado!",
+            "verso": "cuidado!"
+          },
+          {
+            "frente": "perdona las molestias",
+            "verso": "desculpe o incômodo"
+          },
+          {
+            "frente": "gracias a usted",
+            "verso": "eu que agradeço"
+          },
+          {
+            "frente": "un saludo",
+            "verso": "um abraço (despedida)"
+          },
+          {
+            "frente": "que descanse",
+            "verso": "bom descanso"
+          },
+          {
+            "frente": "hasta la vista",
+            "verso": "até à vista"
+          }
+        ],
+        [
+          {
+            "frente": "me alegro",
+            "verso": "fico feliz"
+          },
+          {
+            "frente": "lo siento mucho",
+            "verso": "sinto muito"
+          },
+          {
+            "frente": "con gusto",
+            "verso": "com prazer"
+          },
+          {
+            "frente": "faltaría más",
+            "verso": "imagina, é claro"
+          },
+          {
+            "frente": "no importa",
+            "verso": "não importa"
+          },
+          {
+            "frente": "da igual",
+            "verso": "tanto faz"
+          },
+          {
+            "frente": "¿en qué puedo ayudarle?",
+            "verso": "em que posso ajudar?"
+          },
+          {
+            "frente": "estoy a su disposición",
+            "verso": "estou à disposição"
+          },
+          {
+            "frente": "¿algo más?",
+            "verso": "mais alguma coisa?"
+          },
+          {
+            "frente": "nada más, gracias",
+            "verso": "mais nada, obrigado"
+          },
+          {
+            "frente": "aquí tiene",
+            "verso": "aqui está"
+          },
+          {
+            "frente": "tome asiento",
+            "verso": "tome assento"
+          },
+          {
+            "frente": "un placer conocerle",
+            "verso": "um prazer conhecê-lo"
+          },
+          {
+            "frente": "¿cómo le va?",
+            "verso": "como vão as coisas?"
+          },
+          {
+            "frente": "todo en orden",
+            "verso": "tudo em ordem"
+          },
+          {
+            "frente": "sin falta",
+            "verso": "sem falta"
+          },
+          {
+            "frente": "por si acaso",
+            "verso": "por via das dúvidas"
+          },
+          {
+            "frente": "a ver",
+            "verso": "vejamos"
+          },
+          {
+            "frente": "venga",
+            "verso": "vamos lá / tá bom"
+          },
+          {
+            "frente": "hombre, claro",
+            "verso": "claro, óbvio"
+          },
+          {
+            "frente": "qué va",
+            "verso": "que nada / de jeito nenhum"
+          },
+          {
+            "frente": "de verdad",
+            "verso": "de verdade"
+          },
+          {
+            "frente": "¿qué tal el viaje?",
+            "verso": "como foi a viagem?"
+          },
+          {
+            "frente": "que aproveche el día",
+            "verso": "aproveite o dia"
+          },
+          {
+            "frente": "nos vemos pronto",
+            "verso": "a gente se vê logo"
+          }
+        ]
+      ],
+      "ditado_extra": [
+        "I-gual-MEN-te.",
+        "¿CÓ-mo se LLA-ma us-TED?",
+        "Me LLA-mo A-NA.",
+        "En-can-TA-do de co-no-CER-le.",
+        "¿HA-bla por-tu-GUÉS?",
+        "HA-blo un PO-co de es-pa-ÑOL.",
+        "¿PUE-de re-pe-TIR, por fa-VOR?",
+        "MÁS des-PA-cio, por fa-VOR.",
+        "No en-TIEN-do BIEN.",
+        "GRA-cias por su a-YU-da.",
+        "De NA-da, con GUS-to.",
+        "HAS-ta ma-ÑA-na.",
+        "BUE-nas TAR-des a TO-dos.",
+        "¡Buen VIA-je!",
+        "Que TEN-ga un buen DÍ-a.",
+        "Per-DO-ne las mo-LES-tias.",
+        "No PA-sa NA-da.",
+        "Con per-MI-so.",
+        "¿QUÉ tal es-TÁ?",
+        "TO-do BIEN, GRA-cias."
+      ]
+    },
+    {
+      "modulo": "Direções e transporte",
+      "flashcards_lote": [
+        [
+          {
+            "frente": "aeroporto",
+            "verso": "aeropuerto"
+          },
+          {
+            "frente": "rodoviária",
+            "verso": "estación de autobuses"
+          },
+          {
+            "frente": "porto",
+            "verso": "puerto"
+          },
+          {
+            "frente": "centro da cidade",
+            "verso": "centro de la ciudad"
+          },
+          {
+            "frente": "bairro antigo",
+            "verso": "casco antiguo"
+          },
+          {
+            "frente": "rua",
+            "verso": "calle"
+          },
+          {
+            "frente": "avenida",
+            "verso": "avenida"
+          },
+          {
+            "frente": "praça",
+            "verso": "plaza"
+          },
+          {
+            "frente": "esquina",
+            "verso": "esquina"
+          },
+          {
+            "frente": "quarteirão",
+            "verso": "manzana"
+          },
+          {
+            "frente": "ponte",
+            "verso": "puente"
+          },
+          {
+            "frente": "cruzamento",
+            "verso": "cruce"
+          },
+          {
+            "frente": "faixa de pedestres",
+            "verso": "paso de cebra"
+          },
+          {
+            "frente": "calçada",
+            "verso": "acera"
+          },
+          {
+            "frente": "estacionar",
+            "verso": "aparcar"
+          },
+          {
+            "frente": "pegar o ônibus",
+            "verso": "coger el autobús"
+          },
+          {
+            "frente": "descer na próxima",
+            "verso": "bajar en la próxima"
+          },
+          {
+            "frente": "subir no trem",
+            "verso": "subir al tren"
+          },
+          {
+            "frente": "trocar de linha",
+            "verso": "cambiar de línea"
+          },
+          {
+            "frente": "bilheteria",
+            "verso": "taquilla"
+          },
+          {
+            "frente": "máquina de bilhetes",
+            "verso": "máquina de billetes"
+          },
+          {
+            "frente": "validar o bilhete",
+            "verso": "validar el billete"
+          },
+          {
+            "frente": "horário de pico",
+            "verso": "hora punta"
+          },
+          {
+            "frente": "último trem",
+            "verso": "último tren"
+          },
+          {
+            "frente": "primeiro trem",
+            "verso": "primer tren"
+          }
+        ],
+        [
+          {
+            "frente": "está atrasado",
+            "verso": "va con retraso"
+          },
+          {
+            "frente": "cancelado",
+            "verso": "cancelado"
+          },
+          {
+            "frente": "em que direção",
+            "verso": "en qué dirección"
+          },
+          {
+            "frente": "sentido centro",
+            "verso": "dirección centro"
+          },
+          {
+            "frente": "fim da linha",
+            "verso": "final de línea"
+          },
+          {
+            "frente": "quantas paradas",
+            "verso": "cuántas paradas"
+          },
+          {
+            "frente": "próxima estação",
+            "verso": "próxima estación"
+          },
+          {
+            "frente": "baldeação",
+            "verso": "correspondencia"
+          },
+          {
+            "frente": "saída de emergência",
+            "verso": "salida de emergencia"
+          },
+          {
+            "frente": "escada rolante",
+            "verso": "escalera mecánica"
+          },
+          {
+            "frente": "escadas",
+            "verso": "escaleras"
+          },
+          {
+            "frente": "fica perto do hotel",
+            "verso": "está cerca del hotel"
+          },
+          {
+            "frente": "vire na segunda rua",
+            "verso": "gire en la segunda calle"
+          },
+          {
+            "frente": "atravessar a ponte",
+            "verso": "cruzar el puente"
+          },
+          {
+            "frente": "seguir a placa",
+            "verso": "seguir la señal"
+          },
+          {
+            "frente": "placa / sinal",
+            "verso": "señal"
+          },
+          {
+            "frente": "norte",
+            "verso": "norte"
+          },
+          {
+            "frente": "sul",
+            "verso": "sur"
+          },
+          {
+            "frente": "leste",
+            "verso": "este"
+          },
+          {
+            "frente": "oeste",
+            "verso": "oeste"
+          },
+          {
+            "frente": "ao lado de",
+            "verso": "al lado de"
+          },
+          {
+            "frente": "em frente a",
+            "verso": "enfrente de"
+          },
+          {
+            "frente": "atrás de",
+            "verso": "detrás de"
+          },
+          {
+            "frente": "entre",
+            "verso": "entre"
+          },
+          {
+            "frente": "depois da rotatória",
+            "verso": "después de la rotonda"
+          }
+        ],
+        [
+          {
+            "frente": "¿me puede llevar a esta dirección?",
+            "verso": "pode me levar a este endereço?"
+          },
+          {
+            "frente": "pare aquí, por favor",
+            "verso": "pare aqui, por favor"
+          },
+          {
+            "frente": "quédese con el cambio",
+            "verso": "fique com o troco"
+          },
+          {
+            "frente": "¿cuánto marca el taxímetro?",
+            "verso": "quanto marca o taxímetro?"
+          },
+          {
+            "frente": "tarifa nocturna",
+            "verso": "tarifa noturna"
+          },
+          {
+            "frente": "el AVE",
+            "verso": "o trem de alta velocidade (AVE)"
+          },
+          {
+            "frente": "tren de cercanías",
+            "verso": "trem urbano"
+          },
+          {
+            "frente": "coche de alquiler",
+            "verso": "carro de aluguel"
+          },
+          {
+            "frente": "carné de conducir",
+            "verso": "carteira de motorista"
+          },
+          {
+            "frente": "gasolinera",
+            "verso": "posto de gasolina"
+          },
+          {
+            "frente": "peaje",
+            "verso": "pedágio"
+          },
+          {
+            "frente": "autopista",
+            "verso": "rodovia"
+          },
+          {
+            "frente": "atasco",
+            "verso": "engarrafamento"
+          },
+          {
+            "frente": "multa",
+            "verso": "multa"
+          },
+          {
+            "frente": "zona azul",
+            "verso": "zona azul (estacionamento pago)"
+          },
+          {
+            "frente": "prohibido aparcar",
+            "verso": "proibido estacionar"
+          },
+          {
+            "frente": "ceda el paso",
+            "verso": "dê a preferência"
+          },
+          {
+            "frente": "obras en la vía",
+            "verso": "obras na via"
+          },
+          {
+            "frente": "desvío",
+            "verso": "desvio"
+          },
+          {
+            "frente": "sentido único",
+            "verso": "mão única"
+          },
+          {
+            "frente": "¿a cuántos kilómetros está?",
+            "verso": "a quantos quilômetros fica?"
+          },
+          {
+            "frente": "está a dos manzanas",
+            "verso": "fica a dois quarteirões"
+          },
+          {
+            "frente": "justo ahí",
+            "verso": "bem ali"
+          },
+          {
+            "frente": "al fondo a la derecha",
+            "verso": "no fundo à direita"
+          },
+          {
+            "frente": "suba por esta calle",
+            "verso": "suba por esta rua"
+          }
+        ],
+        [
+          {
+            "frente": "baje la cuesta",
+            "verso": "desça a ladeira"
+          },
+          {
+            "frente": "es imposible perderse",
+            "verso": "é impossível se perder"
+          },
+          {
+            "frente": "está señalizado",
+            "verso": "está sinalizado"
+          },
+          {
+            "frente": "pregunte allí",
+            "verso": "pergunte ali"
+          },
+          {
+            "frente": "el plano del metro",
+            "verso": "o mapa do metrô"
+          },
+          {
+            "frente": "la boca de metro",
+            "verso": "a entrada do metrô"
+          },
+          {
+            "frente": "el vagón",
+            "verso": "o vagão"
+          },
+          {
+            "frente": "el asiento reservado",
+            "verso": "o assento reservado"
+          },
+          {
+            "frente": "próxima parada solicitada",
+            "verso": "próxima parada solicitada"
+          },
+          {
+            "frente": "abróchense los cinturones",
+            "verso": "apertem os cintos"
+          },
+          {
+            "frente": "embarque prioritario",
+            "verso": "embarque prioritário"
+          },
+          {
+            "frente": "tarjeta de embarque",
+            "verso": "cartão de embarque"
+          },
+          {
+            "frente": "equipaje de mano",
+            "verso": "bagagem de mão"
+          },
+          {
+            "frente": "recogida de equipajes",
+            "verso": "esteira de bagagens"
+          },
+          {
+            "frente": "control de seguridad",
+            "verso": "controle de segurança"
+          },
+          {
+            "frente": "aduana",
+            "verso": "alfândega"
+          },
+          {
+            "frente": "vuelo directo",
+            "verso": "voo direto"
+          },
+          {
+            "frente": "escala",
+            "verso": "escala"
+          },
+          {
+            "frente": "retraso de una hora",
+            "verso": "atraso de uma hora"
+          },
+          {
+            "frente": "puerta B12",
+            "verso": "portão B12"
+          },
+          {
+            "frente": "último aviso",
+            "verso": "última chamada"
+          },
+          {
+            "frente": "consigna de equipaje",
+            "verso": "guarda-volumes"
+          },
+          {
+            "frente": "objetos perdidos",
+            "verso": "achados e perdidos"
+          },
+          {
+            "frente": "¿dónde cojo el taxi?",
+            "verso": "onde pego o táxi?"
+          },
+          {
+            "frente": "andén dos",
+            "verso": "plataforma dois"
+          }
+        ]
+      ],
+      "ditado_extra": [
+        "¿DÓN-de es-TÁ la pa-RA-da?",
+        "GI-re a la iz-QUIER-da.",
+        "SI-ga TO-do REC-to.",
+        "Es-TÁ CER-ca de a-QUÍ.",
+        "¿CUÁN-to TAR-da?",
+        "El TREN SA-le a las DIEZ.",
+        "Un bi-LLE-te de I-da y VUEL-ta.",
+        "¿QUÉ LÍ-ne-a CO-jo?",
+        "BA-je en la PRÓ-xi-ma.",
+        "La es-ta-CIÓN es-TÁ LE-jos.",
+        "CRU-ce la CA-lle.",
+        "Al FON-do a la de-RE-cha.",
+        "¿VA al a-e-ro-PUER-to?",
+        "PA-re a-QUÍ, por fa-VOR.",
+        "¿CUÁN-to CUES-ta el TA-xi?",
+        "El an-DÉN NÚ-me-ro DOS.",
+        "HAY que ha-CER tras-BOR-do.",
+        "¿A QUÉ HO-ra SA-le?",
+        "Es la ÚL-ti-ma pa-RA-da.",
+        "SU-ba por ES-ta CA-lle."
+      ]
+    },
+    {
+      "modulo": "Restaurante e café",
+      "flashcards_lote": [
+        [
+          {
+            "frente": "talher",
+            "verso": "cubiertos"
+          },
+          {
+            "frente": "copo",
+            "verso": "vaso"
+          },
+          {
+            "frente": "taça",
+            "verso": "copa"
+          },
+          {
+            "frente": "prato",
+            "verso": "plato"
+          },
+          {
+            "frente": "tigela",
+            "verso": "cuenco"
+          },
+          {
+            "frente": "sal",
+            "verso": "sal"
+          },
+          {
+            "frente": "pimenta",
+            "verso": "pimienta"
+          },
+          {
+            "frente": "azeite",
+            "verso": "aceite de oliva"
+          },
+          {
+            "frente": "vinagre",
+            "verso": "vinagre"
+          },
+          {
+            "frente": "pão",
+            "verso": "pan"
+          },
+          {
+            "frente": "manteiga",
+            "verso": "mantequilla"
+          },
+          {
+            "frente": "queijo",
+            "verso": "queso"
+          },
+          {
+            "frente": "presunto",
+            "verso": "jamón"
+          },
+          {
+            "frente": "frango",
+            "verso": "pollo"
+          },
+          {
+            "frente": "carne bovina",
+            "verso": "ternera"
+          },
+          {
+            "frente": "porco",
+            "verso": "cerdo"
+          },
+          {
+            "frente": "peixe",
+            "verso": "pescado"
+          },
+          {
+            "frente": "camarão",
+            "verso": "gambas"
+          },
+          {
+            "frente": "lula",
+            "verso": "calamares"
+          },
+          {
+            "frente": "polvo",
+            "verso": "pulpo"
+          },
+          {
+            "frente": "arroz",
+            "verso": "arroz"
+          },
+          {
+            "frente": "batata frita",
+            "verso": "patatas fritas"
+          },
+          {
+            "frente": "salada",
+            "verso": "ensalada"
+          },
+          {
+            "frente": "sopa",
+            "verso": "sopa"
+          },
+          {
+            "frente": "ovo",
+            "verso": "huevo"
+          }
+        ],
+        [
+          {
+            "frente": "legumes",
+            "verso": "verduras"
+          },
+          {
+            "frente": "fruta",
+            "verso": "fruta"
+          },
+          {
+            "frente": "sorvete",
+            "verso": "helado"
+          },
+          {
+            "frente": "bolo",
+            "verso": "tarta"
+          },
+          {
+            "frente": "suco de laranja",
+            "verso": "zumo de naranja"
+          },
+          {
+            "frente": "refrigerante",
+            "verso": "refresco"
+          },
+          {
+            "frente": "gelo",
+            "verso": "hielo"
+          },
+          {
+            "frente": "café puro",
+            "verso": "café solo"
+          },
+          {
+            "frente": "café pingado",
+            "verso": "cortado"
+          },
+          {
+            "frente": "chá",
+            "verso": "té"
+          },
+          {
+            "frente": "taça de vinho",
+            "verso": "copa de vino"
+          },
+          {
+            "frente": "meia porção",
+            "verso": "media ración"
+          },
+          {
+            "frente": "bem temperado",
+            "verso": "bien sazonado"
+          },
+          {
+            "frente": "picante",
+            "verso": "picante"
+          },
+          {
+            "frente": "sem sal",
+            "verso": "sin sal"
+          },
+          {
+            "frente": "sem cebola",
+            "verso": "sin cebolla"
+          },
+          {
+            "frente": "está frio",
+            "verso": "está frío"
+          },
+          {
+            "frente": "está quente demais",
+            "verso": "está demasiado caliente"
+          },
+          {
+            "frente": "falta um talher",
+            "verso": "falta un cubierto"
+          },
+          {
+            "frente": "mais pão, por favor",
+            "verso": "más pan, por favor"
+          },
+          {
+            "frente": "outra rodada",
+            "verso": "otra ronda"
+          },
+          {
+            "frente": "a mesma coisa",
+            "verso": "lo mismo"
+          },
+          {
+            "frente": "estou esperando há muito",
+            "verso": "llevo mucho esperando"
+          },
+          {
+            "frente": "pode embrulhar",
+            "verso": "me lo puede envolver"
+          },
+          {
+            "frente": "cadê o banheiro",
+            "verso": "dónde está el baño"
+          }
+        ],
+        [
+          {
+            "frente": "bocadillo",
+            "verso": "sanduíche (de baguete)"
+          },
+          {
+            "frente": "tostada",
+            "verso": "torrada"
+          },
+          {
+            "frente": "churros con chocolate",
+            "verso": "churros com chocolate"
+          },
+          {
+            "frente": "tortilla de patatas",
+            "verso": "omelete de batata"
+          },
+          {
+            "frente": "gazpacho",
+            "verso": "sopa fria de tomate"
+          },
+          {
+            "frente": "paella mixta",
+            "verso": "paella mista"
+          },
+          {
+            "frente": "pimientos de padrón",
+            "verso": "pimentões de Padrón"
+          },
+          {
+            "frente": "croquetas",
+            "verso": "croquetes"
+          },
+          {
+            "frente": "albóndigas",
+            "verso": "almôndegas"
+          },
+          {
+            "frente": "ensaladilla rusa",
+            "verso": "salada russa (maionese)"
+          },
+          {
+            "frente": "pincho",
+            "verso": "espetinho / porção no palito"
+          },
+          {
+            "frente": "montadito",
+            "verso": "mini-sanduíche"
+          },
+          {
+            "frente": "plato combinado",
+            "verso": "prato feito"
+          },
+          {
+            "frente": "guarnición",
+            "verso": "acompanhamento"
+          },
+          {
+            "frente": "entrantes",
+            "verso": "entradas"
+          },
+          {
+            "frente": "a la plancha",
+            "verso": "grelhado na chapa"
+          },
+          {
+            "frente": "al horno",
+            "verso": "assado no forno"
+          },
+          {
+            "frente": "frito",
+            "verso": "frito"
+          },
+          {
+            "frente": "a la brasa",
+            "verso": "na brasa"
+          },
+          {
+            "frente": "casero",
+            "verso": "caseiro"
+          },
+          {
+            "frente": "del tiempo",
+            "verso": "em temperatura ambiente"
+          },
+          {
+            "frente": "caña doble",
+            "verso": "chope grande"
+          },
+          {
+            "frente": "tinto de verano",
+            "verso": "vinho tinto com gasosa"
+          },
+          {
+            "frente": "sangría",
+            "verso": "sangria"
+          },
+          {
+            "frente": "vermut",
+            "verso": "vermute"
+          }
+        ],
+        [
+          {
+            "frente": "sidra",
+            "verso": "sidra"
+          },
+          {
+            "frente": "cava",
+            "verso": "espumante catalão"
+          },
+          {
+            "frente": "carta de vinos",
+            "verso": "carta de vinhos"
+          },
+          {
+            "frente": "maridaje",
+            "verso": "harmonização"
+          },
+          {
+            "frente": "la especialidad de la casa",
+            "verso": "a especialidade da casa"
+          },
+          {
+            "frente": "¿qué me recomienda?",
+            "verso": "o que o senhor recomenda?"
+          },
+          {
+            "frente": "para compartir",
+            "verso": "para dividir"
+          },
+          {
+            "frente": "¿lleva gluten?",
+            "verso": "contém glúten?"
+          },
+          {
+            "frente": "¿lleva frutos secos?",
+            "verso": "contém oleaginosas?"
+          },
+          {
+            "frente": "soy celíaco",
+            "verso": "sou celíaco"
+          },
+          {
+            "frente": "soy vegano",
+            "verso": "sou vegano"
+          },
+          {
+            "frente": "sin lactosa",
+            "verso": "sem lactose"
+          },
+          {
+            "frente": "el pan está incluido",
+            "verso": "o pão está incluído"
+          },
+          {
+            "frente": "servicio incluido",
+            "verso": "serviço incluído"
+          },
+          {
+            "frente": "cobrar por separado",
+            "verso": "cobrar separado"
+          },
+          {
+            "frente": "¿me cobra?",
+            "verso": "pode cobrar?"
+          },
+          {
+            "frente": "invita la casa",
+            "verso": "cortesia da casa"
+          },
+          {
+            "frente": "te invito",
+            "verso": "eu pago / por minha conta"
+          },
+          {
+            "frente": "dejar propina",
+            "verso": "deixar gorjeta"
+          },
+          {
+            "frente": "la cocina cierra a las once",
+            "verso": "a cozinha fecha às onze"
+          },
+          {
+            "frente": "hay lista de espera",
+            "verso": "há lista de espera"
+          },
+          {
+            "frente": "¿tienen mesa fuera?",
+            "verso": "têm mesa lá fora?"
+          },
+          {
+            "frente": "reservar para dos",
+            "verso": "reservar para dois"
+          },
+          {
+            "frente": "mesa junto a la ventana",
+            "verso": "mesa perto da janela"
+          },
+          {
+            "frente": "el camarero viene ahora",
+            "verso": "o garçom já vem"
+          }
+        ]
+      ],
+      "ditado_extra": [
+        "Pa-E-lla PA-ra DOS.",
+        "Qui-SIE-ra un ca-FÉ SO-lo.",
+        "U-na CO-pa de VI-no TIN-to.",
+        "El me-NÚ del DÍ-a, por fa-VOR.",
+        "¿QUÉ me re-co-MIEN-da?",
+        "PA-ra com-par-TIR.",
+        "SIN ce-BO-lla, por fa-VOR.",
+        "¿LLE-va GLU-ten?",
+        "SOY ve-ge-ta-RIA-no.",
+        "MÁS PAN, por fa-VOR.",
+        "O-tra CA-ña, GRA-cias.",
+        "Es-TÁ muy RI-co.",
+        "La es-pe-cia-li-DAD de la CA-sa.",
+        "¿NOS CO-bra, por fa-VOR?",
+        "La CUEN-ta se-pa-RA-da.",
+        "¿DÓN-de es-TÁ el BA-ño?",
+        "U-na ME-sa FUE-ra.",
+        "De POS-tre, un he-LA-do.",
+        "TO-do es-TA-ba bue-NÍ-si-mo.",
+        "¿ME lo PO-ne PA-ra lle-VAR?"
+      ]
+    },
+    {
+      "modulo": "Hotel e check-in",
+      "flashcards_lote": [
+        [
+          {
+            "frente": "hospedagem",
+            "verso": "alojamiento"
+          },
+          {
+            "frente": "pousada",
+            "verso": "hostal"
+          },
+          {
+            "frente": "albergue",
+            "verso": "albergue"
+          },
+          {
+            "frente": "apartamento",
+            "verso": "apartamento"
+          },
+          {
+            "frente": "andar / piso",
+            "verso": "planta"
+          },
+          {
+            "frente": "térreo",
+            "verso": "planta baja"
+          },
+          {
+            "frente": "varanda",
+            "verso": "balcón"
+          },
+          {
+            "frente": "ar-condicionado",
+            "verso": "aire acondicionado"
+          },
+          {
+            "frente": "aquecedor",
+            "verso": "calefactor"
+          },
+          {
+            "frente": "ventilador",
+            "verso": "ventilador"
+          },
+          {
+            "frente": "lençóis",
+            "verso": "sábanas"
+          },
+          {
+            "frente": "colchão",
+            "verso": "colchón"
+          },
+          {
+            "frente": "cortina",
+            "verso": "cortina"
+          },
+          {
+            "frente": "janela",
+            "verso": "ventana"
+          },
+          {
+            "frente": "porta",
+            "verso": "puerta"
+          },
+          {
+            "frente": "fechadura",
+            "verso": "cerradura"
+          },
+          {
+            "frente": "cartão-chave",
+            "verso": "tarjeta llave"
+          },
+          {
+            "frente": "controle remoto",
+            "verso": "mando a distancia"
+          },
+          {
+            "frente": "televisão",
+            "verso": "televisión"
+          },
+          {
+            "frente": "geladeira",
+            "verso": "nevera"
+          },
+          {
+            "frente": "secador de cabelo",
+            "verso": "secador de pelo"
+          },
+          {
+            "frente": "ferro de passar",
+            "verso": "plancha"
+          },
+          {
+            "frente": "berço",
+            "verso": "cuna"
+          },
+          {
+            "frente": "cama extra",
+            "verso": "cama supletoria"
+          },
+          {
+            "frente": "banheira",
+            "verso": "bañera"
+          }
+        ],
+        [
+          {
+            "frente": "chuveiro",
+            "verso": "ducha"
+          },
+          {
+            "frente": "sabonete",
+            "verso": "jabón"
+          },
+          {
+            "frente": "xampu",
+            "verso": "champú"
+          },
+          {
+            "frente": "papel higiênico",
+            "verso": "papel higiénico"
+          },
+          {
+            "frente": "água quente",
+            "verso": "agua caliente"
+          },
+          {
+            "frente": "carregador",
+            "verso": "cargador"
+          },
+          {
+            "frente": "despertador",
+            "verso": "despertador"
+          },
+          {
+            "frente": "serviço de despertar",
+            "verso": "servicio de despertador"
+          },
+          {
+            "frente": "diária",
+            "verso": "precio por noche"
+          },
+          {
+            "frente": "taxa turística",
+            "verso": "tasa turística"
+          },
+          {
+            "frente": "caução",
+            "verso": "fianza"
+          },
+          {
+            "frente": "cancelamento grátis",
+            "verso": "cancelación gratuita"
+          },
+          {
+            "frente": "reserva confirmada",
+            "verso": "reserva confirmada"
+          },
+          {
+            "frente": "noite extra",
+            "verso": "noche extra"
+          },
+          {
+            "frente": "ficar mais uma noite",
+            "verso": "quedarse una noche más"
+          },
+          {
+            "frente": "sair mais cedo",
+            "verso": "salir antes"
+          },
+          {
+            "frente": "guardar as malas",
+            "verso": "guardar las maletas"
+          },
+          {
+            "frente": "chamar um táxi",
+            "verso": "pedir un taxi"
+          },
+          {
+            "frente": "recomendação de restaurante",
+            "verso": "recomendación de restaurante"
+          },
+          {
+            "frente": "mapa da cidade",
+            "verso": "plano de la ciudad"
+          },
+          {
+            "frente": "piscina",
+            "verso": "piscina"
+          },
+          {
+            "frente": "academia",
+            "verso": "gimnasio"
+          },
+          {
+            "frente": "lavanderia",
+            "verso": "lavandería"
+          },
+          {
+            "frente": "limpeza diária",
+            "verso": "limpieza diaria"
+          },
+          {
+            "frente": "reclamação",
+            "verso": "queja"
+          }
+        ],
+        [
+          {
+            "frente": "¿tiene habitaciones libres?",
+            "verso": "tem quartos livres?"
+          },
+          {
+            "frente": "completo",
+            "verso": "lotado"
+          },
+          {
+            "frente": "media pensión",
+            "verso": "meia pensão"
+          },
+          {
+            "frente": "pensión completa",
+            "verso": "pensão completa"
+          },
+          {
+            "frente": "solo alojamiento",
+            "verso": "só hospedagem"
+          },
+          {
+            "frente": "desayuno buffet",
+            "verso": "café da manhã buffet"
+          },
+          {
+            "frente": "hora de entrada",
+            "verso": "horário de check-in"
+          },
+          {
+            "frente": "hora de salida",
+            "verso": "horário de check-out"
+          },
+          {
+            "frente": "la habitación da a la calle",
+            "verso": "o quarto dá para a rua"
+          },
+          {
+            "frente": "da al patio",
+            "verso": "dá para o pátio"
+          },
+          {
+            "frente": "hay mucho ruido",
+            "verso": "há muito barulho"
+          },
+          {
+            "frente": "no hay agua caliente",
+            "verso": "não há água quente"
+          },
+          {
+            "frente": "la luz no funciona",
+            "verso": "a luz não funciona"
+          },
+          {
+            "frente": "la tele no se enciende",
+            "verso": "a TV não liga"
+          },
+          {
+            "frente": "el mando no va",
+            "verso": "o controle não funciona"
+          },
+          {
+            "frente": "falta papel higiénico",
+            "verso": "falta papel higiênico"
+          },
+          {
+            "frente": "¿me trae toallas limpias?",
+            "verso": "traz toalhas limpas?"
+          },
+          {
+            "frente": "cambien las sábanas",
+            "verso": "troquem os lençóis"
+          },
+          {
+            "frente": "huele raro",
+            "verso": "tem um cheiro estranho"
+          },
+          {
+            "frente": "hay una gotera",
+            "verso": "tem um vazamento"
+          },
+          {
+            "frente": "el vecino hace ruido",
+            "verso": "o vizinho faz barulho"
+          },
+          {
+            "frente": "¿pueden arreglarlo hoy?",
+            "verso": "podem consertar hoje?"
+          },
+          {
+            "frente": "quisiera otra habitación",
+            "verso": "queria outro quarto"
+          },
+          {
+            "frente": "en una planta más alta",
+            "verso": "num andar mais alto"
+          },
+          {
+            "frente": "lejos del ascensor",
+            "verso": "longe do elevador"
+          }
+        ],
+        [
+          {
+            "frente": "¿el desayuno hasta qué hora?",
+            "verso": "café da manhã até que horas?"
+          },
+          {
+            "frente": "¿la piscina está abierta?",
+            "verso": "a piscina está aberta?"
+          },
+          {
+            "frente": "hamacas",
+            "verso": "espreguiçadeiras"
+          },
+          {
+            "frente": "toalla de piscina",
+            "verso": "toalha de piscina"
+          },
+          {
+            "frente": "está todo incluido",
+            "verso": "está tudo incluído"
+          },
+          {
+            "frente": "suplemento",
+            "verso": "taxa adicional"
+          },
+          {
+            "frente": "me cobraron de más",
+            "verso": "me cobraram a mais"
+          },
+          {
+            "frente": "revise la factura",
+            "verso": "confira a fatura"
+          },
+          {
+            "frente": "el total no cuadra",
+            "verso": "o total não bate"
+          },
+          {
+            "frente": "¿me imprime la factura?",
+            "verso": "imprime a fatura pra mim?"
+          },
+          {
+            "frente": "firme aquí",
+            "verso": "assine aqui"
+          },
+          {
+            "frente": "su documento, por favor",
+            "verso": "seu documento, por favor"
+          },
+          {
+            "frente": "rellene este formulario",
+            "verso": "preencha este formulário"
+          },
+          {
+            "frente": "la contraseña está en la tarjeta",
+            "verso": "a senha está no cartão"
+          },
+          {
+            "frente": "el wifi va lento",
+            "verso": "o wifi está lento"
+          },
+          {
+            "frente": "se corta la conexión",
+            "verso": "a conexão cai"
+          },
+          {
+            "frente": "¿hay caja fuerte en la habitación?",
+            "verso": "tem cofre no quarto?"
+          },
+          {
+            "frente": "la llave no abre",
+            "verso": "a chave não abre"
+          },
+          {
+            "frente": "me he dejado la llave dentro",
+            "verso": "deixei a chave lá dentro"
+          },
+          {
+            "frente": "¿me abren la puerta?",
+            "verso": "podem abrir a porta pra mim?"
+          },
+          {
+            "frente": "el aire hace ruido",
+            "verso": "o ar faz barulho"
+          },
+          {
+            "frente": "suban el equipaje",
+            "verso": "subam a bagagem"
+          },
+          {
+            "frente": "¿a qué hora cierran la puerta?",
+            "verso": "a que horas fecham a porta?"
+          },
+          {
+            "frente": "recepción nocturna",
+            "verso": "recepção noturna"
+          },
+          {
+            "frente": "gracias por la estancia",
+            "verso": "obrigado pela estadia"
+          }
+        ]
+      ],
+      "ditado_extra": [
+        "La re-SER-va es-TÁ a mi NOM-bre.",
+        "U-na ha-bi-ta-CIÓN DO-ble.",
+        "¿El de-sa-YU-no es-TÁ in-clu-Í-do?",
+        "¿DÓN-de es-TÁ el as-cen-SOR?",
+        "La LLA-ve no A-bre.",
+        "Ne-ce-SI-to O-tra MAN-ta.",
+        "El AI-re HA-ce RUI-do.",
+        "¿ME CAM-bia de ha-bi-ta-CIÓN?",
+        "La DU-cha es-TÁ FRÍ-a.",
+        "FAL-ta pa-PEL hi-GIÉ-ni-co.",
+        "¿HAS-ta QUÉ HO-ra es la sa-LI-da?",
+        "¿PUE-den guar-DAR mis ma-LE-tas?",
+        "La con-tra-SE-ña del WI-fi.",
+        "El WI-fi va LEN-to.",
+        "QUIE-ro U-na CA-ma su-ple-TO-ria.",
+        "¿A QUÉ HO-ra A-bre la pis-CI-na?",
+        "ME co-BRA-ron de MÁS.",
+        "Re-VI-se la fac-TU-ra.",
+        "FIR-me a-QUÍ, por fa-VOR.",
+        "GRA-cias por TO-do."
+      ]
+    },
+    {
+      "modulo": "Compras e pagamentos",
+      "flashcards_lote": [
+        [
+          {
+            "frente": "quanto é tudo",
+            "verso": "cuánto es todo"
+          },
+          {
+            "frente": "caixa",
+            "verso": "caja"
+          },
+          {
+            "frente": "fila",
+            "verso": "cola"
+          },
+          {
+            "frente": "carrinho",
+            "verso": "carrito"
+          },
+          {
+            "frente": "cesta",
+            "verso": "cesta"
+          },
+          {
+            "frente": "prateleira",
+            "verso": "estantería"
+          },
+          {
+            "frente": "vitrine",
+            "verso": "escaparate"
+          },
+          {
+            "frente": "etiqueta",
+            "verso": "etiqueta"
+          },
+          {
+            "frente": "código de barras",
+            "verso": "código de barras"
+          },
+          {
+            "frente": "camiseta",
+            "verso": "camiseta"
+          },
+          {
+            "frente": "camisa",
+            "verso": "camisa"
+          },
+          {
+            "frente": "calça",
+            "verso": "pantalón"
+          },
+          {
+            "frente": "short",
+            "verso": "pantalón corto"
+          },
+          {
+            "frente": "vestido",
+            "verso": "vestido"
+          },
+          {
+            "frente": "saia",
+            "verso": "falda"
+          },
+          {
+            "frente": "casaco",
+            "verso": "abrigo"
+          },
+          {
+            "frente": "jaqueta",
+            "verso": "chaqueta"
+          },
+          {
+            "frente": "suéter",
+            "verso": "jersey"
+          },
+          {
+            "frente": "meias",
+            "verso": "calcetines"
+          },
+          {
+            "frente": "roupa íntima",
+            "verso": "ropa interior"
+          },
+          {
+            "frente": "sapatos",
+            "verso": "zapatos"
+          },
+          {
+            "frente": "tênis",
+            "verso": "zapatillas"
+          },
+          {
+            "frente": "sandálias",
+            "verso": "sandalias"
+          },
+          {
+            "frente": "chinelo",
+            "verso": "chanclas"
+          },
+          {
+            "frente": "cinto",
+            "verso": "cinturón"
+          }
+        ],
+        [
+          {
+            "frente": "bolsa",
+            "verso": "bolso"
+          },
+          {
+            "frente": "mochila",
+            "verso": "mochila"
+          },
+          {
+            "frente": "óculos de sol",
+            "verso": "gafas de sol"
+          },
+          {
+            "frente": "chapéu",
+            "verso": "sombrero"
+          },
+          {
+            "frente": "boné",
+            "verso": "gorra"
+          },
+          {
+            "frente": "relógio",
+            "verso": "reloj"
+          },
+          {
+            "frente": "brincos",
+            "verso": "pendientes"
+          },
+          {
+            "frente": "colar",
+            "verso": "collar"
+          },
+          {
+            "frente": "anel",
+            "verso": "anillo"
+          },
+          {
+            "frente": "perfume",
+            "verso": "perfume"
+          },
+          {
+            "frente": "protetor solar",
+            "verso": "crema solar"
+          },
+          {
+            "frente": "ímã de geladeira",
+            "verso": "imán de nevera"
+          },
+          {
+            "frente": "cartão postal",
+            "verso": "postal"
+          },
+          {
+            "frente": "selo",
+            "verso": "sello"
+          },
+          {
+            "frente": "livraria",
+            "verso": "librería"
+          },
+          {
+            "frente": "papelaria",
+            "verso": "papelería"
+          },
+          {
+            "frente": "joalheria",
+            "verso": "joyería"
+          },
+          {
+            "frente": "sapataria",
+            "verso": "zapatería"
+          },
+          {
+            "frente": "padaria",
+            "verso": "panadería"
+          },
+          {
+            "frente": "açougue",
+            "verso": "carnicería"
+          },
+          {
+            "frente": "peixaria",
+            "verso": "pescadería"
+          },
+          {
+            "frente": "quitanda",
+            "verso": "frutería"
+          },
+          {
+            "frente": "supermercado",
+            "verso": "supermercado"
+          },
+          {
+            "frente": "farmácia de plantão",
+            "verso": "farmacia de guardia"
+          },
+          {
+            "frente": "aberto aos domingos",
+            "verso": "abierto los domingos"
+          }
+        ],
+        [
+          {
+            "frente": "¿cuánto le debo?",
+            "verso": "quanto devo?"
+          },
+          {
+            "frente": "son veinte euros",
+            "verso": "são vinte euros"
+          },
+          {
+            "frente": "¿tiene cambio de cincuenta?",
+            "verso": "tem troco para cinquenta?"
+          },
+          {
+            "frente": "pague en caja",
+            "verso": "pague no caixa"
+          },
+          {
+            "frente": "inserte la tarjeta",
+            "verso": "insira o cartão"
+          },
+          {
+            "frente": "contactless",
+            "verso": "pagamento por aproximação"
+          },
+          {
+            "frente": "teclee su pin",
+            "verso": "digite sua senha"
+          },
+          {
+            "frente": "¿quiere bolsa?",
+            "verso": "quer sacola?"
+          },
+          {
+            "frente": "la bolsa se cobra",
+            "verso": "a sacola é cobrada"
+          },
+          {
+            "frente": "¿le pongo algo más?",
+            "verso": "mais alguma coisa?"
+          },
+          {
+            "frente": "¿me lo puede guardar?",
+            "verso": "pode reservar para mim?"
+          },
+          {
+            "frente": "vuelvo luego",
+            "verso": "volto depois"
+          },
+          {
+            "frente": "me lo pienso",
+            "verso": "vou pensar"
+          },
+          {
+            "frente": "es una ganga",
+            "verso": "é uma pechincha"
+          },
+          {
+            "frente": "está de oferta",
+            "verso": "está em promoção"
+          },
+          {
+            "frente": "segunda unidad al 50%",
+            "verso": "segunda unidade com 50%"
+          },
+          {
+            "frente": "hasta agotar existencias",
+            "verso": "até acabar o estoque"
+          },
+          {
+            "frente": "talla S, M, L",
+            "verso": "tamanho P, M, G"
+          },
+          {
+            "frente": "¿qué número calza?",
+            "verso": "que número calça?"
+          },
+          {
+            "frente": "me aprieta",
+            "verso": "está apertado"
+          },
+          {
+            "frente": "me viene ancho",
+            "verso": "está largo"
+          },
+          {
+            "frente": "¿lo tiene en negro?",
+            "verso": "tem em preto?"
+          },
+          {
+            "frente": "en otro color",
+            "verso": "em outra cor"
+          },
+          {
+            "frente": "es de algodón",
+            "verso": "é de algodão"
+          },
+          {
+            "frente": "es de piel",
+            "verso": "é de couro"
+          }
+        ],
+        [
+          {
+            "frente": "hecho en España",
+            "verso": "feito na Espanha"
+          },
+          {
+            "frente": "de buena calidad",
+            "verso": "de boa qualidade"
+          },
+          {
+            "frente": "tiene garantía",
+            "verso": "tem garantia"
+          },
+          {
+            "frente": "dos años de garantía",
+            "verso": "dois anos de garantia"
+          },
+          {
+            "frente": "el ticket de compra",
+            "verso": "o cupom fiscal"
+          },
+          {
+            "frente": "sin el ticket no hay devolución",
+            "verso": "sem o recibo não há devolução"
+          },
+          {
+            "frente": "cambio en 30 días",
+            "verso": "troca em 30 dias"
+          },
+          {
+            "frente": "solo vale de tienda",
+            "verso": "só vale-compra"
+          },
+          {
+            "frente": "está defectuoso",
+            "verso": "está com defeito"
+          },
+          {
+            "frente": "le falta una pieza",
+            "verso": "falta uma peça"
+          },
+          {
+            "frente": "quiero hablar con el encargado",
+            "verso": "quero falar com o gerente"
+          },
+          {
+            "frente": "hoja de reclamaciones",
+            "verso": "livro de reclamações"
+          },
+          {
+            "frente": "horario comercial",
+            "verso": "horário comercial"
+          },
+          {
+            "frente": "cerrado por descanso",
+            "verso": "fechado para descanso"
+          },
+          {
+            "frente": "abrimos a las diez",
+            "verso": "abrimos às dez"
+          },
+          {
+            "frente": "cerramos a mediodía",
+            "verso": "fechamos ao meio-dia"
+          },
+          {
+            "frente": "¿dónde está la sección de...?",
+            "verso": "onde fica a seção de...?"
+          },
+          {
+            "frente": "pasillo tres",
+            "verso": "corredor três"
+          },
+          {
+            "frente": "al fondo de la tienda",
+            "verso": "no fundo da loja"
+          },
+          {
+            "frente": "planta de arriba",
+            "verso": "andar de cima"
+          },
+          {
+            "frente": "rebajado un veinte por ciento",
+            "verso": "com 20% de desconto"
+          },
+          {
+            "frente": "precio final",
+            "verso": "preço final"
+          },
+          {
+            "frente": "IVA incluido",
+            "verso": "IVA incluído"
+          },
+          {
+            "frente": "tax free para turistas",
+            "verso": "tax free para turistas"
+          },
+          {
+            "frente": "gracias por su compra",
+            "verso": "obrigado pela compra"
+          }
+        ]
+      ],
+      "ditado_extra": [
+        "¿QUÉ PRE-cio TIE-ne?",
+        "Es de-ma-SIA-do CA-ro.",
+        "¿HAY AL-go más ba-RA-to?",
+        "¿TIE-ne U-na TA-lla ME-nos?",
+        "ME QUE-da GRAN-de.",
+        "¿LO TIE-ne en NE-gro?",
+        "¿DÓN-de es-TÁN los pro-ba-DO-res?",
+        "ME lo LLE-vo.",
+        "¿ME da el TI-cket?",
+        "PA-go en e-fec-TI-vo.",
+        "¿A-CEP-tan tar-JE-ta?",
+        "NO TEN-go SUEL-to.",
+        "¿ME lo en-VUEL-ve PA-ra re-GA-lo?",
+        "Es-TÁ de o-FER-ta.",
+        "¿TIE-ne ga-ran-TÍ-a?",
+        "QUIE-ro cam-BIAR-lo.",
+        "Es-TÁ de-fec-TUO-so.",
+        "¿A QUÉ HO-ra CIE-rran?",
+        "A-BREN a las DIEZ.",
+        "GRA-cias, VUEL-vo LUE-go."
+      ]
+    },
+    {
+      "modulo": "Emergências e ajuda",
+      "flashcards_lote": [
+        [
+          {
+            "frente": "cabeça",
+            "verso": "cabeza"
+          },
+          {
+            "frente": "garganta",
+            "verso": "garganta"
+          },
+          {
+            "frente": "estômago",
+            "verso": "estómago"
+          },
+          {
+            "frente": "barriga",
+            "verso": "barriga"
+          },
+          {
+            "frente": "costas",
+            "verso": "espalda"
+          },
+          {
+            "frente": "braço",
+            "verso": "brazo"
+          },
+          {
+            "frente": "perna",
+            "verso": "pierna"
+          },
+          {
+            "frente": "pé",
+            "verso": "pie"
+          },
+          {
+            "frente": "mão",
+            "verso": "mano"
+          },
+          {
+            "frente": "dente",
+            "verso": "diente"
+          },
+          {
+            "frente": "ouvido",
+            "verso": "oído"
+          },
+          {
+            "frente": "olho",
+            "verso": "ojo"
+          },
+          {
+            "frente": "febre",
+            "verso": "fiebre"
+          },
+          {
+            "frente": "tosse",
+            "verso": "tos"
+          },
+          {
+            "frente": "gripe",
+            "verso": "gripe"
+          },
+          {
+            "frente": "resfriado",
+            "verso": "resfriado"
+          },
+          {
+            "frente": "dor de cabeça",
+            "verso": "dolor de cabeza"
+          },
+          {
+            "frente": "dor de garganta",
+            "verso": "dolor de garganta"
+          },
+          {
+            "frente": "dor de estômago",
+            "verso": "dolor de estómago"
+          },
+          {
+            "frente": "enjoo",
+            "verso": "mareo"
+          },
+          {
+            "frente": "vômito",
+            "verso": "vómito"
+          },
+          {
+            "frente": "diarreia",
+            "verso": "diarrea"
+          },
+          {
+            "frente": "prisão de ventre",
+            "verso": "estreñimiento"
+          },
+          {
+            "frente": "queimadura",
+            "verso": "quemadura"
+          },
+          {
+            "frente": "queimadura de sol",
+            "verso": "quemadura solar"
+          }
+        ],
+        [
+          {
+            "frente": "picada de inseto",
+            "verso": "picadura de insecto"
+          },
+          {
+            "frente": "corte",
+            "verso": "corte"
+          },
+          {
+            "frente": "curativo",
+            "verso": "tirita"
+          },
+          {
+            "frente": "atadura",
+            "verso": "venda"
+          },
+          {
+            "frente": "pomada",
+            "verso": "pomada"
+          },
+          {
+            "frente": "analgésico",
+            "verso": "analgésico"
+          },
+          {
+            "frente": "antitérmico",
+            "verso": "antipirético"
+          },
+          {
+            "frente": "antibiótico",
+            "verso": "antibiótico"
+          },
+          {
+            "frente": "receita",
+            "verso": "receta"
+          },
+          {
+            "frente": "dose",
+            "verso": "dosis"
+          },
+          {
+            "frente": "a cada oito horas",
+            "verso": "cada ocho horas"
+          },
+          {
+            "frente": "em jejum",
+            "verso": "en ayunas"
+          },
+          {
+            "frente": "grávida",
+            "verso": "embarazada"
+          },
+          {
+            "frente": "pressão alta",
+            "verso": "tensión alta"
+          },
+          {
+            "frente": "diabético",
+            "verso": "diabético"
+          },
+          {
+            "frente": "asma",
+            "verso": "asma"
+          },
+          {
+            "frente": "desmaiar",
+            "verso": "desmayarse"
+          },
+          {
+            "frente": "sangrar",
+            "verso": "sangrar"
+          },
+          {
+            "frente": "engasgar",
+            "verso": "atragantarse"
+          },
+          {
+            "frente": "torcer o tornozelo",
+            "verso": "torcerse el tobillo"
+          },
+          {
+            "frente": "quebrar o braço",
+            "verso": "romperse el brazo"
+          },
+          {
+            "frente": "pronto-socorro",
+            "verso": "urgencias"
+          },
+          {
+            "frente": "consulta médica",
+            "verso": "consulta médica"
+          },
+          {
+            "frente": "plantão 24 horas",
+            "verso": "guardia 24 horas"
+          },
+          {
+            "frente": "chamar ajuda",
+            "verso": "pedir ayuda"
+          }
+        ],
+        [
+          {
+            "frente": "¿qué le pasa?",
+            "verso": "o que o senhor tem?"
+          },
+          {
+            "frente": "¿dónde le duele?",
+            "verso": "onde dói?"
+          },
+          {
+            "frente": "¿desde cuándo?",
+            "verso": "desde quando?"
+          },
+          {
+            "frente": "¿es alérgico a algo?",
+            "verso": "é alérgico a algo?"
+          },
+          {
+            "frente": "¿toma alguna medicación?",
+            "verso": "toma algum remédio?"
+          },
+          {
+            "frente": "respire hondo",
+            "verso": "respire fundo"
+          },
+          {
+            "frente": "no se mueva",
+            "verso": "não se mova"
+          },
+          {
+            "frente": "túmbese aquí",
+            "verso": "deite-se aqui"
+          },
+          {
+            "frente": "abra la boca",
+            "verso": "abra a boca"
+          },
+          {
+            "frente": "le voy a tomar la tensión",
+            "verso": "vou medir sua pressão"
+          },
+          {
+            "frente": "hay que hacer una radiografía",
+            "verso": "é preciso fazer um raio-x"
+          },
+          {
+            "frente": "no es grave",
+            "verso": "não é grave"
+          },
+          {
+            "frente": "es solo un susto",
+            "verso": "é só um susto"
+          },
+          {
+            "frente": "necesita puntos",
+            "verso": "precisa de pontos"
+          },
+          {
+            "frente": "guarde reposo",
+            "verso": "faça repouso"
+          },
+          {
+            "frente": "beba mucha agua",
+            "verso": "beba muita água"
+          },
+          {
+            "frente": "tome esto cada doce horas",
+            "verso": "tome isto a cada doze horas"
+          },
+          {
+            "frente": "con las comidas",
+            "verso": "junto com as refeições"
+          },
+          {
+            "frente": "si no mejora, vuelva",
+            "verso": "se não melhorar, volte"
+          },
+          {
+            "frente": "la farmacia de guardia está cerca",
+            "verso": "a farmácia de plantão fica perto"
+          },
+          {
+            "frente": "¿tiene seguro médico?",
+            "verso": "tem seguro médico?"
+          },
+          {
+            "frente": "la tarjeta sanitaria europea",
+            "verso": "o cartão europeu de saúde"
+          },
+          {
+            "frente": "rellene el parte",
+            "verso": "preencha o boletim"
+          },
+          {
+            "frente": "el justificante",
+            "verso": "o comprovante"
+          },
+          {
+            "frente": "la denuncia",
+            "verso": "o boletim de ocorrência"
+          }
+        ],
+        [
+          {
+            "frente": "ponga una denuncia",
+            "verso": "registre uma ocorrência"
+          },
+          {
+            "frente": "el consulado de Brasil",
+            "verso": "o consulado do Brasil"
+          },
+          {
+            "frente": "la embajada",
+            "verso": "a embaixada"
+          },
+          {
+            "frente": "documento provisional",
+            "verso": "documento provisório"
+          },
+          {
+            "frente": "bloquee sus tarjetas",
+            "verso": "bloqueie seus cartões"
+          },
+          {
+            "frente": "cancele el móvil",
+            "verso": "bloqueie o celular"
+          },
+          {
+            "frente": "¿vio al ladrón?",
+            "verso": "viu o ladrão?"
+          },
+          {
+            "frente": "me tiraron del bolso",
+            "verso": "puxaram minha bolsa"
+          },
+          {
+            "frente": "en el metro me robaron",
+            "verso": "me roubaram no metrô"
+          },
+          {
+            "frente": "cuidado con los carteristas",
+            "verso": "cuidado com os batedores de carteira"
+          },
+          {
+            "frente": "zona vigilada",
+            "verso": "área monitorada"
+          },
+          {
+            "frente": "cámaras de seguridad",
+            "verso": "câmeras de segurança"
+          },
+          {
+            "frente": "el guardia de seguridad",
+            "verso": "o segurança"
+          },
+          {
+            "frente": "la grúa se llevó el coche",
+            "verso": "o guincho levou o carro"
+          },
+          {
+            "frente": "el depósito municipal",
+            "verso": "o pátio municipal"
+          },
+          {
+            "frente": "tuvo un pinchazo",
+            "verso": "teve um pneu furado"
+          },
+          {
+            "frente": "llame a la asistencia en carretera",
+            "verso": "chame a assistência na estrada"
+          },
+          {
+            "frente": "el triángulo de emergencia",
+            "verso": "o triângulo de emergência"
+          },
+          {
+            "frente": "el chaleco reflectante",
+            "verso": "o colete refletivo"
+          },
+          {
+            "frente": "hubo un choque",
+            "verso": "houve uma batida"
+          },
+          {
+            "frente": "nadie está herido",
+            "verso": "ninguém está ferido"
+          },
+          {
+            "frente": "intercambiar los datos",
+            "verso": "trocar os dados"
+          },
+          {
+            "frente": "el parte amistoso",
+            "verso": "a declaração amigável de acidente"
+          },
+          {
+            "frente": "tranquilo, ya viene la ayuda",
+            "verso": "calma, a ajuda já vem"
+          },
+          {
+            "frente": "todo va a salir bien",
+            "verso": "tudo vai ficar bem"
+          }
+        ]
+      ],
+      "ditado_extra": [
+        "¡A-YU-da, por fa-VOR!",
+        "LLA-me al CIEN-to DO-ce.",
+        "Es U-na e-mer-GEN-cia.",
+        "ME DUE-le la ca-BE-za.",
+        "TEN-go FIE-bre.",
+        "NO me en-CUEN-tro BIEN.",
+        "SOY a-LÉR-gi-co a la pe-ni-ci-LI-na.",
+        "¿DÓN-de HAY un hos-pi-TAL?",
+        "¿HAY un MÉ-di-co a-QUÍ?",
+        "ME han ro-BA-do el MÓ-vil.",
+        "He per-DI-do el pa-sa-POR-te.",
+        "QUIE-ro po-NER U-na de-NUN-cia.",
+        "LLA-me a la po-li-CÍ-a.",
+        "¿DÓN-de es-TÁ la co-mi-sa-RÍ-a?",
+        "TEN-go se-GU-ro de VIA-je.",
+        "Me SIEN-to ma-re-A-do.",
+        "Se ha ca-Í-do.",
+        "NO PUE-do res-pi-RAR BIEN.",
+        "TRAN-qui-lo, YA VIE-ne la a-YU-da.",
+        "TO-do va a sa-LIR BIEN."
+      ]
+    }
+  ]
+}

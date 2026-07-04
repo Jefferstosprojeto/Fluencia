@@ -1,0 +1,139 @@
+{
+  "$schema": "https://espanhol-sobrevivencia/tokens.schema.json",
+  "meta": {
+    "nombre": "Señal — Sistema de diseño Espanhol de Sobrevivência",
+    "version": "1.0.0",
+    "concepto": "Señalización de viaje: cobalto = interactivo, azafrán = marcador de atención.",
+    "contraste": "Todos los pares texto/fondo cumplen WCAG AA (>=4.5:1 texto normal, >=3:1 texto grande e UI)."
+  },
+
+  "color": {
+    "brand": {
+      "cobalto":        { "value": "#1B54B8", "uso": "Color de marca e acciones primarias. AA sobre blanco (5.9:1)." },
+      "cobalto-hover":  { "value": "#133F8C", "uso": "Hover/active de botones e enlaces primarios." },
+      "cobalto-suave":  { "value": "#E8EFFB", "uso": "Fondo tenue de chips, selección e estados info." },
+      "azafran":        { "value": "#F2A413", "uso": "Marcador/highlight. Solo como fondo o icono, nunca como texto sobre blanco." },
+      "azafran-suave":  { "value": "#FCE5BE", "uso": "Swipe de marca-texto detrás de la frase-clave (light)." }
+    },
+
+    "accent_por_modulo": {
+      "_conceito": "Cor de sinalização por módulo, como placas de estrada/turismo espanholas. Aplicada em só 3 pontos (rótulo do módulo, barra de progresso, ícone do acordeão) — o resto do app permanece em 'cobalto' para manter o cromo da interface consistente. O marca-texto açafrão da frase-clave NÃO muda: é o elemento-assinatura único do site.",
+      "saudacoes":   { "light": "#9C5D0A", "dark": "#F4B430", "inspiracao": "Açafrán — sol/boas-vindas. Light escurecido (5.27:1 AA) porque o tom claro #F2A413 falha como texto; o fundo do marca-texto continua no tom original." },
+      "direcoes":    { "light": "#0E6E90", "dark": "#4FC1CE", "inspiracao": "Azul-estrada — placas de direção de autovía/autopista." },
+      "restaurante": { "light": "#C1440E", "dark": "#E8794B", "inspiracao": "Pimentón — páprica, tomate, jamón." },
+      "hotel":       { "light": "#6B5CA5", "dark": "#A79BD9", "inspiracao": "Violeta-descanso — calma, hospedagem." },
+      "compras":     { "light": "#A31545", "dark": "#E85D8A", "inspiracao": "Magenta-rebajas — etiqueta de saldo/promoção." },
+      "emergencias": { "light": "#C0362C", "dark": "#FF6B5E", "inspiracao": "Reaproveita 'error' — vermelho universal de alerta/cruz roja." }
+    },
+
+    "light": {
+      "bg":             { "value": "#FBFBFA", "uso": "Fondo de página." },
+      "surface":        { "value": "#FFFFFF", "uso": "Tarjetas, paneles, acordeones." },
+      "surface-2":      { "value": "#F3F4F2", "uso": "Fondo secundario, filas alternas, campos inertes." },
+      "text":           { "value": "#16202B", "uso": "Texto principal (13.9:1 sobre surface)." },
+      "text-muted":     { "value": "#566372", "uso": "Texto secundario, ayudas, captions (AA)." },
+      "border":         { "value": "#E4E2DC", "uso": "Bordes, divisores hairline." },
+      "focus-ring":     { "value": "#1B54B8", "uso": "Anillo de foco visible :focus-visible." },
+      "success":        { "value": "#1B7F52", "uso": "Respuesta correcta, validación OK." },
+      "success-bg":     { "value": "#E4F3EA", "uso": "Fondo de feedback correcto." },
+      "error":          { "value": "#C0362C", "uso": "Respuesta incorrecta, estado .is-error." },
+      "error-bg":       { "value": "#FBEAE8", "uso": "Fondo de feedback incorrecto." },
+      "info":           { "value": "#1B54B8", "uso": "Toaster de revisión, avisos." }
+    },
+
+    "dark": {
+      "bg":             { "value": "#0E141B", "uso": "Fondo de página (tinta-marino)." },
+      "surface":        { "value": "#161F29", "uso": "Tarjetas, paneles." },
+      "surface-2":      { "value": "#1E2A36", "uso": "Fondo secundario, filas alternas." },
+      "text":           { "value": "#EDEFF2", "uso": "Texto principal (14.2:1 sobre surface)." },
+      "text-muted":     { "value": "#9AA7B4", "uso": "Texto secundario (AA sobre surface)." },
+      "border":         { "value": "#24303C", "uso": "Bordes, divisores." },
+      "focus-ring":     { "value": "#7FA8FF", "uso": "Anillo de foco visible en oscuro." },
+      "cobalto":        { "value": "#7FA8FF", "uso": "Marca/acciones sobre oscuro (AA)." },
+      "cobalto-hover":  { "value": "#A7C2FF", "uso": "Hover en oscuro." },
+      "cobalto-suave":  { "value": "#1B2C48", "uso": "Chips e selección info en oscuro." },
+      "azafran":        { "value": "#F4B430", "uso": "Marcador en oscuro (icono/fondo)." },
+      "azafran-suave":  { "value": "#3A2E12", "uso": "Swipe de marca-texto en oscuro." },
+      "success":        { "value": "#4FD08A", "uso": "Correcto en oscuro." },
+      "success-bg":     { "value": "#14291F", "uso": "Fondo correcto en oscuro." },
+      "error":          { "value": "#FF6B5E", "uso": "Incorrecto en oscuro." },
+      "error-bg":       { "value": "#2E1613", "uso": "Fondo incorrecto en oscuro." },
+      "info":           { "value": "#7FA8FF", "uso": "Toaster/avisos en oscuro." }
+    }
+  },
+
+  "typography": {
+    "family": {
+      "display": { "value": "\"Bricolage Grotesque\", \"Space Grotesk\", system-ui, sans-serif", "uso": "Títulos, número de módulo, la frase-clave en español." },
+      "body":    { "value": "\"Inter\", system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif", "uso": "Cuerpo, botones, traducciones, UI." },
+      "mono":    { "value": "\"Space Mono\", \"JetBrains Mono\", ui-monospace, monospace", "uso": "Pronunciación aproximada (anotación de caderno)." }
+    },
+    "size": {
+      "xs":   { "value": "0.75rem",  "uso": "Captions, etiquetas de progreso." },
+      "sm":   { "value": "0.875rem", "uso": "Texto secundario, ayudas." },
+      "base": { "value": "1rem",     "uso": "Cuerpo por defecto." },
+      "md":   { "value": "1.125rem", "uso": "Traducción PT de la frase-clave." },
+      "lg":   { "value": "1.375rem", "uso": "Subtítulos de sección." },
+      "xl":   { "value": "1.75rem",  "uso": "Frase-clave en español (flashcard)." },
+      "2xl":  { "value": "2.25rem",  "uso": "Título de módulo." },
+      "3xl":  { "value": "clamp(2.5rem, 6vw, 3.5rem)", "uso": "Hero." }
+    },
+    "weight": {
+      "regular":  { "value": "400" },
+      "medium":   { "value": "500" },
+      "semibold": { "value": "600" },
+      "bold":     { "value": "700" }
+    },
+    "leading": {
+      "tight":  { "value": "1.15", "uso": "Títulos display." },
+      "normal": { "value": "1.5",  "uso": "Cuerpo." },
+      "loose":  { "value": "1.7",  "uso": "Texto largo de lección." }
+    },
+    "tracking": {
+      "eyebrow": { "value": "0.08em", "uso": "Etiquetas en mayúsculas (MÓDULO 03)." }
+    }
+  },
+
+  "spacing": {
+    "_base": "4px. Escala: multiplos de 4 para ritmo vertical consistente.",
+    "0":  { "value": "0" },
+    "1":  { "value": "0.25rem" },
+    "2":  { "value": "0.5rem" },
+    "3":  { "value": "0.75rem" },
+    "4":  { "value": "1rem" },
+    "5":  { "value": "1.25rem" },
+    "6":  { "value": "1.5rem" },
+    "8":  { "value": "2rem" },
+    "10": { "value": "2.5rem" },
+    "12": { "value": "3rem" },
+    "16": { "value": "4rem" }
+  },
+
+  "radius": {
+    "sm":   { "value": "6px",   "uso": "Chips, inputs pequeños." },
+    "md":   { "value": "10px",  "uso": "Botones, campos." },
+    "lg":   { "value": "16px",  "uso": "Tarjetas, acordeones, flashcard." },
+    "pill": { "value": "999px", "uso": "Tabs, badges, barra de progreso." }
+  },
+
+  "shadow": {
+    "sm": { "value": "0 1px 2px rgba(16,32,43,0.06)", "uso": "Elevación mínima (chips)." },
+    "md": { "value": "0 4px 14px rgba(16,32,43,0.08)", "uso": "Tarjetas, flashcard." },
+    "lg": { "value": "0 12px 32px rgba(16,32,43,0.16)", "uso": "Toaster, modal, popover." }
+  },
+
+  "z": {
+    "base":     { "value": "0" },
+    "dropdown": { "value": "100" },
+    "sticky":   { "value": "200", "uso": "Barra de navegación superior." },
+    "toast":    { "value": "900", "uso": "Toaster de revisión." },
+    "modal":    { "value": "1000" }
+  },
+
+  "motion": {
+    "fast":   { "value": "120ms", "uso": "Hover, foco." },
+    "base":   { "value": "220ms", "uso": "Flip de flashcard, tabs." },
+    "easing": { "value": "cubic-bezier(0.22, 1, 0.36, 1)", "uso": "Salida suave estándar." },
+    "_nota": "Todo bajo @media (prefers-reduced-motion: reduce) se reduce a 1ms."
+  }
+}

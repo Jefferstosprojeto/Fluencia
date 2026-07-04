@@ -1,0 +1,2541 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Espanhol de Sobrevivência</title>
+<style>
+/* =========================================================================
+   Espanhol de Sobrevivência · styles.css
+   Tokens -> CSS custom properties. Light por padrão, dark em [data-tema].
+   ========================================================================= */
+
+:root {
+  /* Cor — light */
+  --bg: #FBFBFA;
+  --surface: #FFFFFF;
+  --surface-2: #F3F4F2;
+  --text: #16202B;
+  --text-muted: #566372;
+  --border: #E4E2DC;
+  --brand: #1B54B8;
+  --brand-hover: #133F8C;
+  --brand-soft: #E8EFFB;
+  --marker: #F2A413;
+  --marker-soft: #FCE5BE;
+  --success: #1B7F52;
+  --success-bg: #E4F3EA;
+  --error: #C0362C;
+  --error-bg: #FBEAE8;
+  --focus: #1B54B8;
+
+  --accent-saudacoes: #9C5D0A;                --accent-saudacoes-soft: var(--marker-soft);
+  --accent-direcoes: #0E6E90;                 --accent-direcoes-soft: #DCEEF3;
+  --accent-restaurante: #C1440E;              --accent-restaurante-soft: #F7E1D6;
+  --accent-hotel: #6B5CA5;                    --accent-hotel-soft: #E8E4F3;
+  --accent-compras: #A31545;                  --accent-compras-soft: #F5DDE5;
+  --accent-emergencias: var(--error);         --accent-emergencias-soft: var(--error-bg);
+  --accent: var(--brand);                     --accent-soft: var(--brand-soft);
+
+  /* Tipografia */
+  --font-display: "Bricolage Grotesque", "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", "JetBrains Mono", ui-monospace, monospace;
+  --fs-xs: .75rem; --fs-sm: .875rem; --fs-base: 1rem; --fs-md: 1.125rem;
+  --fs-lg: 1.375rem; --fs-xl: 1.75rem; --fs-2xl: 2.25rem;
+  --lh-tight: 1.15; --lh-normal: 1.5; --lh-loose: 1.7;
+
+  /* Espaçamento (base 4) */
+  --s1: .25rem; --s2: .5rem; --s3: .75rem; --s4: 1rem; --s5: 1.25rem;
+  --s6: 1.5rem; --s8: 2rem; --s10: 2.5rem; --s12: 3rem; --s16: 4rem;
+
+  /* Raio, sombra, z, movimento */
+  --r-sm: 6px; --r-md: 10px; --r-lg: 16px; --r-pill: 999px;
+  --sh-sm: 0 1px 2px rgba(16,32,43,.06);
+  --sh-md: 0 4px 14px rgba(16,32,43,.08);
+  --sh-lg: 0 12px 32px rgba(16,32,43,.16);
+  --z-sticky: 200; --z-toast: 900; --z-modal: 1000;
+  --t-fast: 120ms; --t-base: 220ms; --ease: cubic-bezier(.22,1,.36,1);
+
+  --wrap: 46rem;      /* largura de leitura */
+}
+
+[data-tema="dark"] {
+  --bg: #0E141B;
+  --surface: #161F29;
+  --surface-2: #1E2A36;
+  --text: #EDEFF2;
+  --text-muted: #9AA7B4;
+  --border: #24303C;
+  --brand: #7FA8FF;
+  --brand-hover: #A7C2FF;
+  --brand-soft: #1B2C48;
+  --marker: #F4B430;
+  --marker-soft: #3A2E12;
+  --success: #4FD08A;
+  --success-bg: #14291F;
+  --error: #FF6B5E;
+  --error-bg: #2E1613;
+  --focus: #7FA8FF;
+
+  --accent-saudacoes: var(--marker);          --accent-saudacoes-soft: var(--marker-soft);
+  --accent-direcoes: #4FC1CE;                 --accent-direcoes-soft: #123138;
+  --accent-restaurante: #E8794B;              --accent-restaurante-soft: #3A2013;
+  --accent-hotel: #A79BD9;                    --accent-hotel-soft: #241C3B;
+  --accent-compras: #E85D8A;                  --accent-compras-soft: #3A1420;
+  --accent-emergencias: var(--error);         --accent-emergencias-soft: var(--error-bg);
+  --accent: var(--brand);                     --accent-soft: var(--brand-soft);
+}
+
+[data-modulo="saudacoes"]   { --accent: var(--accent-saudacoes);   --accent-soft: var(--accent-saudacoes-soft); }
+[data-modulo="direcoes"]    { --accent: var(--accent-direcoes);    --accent-soft: var(--accent-direcoes-soft); }
+[data-modulo="restaurante"] { --accent: var(--accent-restaurante); --accent-soft: var(--accent-restaurante-soft); }
+[data-modulo="hotel"]       { --accent: var(--accent-hotel);       --accent-soft: var(--accent-hotel-soft); }
+[data-modulo="compras"]     { --accent: var(--accent-compras);     --accent-soft: var(--accent-compras-soft); }
+[data-modulo="emergencias"] { --accent: var(--accent-emergencias); --accent-soft: var(--accent-emergencias-soft); }
+
+/* ---------- base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-display); line-height: var(--lh-tight); margin: 0; }
+a { color: var(--brand); }
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link {
+  position: absolute; left: var(--s3); top: -3rem; z-index: var(--z-modal);
+  background: var(--brand); color: #fff; padding: var(--s2) var(--s4);
+  border-radius: var(--r-md); text-decoration: none; transition: top var(--t-fast);
+}
+.skip-link:focus { top: var(--s3); }
+
+/* ---------- topbar ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar__inner {
+  max-width: var(--wrap); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+  padding: var(--s3) var(--s4);
+}
+.brand { display: flex; align-items: center; gap: var(--s3); text-decoration: none; color: var(--text); }
+.brand__mark {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--fs-sm);
+  color: var(--brand); background: var(--brand-soft);
+  padding: var(--s2) var(--s3); border-radius: var(--r-md); letter-spacing: .02em;
+}
+.brand__text b { display: block; font-family: var(--font-display); font-size: var(--fs-base); }
+.brand__text small { color: var(--text-muted); font-size: var(--fs-xs); }
+.topbar__tools { display: flex; align-items: center; gap: var(--s2); }
+
+.select {
+  font: inherit; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: var(--s2) var(--s3); max-width: 12rem;
+}
+.icon-btn {
+  display: grid; place-items: center; width: 2.5rem; height: 2.5rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-md); color: var(--text); cursor: pointer;
+  transition: background var(--t-fast);
+}
+.icon-btn:hover { background: var(--surface-2); }
+.icon-btn__glyph { font-size: 1.1rem; }
+
+/* ---------- progresso ---------- */
+.progress { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--s4) var(--s2); }
+.progress__meta { display: flex; justify-content: space-between; font-size: var(--fs-xs); color: var(--text-muted); margin-bottom: var(--s1); }
+.progress__track { height: 8px; background: var(--surface-2); border-radius: var(--r-pill); overflow: hidden; }
+.progress__fill { height: 100%; width: 0%; background: var(--accent); border-radius: var(--r-pill); transition: width var(--t-base) var(--ease), background var(--t-base) var(--ease); }
+
+/* ---------- abas ---------- */
+.tabs {
+  max-width: var(--wrap); margin: 0 auto; display: flex; gap: var(--s1);
+  padding: var(--s2) var(--s4) var(--s3); overflow-x: auto;
+}
+.tab {
+  flex: 1 0 auto; text-align: center; text-decoration: none; white-space: nowrap;
+  color: var(--text-muted); font-weight: 500; font-size: var(--fs-sm);
+  padding: var(--s2) var(--s4); border-radius: var(--r-pill);
+  border: 1px solid transparent; transition: background var(--t-fast), color var(--t-fast);
+}
+.tab:hover { background: var(--surface-2); color: var(--text); }
+.tab[aria-selected="true"] { background: var(--brand); color: #fff; }
+[data-tema="dark"] .tab[aria-selected="true"] { color: #0E141B; }
+
+/* ---------- página ---------- */
+.page { max-width: var(--wrap); margin: 0 auto; padding: var(--s6) var(--s4) var(--s16); }
+.view:focus { outline: none; }
+.view-head { margin-bottom: var(--s6); }
+.eyebrow { font-size: var(--fs-xs); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 600; transition: color var(--t-base) var(--ease); }
+.view-head h1 { font-size: var(--fs-2xl); margin-top: var(--s1); }
+.view-head p { color: var(--text-muted); margin: var(--s2) 0 0; }
+
+/* ---------- frase-clave (elemento-assinatura) ---------- */
+.frase {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: var(--s5); box-shadow: var(--sh-sm);
+  margin-bottom: var(--s4);
+}
+.frase__es { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s3); }
+.frase__mark {
+  font-family: var(--font-display); font-weight: 700; font-size: var(--fs-xl);
+  color: var(--text); background: transparent; line-height: 1.25;
+  /* swipe de marca-texto açafrão: assinatura visual */
+  background-image: linear-gradient(transparent 62%, var(--marker-soft) 62%);
+  padding: 0 .1em;
+}
+.frase__pron { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--brand); margin: var(--s3) 0 0; }
+.frase__pt { font-size: var(--fs-md); margin: var(--s2) 0 0; }
+.frase__var { margin-top: var(--s3); }
+.frase__var summary { cursor: pointer; color: var(--text-muted); font-size: var(--fs-sm); }
+.frase__var ul { margin: var(--s2) 0 0; padding-left: var(--s5); color: var(--text); }
+.frase__var li { margin: var(--s1) 0; }
+
+.speak {
+  flex: 0 0 auto; background: var(--brand-soft); color: var(--brand);
+  border: none; border-radius: var(--r-md); width: 2.25rem; height: 2.25rem;
+  cursor: pointer; font-size: 1rem;
+}
+.speak:hover { background: color-mix(in srgb, var(--brand-soft) 70%, var(--brand) 15%); }
+
+/* ---------- listas de palavras ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: var(--s2); margin: var(--s3) 0 0; padding: 0; list-style: none; }
+.chip {
+  background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: var(--r-pill); padding: var(--s1) var(--s3); font-size: var(--fs-sm);
+}
+
+/* ---------- acordeão ---------- */
+.acc { border: 1px solid var(--border); border-radius: var(--r-lg); background: var(--surface); overflow: hidden; margin-bottom: var(--s3); }
+.acc > summary {
+  cursor: pointer; padding: var(--s4) var(--s5); font-weight: 600; font-family: var(--font-display);
+  list-style: none; display: flex; justify-content: space-between; align-items: center;
+}
+.acc > summary::-webkit-details-marker { display: none; }
+.acc > summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; transition: color var(--t-base) var(--ease); }
+.acc[open] > summary::after { content: "–"; }
+.acc__body { padding: 0 var(--s5) var(--s5); }
+.acc__body code { font-family: var(--font-mono); background: var(--surface-2); padding: .1em .35em; border-radius: var(--r-sm); }
+
+/* ---------- botões ---------- */
+.btn {
+  font: inherit; font-weight: 600; cursor: pointer;
+  background: var(--brand); color: #fff; border: 1px solid var(--brand);
+  border-radius: var(--r-md); padding: var(--s3) var(--s5);
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+[data-tema="dark"] .btn { color: #0E141B; }
+.btn:hover { background: var(--brand-hover); border-color: var(--brand-hover); }
+.btn:active { transform: translateY(1px); }
+.btn--ghost { background: transparent; color: var(--brand); }
+[data-tema="dark"] .btn--ghost { color: var(--brand); }
+.btn--ghost:hover { background: var(--brand-soft); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+.btn-row { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s4); }
+
+/* ---------- campos ---------- */
+.input {
+  font: inherit; color: var(--text); background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--r-md);
+  padding: var(--s3) var(--s4); width: 100%;
+}
+.input:focus-visible { border-color: var(--brand); }
+.input.is-error { border-color: var(--error); background: var(--error-bg); }
+
+/* ---------- flashcard ---------- */
+.flash {
+  perspective: 1200px; margin: 0 auto var(--s5); max-width: 34rem;
+}
+.flash__card {
+  position: relative; width: 100%; min-height: 12rem; cursor: pointer;
+  transform-style: preserve-3d; transition: transform var(--t-base) var(--ease);
+}
+.flash__card.is-flipped { transform: rotateY(180deg); }
+.flash__face {
+  position: absolute; inset: 0; backface-visibility: hidden;
+  display: grid; place-items: center; text-align: center; padding: var(--s6);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-lg); box-shadow: var(--sh-md);
+}
+.flash__face small { display: block; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: var(--s2); }
+.flash__face p { font-family: var(--font-display); font-size: var(--fs-xl); margin: 0; }
+.flash__back { transform: rotateY(180deg); }
+.flash__back p { color: var(--brand); }
+.flash__hint { text-align: center; color: var(--text-muted); font-size: var(--fs-xs); margin-top: var(--s2); }
+
+/* ---------- feedback (ditado / lacunas) ---------- */
+.feedback { margin-top: var(--s3); padding: var(--s3) var(--s4); border-radius: var(--r-md); font-size: var(--fs-sm); }
+.feedback.is-correct { background: var(--success-bg); color: var(--success); }
+.feedback.is-error { background: var(--error-bg); color: var(--error); }
+.feedback b { font-weight: 700; }
+
+/* ---------- role-play ---------- */
+.chat { display: flex; flex-direction: column; gap: var(--s3); margin: var(--s4) 0; }
+.msg { max-width: 85%; padding: var(--s3) var(--s4); border-radius: var(--r-lg); }
+.msg--sys { align-self: flex-start; background: var(--surface-2); }
+.msg--user { align-self: flex-end; background: var(--brand-soft); color: var(--text); }
+.msg--eval { align-self: stretch; background: var(--surface); border: 1px dashed var(--border); font-size: var(--fs-sm); }
+.msg--eval .rewrite { font-family: var(--font-display); }
+.msg--eval .tip { color: var(--brand); font-family: var(--font-mono); font-size: var(--fs-xs); }
+
+/* ---------- estados globais ---------- */
+.is-loading { position: relative; color: transparent !important; pointer-events: none; }
+.is-loading::after {
+  content: ""; position: absolute; inset: 0; margin: auto;
+  width: 1.2rem; height: 1.2rem; border-radius: 50%;
+  border: 2px solid var(--border); border-top-color: var(--brand);
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- toaster de revisão ---------- */
+.toaster {
+  position: fixed; left: 50%; bottom: var(--s6); transform: translateX(-50%);
+  z-index: var(--z-toast); max-width: min(28rem, 92vw);
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border); border-left: 4px solid var(--marker);
+  border-radius: var(--r-lg); box-shadow: var(--sh-lg); padding: var(--s4) var(--s5);
+}
+.toaster h3 { font-size: var(--fs-base); margin-bottom: var(--s1); }
+.toaster ul { margin: var(--s2) 0 0; padding-left: var(--s5); font-size: var(--fs-sm); color: var(--text-muted); }
+.toaster__actions { display: flex; gap: var(--s2); margin-top: var(--s3); }
+
+/* ---------- rodapé ---------- */
+.footer { max-width: var(--wrap); margin: 0 auto; padding: var(--s8) var(--s4); color: var(--text-muted); font-size: var(--fs-sm); border-top: 1px solid var(--border); }
+
+/* ---------- responsivo ---------- */
+@media (max-width: 34rem) {
+  .brand__text small { display: none; }
+  .view-head h1 { font-size: var(--fs-xl); }
+  .msg { max-width: 92%; }
+}
+
+/* ---------- movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+  .flash__card { transition: none; }
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#principal">Ir ao conteúdo</a>
+
+  <header class="topbar" role="banner">
+    <div class="topbar__inner">
+      <a class="brand" href="#/estudar" aria-label="Início — Espanhol de Sobrevivência">
+        <span class="brand__mark" aria-hidden="true">¡ES!</span>
+        <span class="brand__text">
+          <b>Espanhol de Sobrevivência</b>
+          <small>A0 → A1 · viagem na Espanha</small>
+        </span>
+      </a>
+      <div class="topbar__tools">
+        <label class="field-inline">
+          <span class="sr-only">Módulo atual</span>
+          <select id="seletor-modulo" class="select" aria-label="Escolher módulo"></select>
+        </label>
+        <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
+          <span class="icon-btn__glyph" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="progress">
+      <div class="progress__meta">
+        <span id="progress-label" class="progress__label">Progresso</span>
+        <span id="progress-value" class="progress__value">0%</span>
+      </div>
+      <div class="progress__track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+        <div class="progress__fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <nav class="tabs" aria-label="Seções da lição">
+      <a class="tab" href="#/estudar" data-rota="estudar" role="tab" aria-selected="true">Estudar</a>
+      <a class="tab" href="#/praticar" data-rota="praticar" role="tab" aria-selected="false">Praticar</a>
+      <a class="tab" href="#/simulador" data-rota="simulador" role="tab" aria-selected="false">Simulador</a>
+      <a class="tab" href="#/revisao" data-rota="revisao" role="tab" aria-selected="false">Revisão</a>
+    </nav>
+  </header>
+
+  <main id="principal" class="page" tabindex="-1">
+    <section id="view" class="view" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>Feito para viajar leve. Seu progresso é salvo automaticamente aqui.</p>
+  </footer>
+
+  <p id="live" class="sr-only" aria-live="assertive"></p>
+  <div id="toaster" class="toaster" role="status" aria-live="polite" hidden></div>
+
+  <template id="tpl-frase">
+    <article class="frase">
+      <div class="frase__es">
+        <mark class="frase__mark" data-es></mark>
+        <button class="speak" type="button" data-speak aria-label="Ouvir em espanhol">
+          <span aria-hidden="true">🔊</span>
+        </button>
+      </div>
+      <p class="frase__pron" data-pron></p>
+      <p class="frase__pt" data-pt></p>
+      <details class="frase__var">
+        <summary>2 variações naturais</summary>
+        <ul data-var></ul>
+      </details>
+    </article>
+  </template>
+
+<script>
+/* ===== Conteúdo embutido (6 módulos, sem fetch) ===== */
+const CONTEUDO = {
+  "meta": {
+    "titulo": "Espanhol de Sobrevivência",
+    "nivel": "A0 → A1 funcional (viagem, Espanha)",
+    "pronuncia_legenda": "Castelhano da Espanha. VOGAL MAIÚSCULA = sílaba tônica. 'th' = z/c(e,i) como no inglês 'think'. 'rr' áspero = j / g(e,i). 'y' = ll/y.",
+    "ordem": [
+      "saudacoes",
+      "direcoes",
+      "restaurante",
+      "hotel",
+      "compras",
+      "emergencias"
+    ]
+  },
+  "modulos": [
+    {
+      "id": "saudacoes",
+      "modulo": "Saudações e cortesias",
+      "objetivo": "Cumprimentar, agradecer e pedir ajuda com educação.",
+      "frases_chave": [
+        {
+          "es": "Hola, buenos días.",
+          "pt": "Olá, bom dia.",
+          "pronuncia": "Ó-la, BUÊ-nos DÍ-as",
+          "variacoes": [
+            "Buenas.",
+            "¡Hola! ¿Qué tal?"
+          ]
+        },
+        {
+          "es": "Por favor.",
+          "pt": "Por favor.",
+          "pronuncia": "por fa-BÔR",
+          "variacoes": [
+            "Si es tan amable.",
+            "Porfa. (informal)"
+          ]
+        },
+        {
+          "es": "Muchas gracias.",
+          "pt": "Muito obrigado/a.",
+          "pronuncia": "MÚ-tchas GRÁ-thias",
+          "variacoes": [
+            "Mil gracias.",
+            "Muy amable."
+          ]
+        },
+        {
+          "es": "De nada.",
+          "pt": "De nada.",
+          "pronuncia": "de NÁ-da",
+          "variacoes": [
+            "No hay de qué.",
+            "A usted."
+          ]
+        },
+        {
+          "es": "Perdone, ¿habla inglés?",
+          "pt": "Desculpe, fala inglês?",
+          "pronuncia": "per-DÔ-ne, Á-bla in-GLÊS",
+          "variacoes": [
+            "¿Habla portugués?",
+            "¿Me entiende?"
+          ]
+        },
+        {
+          "es": "No entiendo, más despacio, por favor.",
+          "pt": "Não entendo, mais devagar, por favor.",
+          "pronuncia": "no en-TIÊN-do, mas des-PÁ-thio, por fa-BÔR",
+          "variacoes": [
+            "¿Cómo dice?",
+            "¿Puede repetir?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "sí",
+        "no",
+        "vale",
+        "hola",
+        "adiós",
+        "perdón",
+        "gracias",
+        "señor/señora"
+      ],
+      "padrao_gramatical": {
+        "tema": "Cumprimentar com 'estar': (yo) estoy · (tú) estás · (usted) está",
+        "exemplos": [
+          "¿Cómo estás?",
+          "Estoy bien, gracias.",
+          "¿Y usted, cómo está?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "bom dia",
+            "verso": "buenos días"
+          },
+          {
+            "frente": "boa tarde",
+            "verso": "buenas tardes"
+          },
+          {
+            "frente": "boa noite",
+            "verso": "buenas noches"
+          },
+          {
+            "frente": "como você está",
+            "verso": "cómo está"
+          },
+          {
+            "frente": "tudo bem",
+            "verso": "todo bien"
+          },
+          {
+            "frente": "por favor",
+            "verso": "por favor"
+          },
+          {
+            "frente": "muito obrigado",
+            "verso": "muchas gracias"
+          },
+          {
+            "frente": "de nada",
+            "verso": "de nada"
+          },
+          {
+            "frente": "com licença",
+            "verso": "perdone"
+          },
+          {
+            "frente": "desculpe",
+            "verso": "lo siento"
+          },
+          {
+            "frente": "até logo",
+            "verso": "hasta luego"
+          },
+          {
+            "frente": "até amanhã",
+            "verso": "hasta mañana"
+          },
+          {
+            "frente": "prazer em conhecê-lo",
+            "verso": "mucho gusto"
+          },
+          {
+            "frente": "como se chama",
+            "verso": "cómo se llama"
+          },
+          {
+            "frente": "eu me chamo",
+            "verso": "me llamo"
+          },
+          {
+            "frente": "sim",
+            "verso": "sí"
+          },
+          {
+            "frente": "não",
+            "verso": "no"
+          },
+          {
+            "frente": "senhor",
+            "verso": "señor"
+          },
+          {
+            "frente": "senhora",
+            "verso": "señora"
+          },
+          {
+            "frente": "bem-vindo",
+            "verso": "bienvenido"
+          },
+          {
+            "frente": "buenas",
+            "verso": "olá / oi (informal)"
+          },
+          {
+            "frente": "qué tal",
+            "verso": "como vai"
+          },
+          {
+            "frente": "nos vemos",
+            "verso": "a gente se vê"
+          },
+          {
+            "frente": "encantado",
+            "verso": "encantado (prazer, forma masc.)"
+          },
+          {
+            "frente": "igualmente",
+            "verso": "igualmente"
+          },
+          {
+            "frente": "no pasa nada",
+            "verso": "não tem problema"
+          },
+          {
+            "frente": "con permiso",
+            "verso": "com licença (para passar)"
+          },
+          {
+            "frente": "salud",
+            "verso": "saúde (brinde/espirro)"
+          },
+          {
+            "frente": "buen provecho",
+            "verso": "bom apetite"
+          },
+          {
+            "frente": "lo mismo digo",
+            "verso": "digo o mesmo"
+          },
+          {
+            "frente": "hasta pronto",
+            "verso": "até breve"
+          },
+          {
+            "frente": "qué alegría verte",
+            "verso": "que alegria te ver"
+          },
+          {
+            "frente": "cuídate",
+            "verso": "se cuide"
+          },
+          {
+            "frente": "feliz día",
+            "verso": "tenha um bom dia"
+          },
+          {
+            "frente": "un placer",
+            "verso": "um prazer"
+          },
+          {
+            "frente": "disculpa",
+            "verso": "desculpa (informal)"
+          },
+          {
+            "frente": "vale",
+            "verso": "tá bem / entendido"
+          },
+          {
+            "frente": "claro que sí",
+            "verso": "claro que sim"
+          },
+          {
+            "frente": "por supuesto",
+            "verso": "claro / com certeza"
+          },
+          {
+            "frente": "no hay problema",
+            "verso": "não há problema"
+          }
+        ],
+        "ditado": [
+          "Buenos días.",
+          "¿Cómo está usted?",
+          "Mucho gusto.",
+          "Hasta luego.",
+          "Perdone, señora."
+        ],
+        "lacunas": [
+          {
+            "frase": "____ días, señora.",
+            "resposta": "Buenos"
+          },
+          {
+            "frase": "Muchas ____.",
+            "resposta": "gracias"
+          },
+          {
+            "frase": "¿____ inglés?",
+            "resposta": "Habla"
+          }
+        ],
+        "role_play": {
+          "cenario": "Chegar e pedir ajuda na recepção",
+          "personagens": [
+            "Viajante (aluno)",
+            "Local (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Cortesía",
+            "Pedir ayuda en inglés",
+            "Despedida"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'buenos días' e 'muchas gracias'",
+          "Diferença tú vs usted"
+        ],
+        "em_24h": [
+          "Refazer o role-play de saudação",
+          "Ditado das 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "direcoes",
+      "modulo": "Direções e transporte",
+      "objetivo": "Achar o caminho, comprar bilhete e pegar transporte.",
+      "frases_chave": [
+        {
+          "es": "¿Dónde está la estación?",
+          "pt": "Onde fica a estação?",
+          "pronuncia": "DÔN-de es-TÁ la es-ta-THIÔN",
+          "variacoes": [
+            "¿La estación está por aquí?",
+            "¿Está lejos la estación?"
+          ]
+        },
+        {
+          "es": "¿Cómo llego al centro?",
+          "pt": "Como chego ao centro?",
+          "pronuncia": "KÔ-mo YÊ-go al THÊN-tro",
+          "variacoes": [
+            "¿Para ir al centro?",
+            "¿Puedo ir andando?"
+          ]
+        },
+        {
+          "es": "Un billete para Madrid, por favor.",
+          "pt": "Uma passagem para Madrid, por favor.",
+          "pronuncia": "un bi-YÊ-te PÁ-ra ma-DRÍD",
+          "variacoes": [
+            "Dos billetes, por favor.",
+            "Un billete de ida y vuelta."
+          ]
+        },
+        {
+          "es": "¿A qué hora sale el tren?",
+          "pt": "A que horas sai o trem?",
+          "pronuncia": "a ke Ó-ra SÁ-le el TRÊN",
+          "variacoes": [
+            "¿Cuándo sale el próximo?",
+            "¿De qué andén sale?"
+          ]
+        },
+        {
+          "es": "¿Cuánto cuesta hasta el aeropuerto?",
+          "pt": "Quanto custa até o aeroporto?",
+          "pronuncia": "KUÂN-to KUÊS-ta ÁS-ta el a-e-ro-PUÊR-to",
+          "variacoes": [
+            "¿Me lleva al aeropuerto?",
+            "¿Cuánto es en taxi?"
+          ]
+        },
+        {
+          "es": "Gire a la derecha, por favor.",
+          "pt": "Vire à direita, por favor.",
+          "pronuncia": "RRÍ-re a la de-RÊ-tcha, por fa-BÔR",
+          "variacoes": [
+            "A la izquierda.",
+            "Todo recto."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "estación",
+        "tren",
+        "metro",
+        "autobús",
+        "billete",
+        "andén",
+        "parada",
+        "cerca",
+        "lejos",
+        "derecha/izquierda"
+      ],
+      "padrao_gramatical": {
+        "tema": "Perguntar com ¿Dónde? · ¿Cómo? · ¿Cuánto?",
+        "exemplos": [
+          "¿Dónde está el metro?",
+          "¿Cómo llego al hotel?",
+          "¿Cuánto cuesta el billete?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "onde fica",
+            "verso": "dónde está"
+          },
+          {
+            "frente": "estação de trem",
+            "verso": "estación de tren"
+          },
+          {
+            "frente": "estação de metrô",
+            "verso": "estación de metro"
+          },
+          {
+            "frente": "parada de ônibus",
+            "verso": "parada de autobús"
+          },
+          {
+            "frente": "bilhete",
+            "verso": "billete"
+          },
+          {
+            "frente": "ida e volta",
+            "verso": "ida y vuelta"
+          },
+          {
+            "frente": "só ida",
+            "verso": "solo ida"
+          },
+          {
+            "frente": "à direita",
+            "verso": "a la derecha"
+          },
+          {
+            "frente": "à esquerda",
+            "verso": "a la izquierda"
+          },
+          {
+            "frente": "em frente",
+            "verso": "todo recto"
+          },
+          {
+            "frente": "perto",
+            "verso": "cerca"
+          },
+          {
+            "frente": "longe",
+            "verso": "lejos"
+          },
+          {
+            "frente": "quanto tempo demora",
+            "verso": "cuánto tarda"
+          },
+          {
+            "frente": "posso ir a pé",
+            "verso": "puedo ir andando"
+          },
+          {
+            "frente": "táxi",
+            "verso": "taxi"
+          },
+          {
+            "frente": "aluguel de carro",
+            "verso": "alquiler de coche"
+          },
+          {
+            "frente": "mapa",
+            "verso": "mapa"
+          },
+          {
+            "frente": "saída",
+            "verso": "salida"
+          },
+          {
+            "frente": "entrada",
+            "verso": "entrada"
+          },
+          {
+            "frente": "plataforma",
+            "verso": "andén"
+          },
+          {
+            "frente": "el próximo tren",
+            "verso": "o próximo trem"
+          },
+          {
+            "frente": "hay que hacer trasbordo",
+            "verso": "é preciso fazer baldeação"
+          },
+          {
+            "frente": "la línea uno",
+            "verso": "a linha um"
+          },
+          {
+            "frente": "billete sencillo",
+            "verso": "bilhete simples"
+          },
+          {
+            "frente": "bono de diez viajes",
+            "verso": "cartão de dez viagens"
+          },
+          {
+            "frente": "tarjeta de transporte",
+            "verso": "cartão de transporte"
+          },
+          {
+            "frente": "el semáforo",
+            "verso": "o semáforo"
+          },
+          {
+            "frente": "la rotonda",
+            "verso": "a rotatória"
+          },
+          {
+            "frente": "cruce la calle",
+            "verso": "atravesse a rua"
+          },
+          {
+            "frente": "siga recto",
+            "verso": "siga em frente"
+          },
+          {
+            "frente": "a mano derecha",
+            "verso": "à mão direita"
+          },
+          {
+            "frente": "al final de la calle",
+            "verso": "no final da rua"
+          },
+          {
+            "frente": "coja la segunda calle",
+            "verso": "pegue a segunda rua"
+          },
+          {
+            "frente": "está a cinco minutos",
+            "verso": "fica a cinco minutos"
+          },
+          {
+            "frente": "el vuelo",
+            "verso": "o voo"
+          },
+          {
+            "frente": "la terminal",
+            "verso": "o terminal"
+          },
+          {
+            "frente": "facturar el equipaje",
+            "verso": "despachar a bagagem"
+          },
+          {
+            "frente": "la puerta de embarque",
+            "verso": "o portão de embarque"
+          },
+          {
+            "frente": "el horario",
+            "verso": "o horário"
+          },
+          {
+            "frente": "llegadas y salidas",
+            "verso": "chegadas e partidas"
+          }
+        ],
+        "ditado": [
+          "¿Dónde está el metro?",
+          "A la izquierda.",
+          "Un billete, por favor.",
+          "¿Está lejos de aquí?",
+          "Todo recto."
+        ],
+        "lacunas": [
+          {
+            "frase": "¿____ está la parada?",
+            "resposta": "Dónde"
+          },
+          {
+            "frase": "Un ____ para Sevilla, por favor.",
+            "resposta": "billete"
+          },
+          {
+            "frase": "Gire a la ____.",
+            "resposta": "derecha"
+          }
+        ],
+        "role_play": {
+          "cenario": "Comprar bilhete e pedir direção na estação",
+          "personagens": [
+            "Viajante (aluno)",
+            "Funcionário (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Pedir billete",
+            "Preguntar andén",
+            "Preguntar dirección al centro"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir '¿dónde está...?' com 3 lugares",
+          "Direita/esquerda/reto"
+        ],
+        "em_24h": [
+          "Refazer role-play da estação",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "restaurante",
+      "modulo": "Restaurante e café",
+      "objetivo": "Sentar, pedir e pagar sem gaguejar.",
+      "frases_chave": [
+        {
+          "es": "¿Tiene una mesa para dos?",
+          "pt": "Tem mesa para duas pessoas?",
+          "pronuncia": "TIÊ-ne U-na MÊ-sa PÁ-ra dos",
+          "variacoes": [
+            "¿Hay mesa para dos?",
+            "¿Podemos sentarnos aquí?"
+          ]
+        },
+        {
+          "es": "La carta, por favor.",
+          "pt": "O cardápio, por favor.",
+          "pronuncia": "la KÁR-ta, por fa-BÔR",
+          "variacoes": [
+            "¿Me trae la carta?",
+            "¿Tienen menú del día?"
+          ]
+        },
+        {
+          "es": "Me pone una caña, por favor.",
+          "pt": "Me traz um chope pequeno, por favor.",
+          "pronuncia": "me PÔ-ne U-na KÁ-nya, por fa-BÔR",
+          "variacoes": [
+            "Una caña, cuando pueda.",
+            "¿Me pone un café con leche?"
+          ]
+        },
+        {
+          "es": "Para mí, la tortilla.",
+          "pt": "Para mim, a tortilla (de batata).",
+          "pronuncia": "PÁ-ra mi, la tor-TÍ-ya",
+          "variacoes": [
+            "Yo quiero la tortilla.",
+            "De primero, la tortilla."
+          ]
+        },
+        {
+          "es": "Agua del grifo, por favor.",
+          "pt": "Água da torneira, por favor.",
+          "pronuncia": "Á-gua del GRÍ-fo, por fa-BÔR",
+          "variacoes": [
+            "Una botella de agua.",
+            "Agua sin gas."
+          ]
+        },
+        {
+          "es": "La cuenta, por favor.",
+          "pt": "A conta, por favor.",
+          "pronuncia": "la KUÊN-ta, por fa-BÔR",
+          "variacoes": [
+            "¿Me cobra, por favor?",
+            "¿Cuánto es?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "carta",
+        "menú del día",
+        "cuenta",
+        "caña",
+        "agua del grifo",
+        "propina",
+        "camarero/a",
+        "postre",
+        "para llevar",
+        "la cuenta"
+      ],
+      "padrao_gramatical": {
+        "tema": "Pedir com 'me pone / me da / para mí'",
+        "exemplos": [
+          "Me pone un café, por favor.",
+          "¿Me da la cuenta?",
+          "Para mí, el pescado."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "mesa para dois",
+            "verso": "mesa para dos"
+          },
+          {
+            "frente": "cardápio",
+            "verso": "carta"
+          },
+          {
+            "frente": "menu do dia",
+            "verso": "menú del día"
+          },
+          {
+            "frente": "conta",
+            "verso": "cuenta"
+          },
+          {
+            "frente": "gorjeta",
+            "verso": "propina"
+          },
+          {
+            "frente": "garçom",
+            "verso": "camarero"
+          },
+          {
+            "frente": "água sem gás",
+            "verso": "agua sin gas"
+          },
+          {
+            "frente": "água com gás",
+            "verso": "agua con gas"
+          },
+          {
+            "frente": "vinho tinto",
+            "verso": "vino tinto"
+          },
+          {
+            "frente": "vinho branco",
+            "verso": "vino blanco"
+          },
+          {
+            "frente": "cerveja",
+            "verso": "cerveza"
+          },
+          {
+            "frente": "sobremesa",
+            "verso": "postre"
+          },
+          {
+            "frente": "café com leite",
+            "verso": "café con leche"
+          },
+          {
+            "frente": "para levar",
+            "verso": "para llevar"
+          },
+          {
+            "frente": "estou satisfeito",
+            "verso": "estoy lleno"
+          },
+          {
+            "frente": "está delicioso",
+            "verso": "está riquísimo"
+          },
+          {
+            "frente": "sem glúten",
+            "verso": "sin gluten"
+          },
+          {
+            "frente": "sou vegetariano",
+            "verso": "soy vegetariano"
+          },
+          {
+            "frente": "alérgico a",
+            "verso": "alérgico a"
+          },
+          {
+            "frente": "colher",
+            "verso": "cuchara"
+          },
+          {
+            "frente": "tapa",
+            "verso": "petisco / porção pequena"
+          },
+          {
+            "frente": "ración",
+            "verso": "porção"
+          },
+          {
+            "frente": "jamón ibérico",
+            "verso": "presunto ibérico"
+          },
+          {
+            "frente": "pan con tomate",
+            "verso": "pão com tomate"
+          },
+          {
+            "frente": "el menú del día",
+            "verso": "o menu do dia"
+          },
+          {
+            "frente": "de primero",
+            "verso": "de entrada"
+          },
+          {
+            "frente": "de segundo",
+            "verso": "de prato principal"
+          },
+          {
+            "frente": "está para chuparse los dedos",
+            "verso": "está de lamber os dedos"
+          },
+          {
+            "frente": "la cuenta separada",
+            "verso": "a conta separada"
+          },
+          {
+            "frente": "pagar a medias",
+            "verso": "pagar dividido"
+          },
+          {
+            "frente": "el tenedor",
+            "verso": "o garfo"
+          },
+          {
+            "frente": "el cuchillo",
+            "verso": "a faca"
+          },
+          {
+            "frente": "la servilleta",
+            "verso": "o guardanapo"
+          },
+          {
+            "frente": "sin hielo",
+            "verso": "sem gelo"
+          },
+          {
+            "frente": "muy hecho",
+            "verso": "bem passado"
+          },
+          {
+            "frente": "poco hecho",
+            "verso": "mal passado"
+          },
+          {
+            "frente": "al punto",
+            "verso": "ao ponto"
+          },
+          {
+            "frente": "picar algo",
+            "verso": "beliscar alguma coisa"
+          },
+          {
+            "frente": "barra o mesa",
+            "verso": "balcão ou mesa"
+          },
+          {
+            "frente": "la terraza",
+            "verso": "o terraço / varanda"
+          }
+        ],
+        "ditado": [
+          "La cuenta, por favor.",
+          "Una caña, gracias.",
+          "¿Tienen menú del día?",
+          "Sin hielo, por favor.",
+          "Está riquísimo."
+        ],
+        "lacunas": [
+          {
+            "frase": "____ la cuenta, por favor.",
+            "resposta": "Me da"
+          },
+          {
+            "frase": "Me ____ una caña.",
+            "resposta": "pone"
+          },
+          {
+            "frase": "____ mí, el pescado.",
+            "resposta": "Para"
+          }
+        ],
+        "role_play": {
+          "cenario": "Pedir comida num bar",
+          "personagens": [
+            "Cliente (aluno)",
+            "Camarero (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Bebida",
+            "Plato",
+            "Cuenta"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'la cuenta, por favor'",
+          "Pedir 2 coisas com 'me pone'"
+        ],
+        "em_24h": [
+          "Refazer o role-play do restaurante",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "hotel",
+      "modulo": "Hotel e check-in",
+      "objetivo": "Fazer check-in, resolver o quarto e o wifi.",
+      "frases_chave": [
+        {
+          "es": "Tengo una reserva a nombre de Santos.",
+          "pt": "Tenho uma reserva em nome de Santos.",
+          "pronuncia": "TÊN-go U-na re-SÊR-ba a NÔM-bre de SÂN-tos",
+          "variacoes": [
+            "Reservé una habitación.",
+            "La reserva está a mi nombre."
+          ]
+        },
+        {
+          "es": "¿A qué hora es la salida?",
+          "pt": "A que horas é o check-out?",
+          "pronuncia": "a ke Ó-ra es la sa-LÍ-da",
+          "variacoes": [
+            "¿Cuándo es el check-in?",
+            "¿Hasta qué hora puedo quedarme?"
+          ]
+        },
+        {
+          "es": "¿El desayuno está incluido?",
+          "pt": "O café da manhã está incluído?",
+          "pronuncia": "el de-sa-YÚ-no es-TÁ in-kluí-do",
+          "variacoes": [
+            "¿Incluye desayuno?",
+            "¿A qué hora es el desayuno?"
+          ]
+        },
+        {
+          "es": "¿Cuál es la contraseña del wifi?",
+          "pt": "Qual é a senha do wifi?",
+          "pronuncia": "kual es la kon-tra-SÊ-nya del UÍ-fi",
+          "variacoes": [
+            "¿Me da la clave del wifi?",
+            "¿El wifi es gratis?"
+          ]
+        },
+        {
+          "es": "No funciona el aire acondicionado.",
+          "pt": "O ar-condicionado não funciona.",
+          "pronuncia": "no fun-THIÔ-na el Ái-re a-kon-di-thio-NÁ-do",
+          "variacoes": [
+            "La ducha no funciona.",
+            "La habitación es muy ruidosa."
+          ]
+        },
+        {
+          "es": "¿Pueden guardar mi maleta?",
+          "pt": "Podem guardar minha mala?",
+          "pronuncia": "PUÊ-den guar-DÁR mi ma-LÊ-ta",
+          "variacoes": [
+            "¿Tienen consigna?",
+            "¿Puedo dejar el equipaje aquí?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "reserva",
+        "habitación",
+        "llave/tarjeta",
+        "desayuno",
+        "toalla",
+        "ducha",
+        "aire acondicionado",
+        "recepción",
+        "salida",
+        "maleta"
+      ],
+      "padrao_gramatical": {
+        "tema": "'¿Hay...?' e 'Tengo / Tienen' (haber e tener)",
+        "exemplos": [
+          "¿Hay wifi?",
+          "Tengo una reserva.",
+          "¿Tienen habitaciones libres?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "reserva",
+            "verso": "reserva"
+          },
+          {
+            "frente": "quarto",
+            "verso": "habitación"
+          },
+          {
+            "frente": "chave",
+            "verso": "llave"
+          },
+          {
+            "frente": "toalha",
+            "verso": "toalla"
+          },
+          {
+            "frente": "travesseiro",
+            "verso": "almohada"
+          },
+          {
+            "frente": "cobertor",
+            "verso": "manta"
+          },
+          {
+            "frente": "recepção",
+            "verso": "recepción"
+          },
+          {
+            "frente": "elevador",
+            "verso": "ascensor"
+          },
+          {
+            "frente": "café da manhã",
+            "verso": "desayuno"
+          },
+          {
+            "frente": "arrumar o quarto",
+            "verso": "limpiar la habitación"
+          },
+          {
+            "frente": "sacola de lavanderia",
+            "verso": "bolsa de lavandería"
+          },
+          {
+            "frente": "estacionamento",
+            "verso": "aparcamiento"
+          },
+          {
+            "frente": "cofre",
+            "verso": "caja fuerte"
+          },
+          {
+            "frente": "vista para o mar",
+            "verso": "vista al mar"
+          },
+          {
+            "frente": "quarto de casal",
+            "verso": "habitación doble"
+          },
+          {
+            "frente": "quarto de solteiro",
+            "verso": "habitación individual"
+          },
+          {
+            "frente": "tranquilo",
+            "verso": "tranquilo"
+          },
+          {
+            "frente": "barulhento",
+            "verso": "ruidoso"
+          },
+          {
+            "frente": "check-in antecipado",
+            "verso": "check-in anticipado"
+          },
+          {
+            "frente": "saída tardia",
+            "verso": "salida tardía"
+          },
+          {
+            "frente": "conserje",
+            "verso": "concierge"
+          },
+          {
+            "frente": "botones",
+            "verso": "carregador de malas"
+          },
+          {
+            "frente": "minibar",
+            "verso": "frigobar"
+          },
+          {
+            "frente": "la calefacción",
+            "verso": "o aquecimento"
+          },
+          {
+            "frente": "el enchufe",
+            "verso": "a tomada"
+          },
+          {
+            "frente": "el adaptador",
+            "verso": "o adaptador"
+          },
+          {
+            "frente": "wifi gratis",
+            "verso": "wifi grátis"
+          },
+          {
+            "frente": "servicio de habitaciones",
+            "verso": "serviço de quarto"
+          },
+          {
+            "frente": "no molestar",
+            "verso": "não perturbe"
+          },
+          {
+            "frente": "recepción 24 horas",
+            "verso": "recepção 24 horas"
+          },
+          {
+            "frente": "el ascensor está averiado",
+            "verso": "o elevador está quebrado"
+          },
+          {
+            "frente": "cambiar de habitación",
+            "verso": "trocar de quarto"
+          },
+          {
+            "frente": "hace falta una manta extra",
+            "verso": "falta uma manta extra"
+          },
+          {
+            "frente": "el aire está muy fuerte",
+            "verso": "o ar está muito forte"
+          },
+          {
+            "frente": "el grifo gotea",
+            "verso": "a torneira pinga"
+          },
+          {
+            "frente": "la ducha está fría",
+            "verso": "o chuveiro está frio"
+          },
+          {
+            "frente": "quiero quejarme",
+            "verso": "quero reclamar"
+          },
+          {
+            "frente": "la factura",
+            "verso": "a fatura"
+          },
+          {
+            "frente": "pagar con tarjeta",
+            "verso": "pagar com cartão"
+          },
+          {
+            "frente": "dejar la llave en recepción",
+            "verso": "deixar a chave na recepção"
+          }
+        ],
+        "ditado": [
+          "Tengo una reserva.",
+          "¿Hay wifi gratis?",
+          "Necesito una toalla.",
+          "No funciona la ducha.",
+          "¿A qué hora es el desayuno?"
+        ],
+        "lacunas": [
+          {
+            "frase": "____ una reserva a nombre de Santos.",
+            "resposta": "Tengo"
+          },
+          {
+            "frase": "¿____ wifi en la habitación?",
+            "resposta": "Hay"
+          },
+          {
+            "frase": "¿El desayuno está ____?",
+            "resposta": "incluido"
+          }
+        ],
+        "role_play": {
+          "cenario": "Check-in no hotel",
+          "personagens": [
+            "Hóspede (aluno)",
+            "Recepcionista (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Dar el nombre de la reserva",
+            "Preguntar desayuno y wifi",
+            "Pedir la llave"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'tengo una reserva'",
+          "Perguntar wifi e desayuno"
+        ],
+        "em_24h": [
+          "Refazer o role-play do check-in",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "compras",
+      "modulo": "Compras e pagamentos",
+      "objetivo": "Comprar, provar e pagar sem surpresa.",
+      "frases_chave": [
+        {
+          "es": "¿Cuánto cuesta?",
+          "pt": "Quanto custa?",
+          "pronuncia": "KUÂN-to KUÊS-ta",
+          "variacoes": [
+            "¿Cuánto es?",
+            "¿Qué precio tiene?"
+          ]
+        },
+        {
+          "es": "¿Puedo pagar con tarjeta?",
+          "pt": "Posso pagar com cartão?",
+          "pronuncia": "PUÊ-do pa-GÁR kon tar-RRÊ-ta",
+          "variacoes": [
+            "¿Aceptan tarjeta?",
+            "¿Se puede pagar con móvil?"
+          ]
+        },
+        {
+          "es": "Solo estoy mirando, gracias.",
+          "pt": "Só estou olhando, obrigado.",
+          "pronuncia": "SÔ-lo es-TÔI mi-RÂN-do, GRÁ-thias",
+          "variacoes": [
+            "Estoy mirando, gracias.",
+            "Gracias, solo miro."
+          ]
+        },
+        {
+          "es": "¿Tiene una talla más grande?",
+          "pt": "Tem um tamanho maior?",
+          "pronuncia": "TIÊ-ne U-na TÁ-ya mas GRÂN-de",
+          "variacoes": [
+            "¿Lo tiene en otra talla?",
+            "¿Tiene una más pequeña?"
+          ]
+        },
+        {
+          "es": "¿Me lo puedo probar?",
+          "pt": "Posso experimentar?",
+          "pronuncia": "me lo PUÊ-do pro-BÁR",
+          "variacoes": [
+            "¿Dónde están los probadores?",
+            "¿Puedo probármelo?"
+          ]
+        },
+        {
+          "es": "¿Me da una bolsa, por favor?",
+          "pt": "Me dá uma sacola, por favor?",
+          "pronuncia": "me da U-na BÔL-sa, por fa-BÔR",
+          "variacoes": [
+            "¿Me lo envuelve?",
+            "¿Me da el recibo?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "precio",
+        "tarjeta",
+        "efectivo",
+        "talla",
+        "probador",
+        "descuento",
+        "oferta",
+        "bolsa",
+        "recibo",
+        "caja"
+      ],
+      "padrao_gramatical": {
+        "tema": "Pedir permissão com 'poder': ¿Puedo...? · ¿Se puede...?",
+        "exemplos": [
+          "¿Puedo pagar con tarjeta?",
+          "¿Me lo puedo probar?",
+          "¿Se puede pagar en efectivo?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "preço",
+            "verso": "precio"
+          },
+          {
+            "frente": "desconto",
+            "verso": "descuento"
+          },
+          {
+            "frente": "promoção",
+            "verso": "oferta"
+          },
+          {
+            "frente": "dinheiro",
+            "verso": "efectivo"
+          },
+          {
+            "frente": "troco",
+            "verso": "cambio"
+          },
+          {
+            "frente": "cartão de crédito",
+            "verso": "tarjeta de crédito"
+          },
+          {
+            "frente": "provador",
+            "verso": "probador"
+          },
+          {
+            "frente": "tamanho",
+            "verso": "talla"
+          },
+          {
+            "frente": "cor",
+            "verso": "color"
+          },
+          {
+            "frente": "muito caro",
+            "verso": "muy caro"
+          },
+          {
+            "frente": "mais barato",
+            "verso": "más barato"
+          },
+          {
+            "frente": "recibo",
+            "verso": "recibo"
+          },
+          {
+            "frente": "sacola",
+            "verso": "bolsa"
+          },
+          {
+            "frente": "devolução",
+            "verso": "devolución"
+          },
+          {
+            "frente": "loja",
+            "verso": "tienda"
+          },
+          {
+            "frente": "shopping",
+            "verso": "centro comercial"
+          },
+          {
+            "frente": "mercado",
+            "verso": "mercado"
+          },
+          {
+            "frente": "feira",
+            "verso": "mercadillo"
+          },
+          {
+            "frente": "horário de funcionamento",
+            "verso": "horario de apertura"
+          },
+          {
+            "frente": "fechado",
+            "verso": "cerrado"
+          },
+          {
+            "frente": "rebajas",
+            "verso": "liquidação / saldos"
+          },
+          {
+            "frente": "dos por uno",
+            "verso": "leve dois pague um"
+          },
+          {
+            "frente": "talla única",
+            "verso": "tamanho único"
+          },
+          {
+            "frente": "me queda bien",
+            "verso": "fica bem em mim"
+          },
+          {
+            "frente": "me queda grande",
+            "verso": "fica grande em mim"
+          },
+          {
+            "frente": "me queda pequeño",
+            "verso": "fica pequeno em mim"
+          },
+          {
+            "frente": "el probador está al fondo",
+            "verso": "o provador é no fundo"
+          },
+          {
+            "frente": "pagar en cuotas",
+            "verso": "pagar parcelado"
+          },
+          {
+            "frente": "el cambio",
+            "verso": "o troco"
+          },
+          {
+            "frente": "no tengo suelto",
+            "verso": "não tenho trocado"
+          },
+          {
+            "frente": "quiero devolver esto",
+            "verso": "quero devolver isso"
+          },
+          {
+            "frente": "¿tiene el ticket?",
+            "verso": "tem o recibo?"
+          },
+          {
+            "frente": "lo dejo, gracias",
+            "verso": "deixo, obrigado (não vou levar)"
+          },
+          {
+            "frente": "me lo llevo",
+            "verso": "vou levar isto"
+          },
+          {
+            "frente": "hecho a mano",
+            "verso": "feito à mão"
+          },
+          {
+            "frente": "producto local",
+            "verso": "produto local"
+          },
+          {
+            "frente": "recuerdo",
+            "verso": "lembrança / souvenir"
+          },
+          {
+            "frente": "artesanía",
+            "verso": "artesanato"
+          },
+          {
+            "frente": "impuestos incluidos",
+            "verso": "impostos incluídos"
+          },
+          {
+            "frente": "libre de impuestos",
+            "verso": "isento de impostos"
+          }
+        ],
+        "ditado": [
+          "¿Cuánto cuesta esto?",
+          "¿Tiene otra talla?",
+          "Solo estoy mirando.",
+          "¿Puedo pagar con tarjeta?",
+          "Quiero devolver esto."
+        ],
+        "lacunas": [
+          {
+            "frase": "¿Cuánto ____?",
+            "resposta": "cuesta"
+          },
+          {
+            "frase": "¿____ pagar con tarjeta?",
+            "resposta": "Puedo"
+          },
+          {
+            "frase": "¿Tiene una ____ más grande?",
+            "resposta": "talla"
+          }
+        ],
+        "role_play": {
+          "cenario": "Comprar numa loja de roupa",
+          "personagens": [
+            "Cliente (aluno)",
+            "Vendedor (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Preguntar precio",
+            "Pedir otra talla / probar",
+            "Pagar con tarjeta"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir '¿cuánto cuesta?' e '¿puedo pagar con tarjeta?'",
+          "Pedir outra talla"
+        ],
+        "em_24h": [
+          "Refazer o role-play da loja",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "emergencias",
+      "modulo": "Emergências e ajuda",
+      "objetivo": "Pedir socorro, achar médico e explicar o problema.",
+      "frases_chave": [
+        {
+          "es": "Necesito ayuda, por favor.",
+          "pt": "Preciso de ajuda, por favor.",
+          "pronuncia": "ne-the-SÍ-to a-YÚ-da, por fa-BÔR",
+          "variacoes": [
+            "¡Socorro!",
+            "Es una emergencia."
+          ]
+        },
+        {
+          "es": "Llame a una ambulancia.",
+          "pt": "Chame uma ambulância.",
+          "pronuncia": "YÁ-me a U-na am-bu-LÂN-thia",
+          "variacoes": [
+            "Llame al 112.",
+            "Llame a la policía."
+          ]
+        },
+        {
+          "es": "Necesito un médico.",
+          "pt": "Preciso de um médico.",
+          "pronuncia": "ne-the-SÍ-to un MÊ-di-ko",
+          "variacoes": [
+            "¿Dónde hay una farmacia?",
+            "No me encuentro bien."
+          ]
+        },
+        {
+          "es": "Me he perdido.",
+          "pt": "Me perdi.",
+          "pronuncia": "me e per-DÍ-do",
+          "variacoes": [
+            "No sé dónde estoy.",
+            "¿Me puede ayudar?"
+          ]
+        },
+        {
+          "es": "Me han robado la cartera.",
+          "pt": "Roubaram minha carteira.",
+          "pronuncia": "me an ro-BÁ-do la kar-TÊ-ra",
+          "variacoes": [
+            "He perdido el pasaporte.",
+            "Me falta el móvil."
+          ]
+        },
+        {
+          "es": "¿Dónde está el hospital más cercano?",
+          "pt": "Onde fica o hospital mais próximo?",
+          "pronuncia": "DÔN-de es-TÁ el os-pi-TÁL mas ther-KÁ-no",
+          "variacoes": [
+            "¿Hay una farmacia de guardia?",
+            "Me duele mucho aquí."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "ayuda",
+        "médico",
+        "farmacia",
+        "policía",
+        "ambulancia",
+        "112",
+        "pasaporte",
+        "me duele",
+        "hospital",
+        "emergencia"
+      ],
+      "padrao_gramatical": {
+        "tema": "Pedir ajuda com 'Necesito...' e 'Me duele...'",
+        "exemplos": [
+          "Necesito ayuda.",
+          "Necesito un médico.",
+          "Me duele la cabeza."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "ajuda",
+            "verso": "ayuda"
+          },
+          {
+            "frente": "socorro",
+            "verso": "socorro"
+          },
+          {
+            "frente": "emergência",
+            "verso": "emergencia"
+          },
+          {
+            "frente": "médico",
+            "verso": "médico"
+          },
+          {
+            "frente": "hospital",
+            "verso": "hospital"
+          },
+          {
+            "frente": "farmácia",
+            "verso": "farmacia"
+          },
+          {
+            "frente": "polícia",
+            "verso": "policía"
+          },
+          {
+            "frente": "ambulância",
+            "verso": "ambulancia"
+          },
+          {
+            "frente": "bombeiros",
+            "verso": "bomberos"
+          },
+          {
+            "frente": "acidente",
+            "verso": "accidente"
+          },
+          {
+            "frente": "perdido",
+            "verso": "perdido"
+          },
+          {
+            "frente": "roubo",
+            "verso": "robo"
+          },
+          {
+            "frente": "carteira",
+            "verso": "cartera"
+          },
+          {
+            "frente": "passaporte",
+            "verso": "pasaporte"
+          },
+          {
+            "frente": "dói aqui",
+            "verso": "me duele aquí"
+          },
+          {
+            "frente": "alergia",
+            "verso": "alergia"
+          },
+          {
+            "frente": "remédio",
+            "verso": "medicamento"
+          },
+          {
+            "frente": "seguro de viagem",
+            "verso": "seguro de viaje"
+          },
+          {
+            "frente": "número de emergência",
+            "verso": "número de emergencia"
+          },
+          {
+            "frente": "estou bem",
+            "verso": "estoy bien"
+          },
+          {
+            "frente": "se me ha perdido el pasaporte",
+            "verso": "perdi o passaporte"
+          },
+          {
+            "frente": "me han robado la mochila",
+            "verso": "roubaram minha mochila"
+          },
+          {
+            "frente": "llame a la policía",
+            "verso": "chame a polícia"
+          },
+          {
+            "frente": "necesito un intérprete",
+            "verso": "preciso de um intérprete"
+          },
+          {
+            "frente": "tengo fiebre",
+            "verso": "estou com febre"
+          },
+          {
+            "frente": "me siento mareado",
+            "verso": "estou tonto / enjoado"
+          },
+          {
+            "frente": "tengo náuseas",
+            "verso": "estou com náuseas"
+          },
+          {
+            "frente": "se ha desmayado",
+            "verso": "desmaiou"
+          },
+          {
+            "frente": "hay un incendio",
+            "verso": "há um incêndio"
+          },
+          {
+            "frente": "llame a los bomberos",
+            "verso": "chame os bombeiros"
+          },
+          {
+            "frente": "¿dónde está la comisaría?",
+            "verso": "onde fica a delegacia?"
+          },
+          {
+            "frente": "quiero denunciar un robo",
+            "verso": "quero denunciar um roubo"
+          },
+          {
+            "frente": "mi seguro cubre esto",
+            "verso": "meu seguro cobre isso"
+          },
+          {
+            "frente": "necesito receta médica",
+            "verso": "preciso de receita médica"
+          },
+          {
+            "frente": "es alérgico a la penicilina",
+            "verso": "é alérgico a penicilina"
+          },
+          {
+            "frente": "no puedo respirar bien",
+            "verso": "não consigo respirar bem"
+          },
+          {
+            "frente": "se ha caído",
+            "verso": "ele/ela caiu"
+          },
+          {
+            "frente": "se ha cortado",
+            "verso": "se cortou / se machucou"
+          },
+          {
+            "frente": "avise a mi familia",
+            "verso": "avise minha família"
+          },
+          {
+            "frente": "estoy perdido, ¿me ayuda?",
+            "verso": "estou perdido, pode me ajudar?"
+          }
+        ],
+        "ditado": [
+          "Necesito ayuda.",
+          "Llame a un médico.",
+          "Me he perdido.",
+          "Me duele aquí.",
+          "¿Dónde está la farmacia?"
+        ],
+        "lacunas": [
+          {
+            "frase": "____ un médico.",
+            "resposta": "Necesito"
+          },
+          {
+            "frase": "Llame a una ____.",
+            "resposta": "ambulancia"
+          },
+          {
+            "frase": "Me ____ la cabeza.",
+            "resposta": "duele"
+          }
+        ],
+        "role_play": {
+          "cenario": "Pedir socorro na rua",
+          "personagens": [
+            "Viajante (aluno)",
+            "Pessoa que ajuda (você)"
+          ],
+          "roteiro": [
+            "Pedir ayuda",
+            "Explicar el problema",
+            "Pedir médico o policía",
+            "Agradecer"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'necesito ayuda' e 'necesito un médico'",
+          "Guardar o número 112"
+        ],
+        "em_24h": [
+          "Refazer o role-play de emergência",
+          "Ditar as 4 frases"
+        ]
+      }
+    }
+  ]
+};
+
+/* ===== util ===== */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const live = (msg) => { $('#live').textContent = ''; requestAnimationFrame(() => $('#live').textContent = msg); };
+const norm = (s) => (s || '')
+  .toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+  .replace(/[¿¡?!.,;:]/g, '').replace(/\s+/g, ' ').trim();
+
+function speak(text) {
+  if (!('speechSynthesis' in window)) return;
+  try {
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'es-ES';
+    const v = speechSynthesis.getVoices().find(v => v.lang.startsWith('es'));
+    if (v) u.voice = v;
+    u.rate = 0.95;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(u);
+  } catch (e) { /* TTS indisponível neste navegador — segue sem áudio */ }
+}
+
+/* ===== estado (persistido via window.storage do Artifact) ===== */
+const DB_KEY = 'estado-app';
+const estado = {
+  moduloAtual: 0, progresso: {}, revisoes: [], tema: null,
+  async carregar() {
+    try {
+      const r = await window.storage.get(DB_KEY);
+      if (r && r.value) Object.assign(this, JSON.parse(r.value));
+    } catch (e) { /* primeira visita — sem estado salvo ainda */ }
+  },
+  async salvar() {
+    try {
+      await window.storage.set(DB_KEY, JSON.stringify({
+        moduloAtual: this.moduloAtual, progresso: this.progresso,
+        revisoes: this.revisoes, tema: this.tema
+      }));
+    } catch (e) { console.error('storage', e); }
+  },
+  async marcar(moduloId, chave) {
+    this.progresso[moduloId] = this.progresso[moduloId] || {};
+    this.progresso[moduloId][chave] = true;
+    await this.salvar(); renderProgresso();
+  }
+};
+const modulo = () => CONTEUDO.modulos[estado.moduloAtual];
+
+/* ===== motor (avaliação local — sem chamada de rede no Artifact) ===== */
+function avaliarLocal({ falaAluno }) {
+  const n = norm(falaAluno);
+  const temCortesia = /por favor|gracias|perdon|buenas|hola/.test(n);
+  const curto = n.split(' ').length < 2;
+  let avaliacao;
+  if (!n) avaliacao = 'Sem resposta. Diga ao menos uma frase curta em espanhol.';
+  else if (curto) avaliacao = 'Entendível, mas muito curto — monte uma frase completa.';
+  else if (temCortesia) avaliacao = 'Claro e natural: boa cortesia.';
+  else avaliacao = 'Claro. Fica ainda mais natural com “por favor”.';
+  const reescrita = falaAluno && !temCortesia && !curto ? `${falaAluno.replace(/[.?!]?$/, '')}, por favor.` : (falaAluno || '—');
+  return { avaliacao, reescrita, dica: 'Marque a sílaba tônica e o “th” do castelhano (gra-THIAS).' };
+}
+
+/* ===== componentes ===== */
+function Flashcard(cards, onDone) {
+  let i = 0, virado = false;
+  const box = document.createElement('div');
+  const render = () => {
+    const c = cards[i];
+    box.innerHTML = `
+      <div class="flash">
+        <div class="flash__card ${virado ? 'is-flipped' : ''}" id="fc" tabindex="0" role="button"
+             aria-label="Cartão ${i + 1} de ${cards.length}. Frente: ${c.frente}. Espaço para virar.">
+          <div class="flash__face"><div><small>PT</small><p>${c.frente}</p></div></div>
+          <div class="flash__face flash__back"><div><small>ES</small><p>${c.verso}</p></div></div>
+        </div>
+        <p class="flash__hint">Espaço/Enter vira · ← → navega · ${i + 1}/${cards.length}</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--ghost" data-prev>Anterior</button>
+        <button class="btn" data-next>${i === cards.length - 1 ? 'Concluir' : 'Próximo'}</button>
+      </div>`;
+    const card = $('#fc', box);
+    card.addEventListener('click', flip);
+    card.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); flip(); }
+      if (e.code === 'ArrowRight') next();
+      if (e.code === 'ArrowLeft') prev();
+    });
+    $('[data-next]', box).addEventListener('click', next);
+    $('[data-prev]', box).addEventListener('click', prev);
+    $('#fc', box).focus();
+  };
+  const flip = () => { virado = !virado; if (virado) speak(cards[i].verso); render(); };
+  const next = () => { if (i < cards.length - 1) { i++; virado = false; render(); } else onDone && onDone(); };
+  const prev = () => { if (i > 0) { i--; virado = false; render(); } };
+  render();
+  return box;
+}
+
+function Ditado(frases) {
+  let i = 0;
+  const box = document.createElement('div');
+  const render = () => {
+    const alvo = frases[i];
+    box.innerHTML = `
+      <p class="eyebrow">Ditado ${i + 1}/${frases.length}</p>
+      <p>Ouça e escreva o que entender.</p>
+      <div class="btn-row">
+        <button class="btn" data-play>🔊 Tocar</button>
+        <button class="btn btn--ghost" data-show aria-expanded="false">Mostrar frase</button>
+      </div>
+      <p id="alvo" class="frase__mark" hidden style="font-size:var(--fs-md);margin-top:var(--s3)">${alvo}</p>
+      <label class="sr-only" for="dit-in">Sua resposta do ditado</label>
+      <input id="dit-in" class="input" style="margin-top:var(--s4)" autocomplete="off" placeholder="Escreva aqui…" />
+      <div class="btn-row">
+        <button class="btn" data-check>Corrigir</button>
+        <button class="btn btn--ghost" data-next hidden>Próximo</button>
+      </div>
+      <div id="fb" class="feedback" hidden></div>`;
+    const inp = $('#dit-in', box), fb = $('#fb', box);
+    $('[data-play]', box).addEventListener('click', () => speak(alvo));
+    $('[data-show]', box).addEventListener('click', (e) => {
+      const p = $('#alvo', box); const open = p.hidden;
+      p.hidden = !open; e.target.setAttribute('aria-expanded', String(open));
+    });
+    $('[data-check]', box).addEventListener('click', () => {
+      const ok = norm(inp.value) === norm(alvo);
+      fb.hidden = false; inp.classList.toggle('is-error', !ok);
+      fb.className = 'feedback ' + (ok ? 'is-correct' : 'is-error');
+      fb.innerHTML = ok ? '✓ Certo!' : `✗ Quase. Resposta: <b>${alvo}</b>`;
+      live(ok ? 'Correto' : 'Incorreto. ' + alvo);
+      $('[data-next]', box).hidden = false;
+    });
+    $('[data-next]', box).addEventListener('click', () => {
+      if (i < frases.length - 1) { i++; render(); } else { live('Ditado concluído'); estado.marcar(modulo().id, 'praticou'); }
+    });
+    inp.focus();
+  };
+  render();
+  return box;
+}
+
+function Lacunas(itens) {
+  const box = document.createElement('div');
+  itens.forEach((it, idx) => {
+    const row = document.createElement('div');
+    row.style.marginBottom = 'var(--s5)';
+    row.innerHTML = `
+      <p style="font-size:var(--fs-md)">${it.frase.replace('____', '<b>____</b>')}</p>
+      <label class="sr-only" for="lac-${idx}">Complete a lacuna ${idx + 1}</label>
+      <input id="lac-${idx}" class="input" autocomplete="off" placeholder="Complete…" />
+      <div class="feedback" hidden></div>`;
+    const inp = $('input', row), fb = $('.feedback', row);
+    const check = () => {
+      if (!inp.value.trim()) return;
+      const ok = norm(inp.value) === norm(it.resposta);
+      fb.hidden = false; inp.classList.toggle('is-error', !ok);
+      fb.className = 'feedback ' + (ok ? 'is-correct' : 'is-error');
+      fb.innerHTML = ok ? '✓ Certo' : `✗ Resposta: <b>${it.resposta}</b>`;
+      live(ok ? 'Correto' : 'Incorreto');
+    };
+    inp.addEventListener('input', () => { if (norm(inp.value) === norm(it.resposta)) check(); });
+    inp.addEventListener('blur', check);
+    inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') check(); });
+    box.appendChild(row);
+  });
+  return box;
+}
+
+function RolePlay(rp) {
+  let passo = 0;
+  const box = document.createElement('div');
+  box.innerHTML = `
+    <p class="eyebrow">Simulador</p>
+    <h2 style="font-size:var(--fs-lg)">${rp.cenario}</h2>
+    <p style="color:var(--text-muted)">${rp.personagens.join(' · ')}</p>
+    <div class="chat" id="chat" aria-live="polite"></div>
+    <label class="sr-only" for="rp-in">Sua fala em espanhol</label>
+    <input id="rp-in" class="input" autocomplete="off" placeholder="Responda em espanhol…" />
+    <div class="btn-row">
+      <button class="btn" data-send>Enviar</button>
+      <button class="btn btn--ghost" data-restart>Recomeçar</button>
+    </div>`;
+  const chat = $('#chat', box), inp = $('#rp-in', box), send = $('[data-send]', box);
+  const add = (cls, html) => { const d = document.createElement('div'); d.className = 'msg ' + cls; d.innerHTML = html; chat.appendChild(d); d.scrollIntoView({ block: 'nearest' }); };
+  const pedirPasso = () => add('msg--sys', `<b>${rp.roteiro[passo] || 'Cierre'}</b> — sua vez.`);
+
+  function enviar() {
+    const fala = inp.value.trim(); if (!fala) return;
+    add('msg--user', fala); inp.value = '';
+    const r = avaliarLocal({ falaAluno: fala });
+    add('msg--eval', `
+      <div>${r.avaliacao}</div>
+      <div class="rewrite">Nativo: “${r.reescrita}”</div>
+      <div class="tip">Pronúncia: ${r.dica}</div>`);
+    live('Avaliação recebida');
+    passo++;
+    if (passo < rp.roteiro.length) pedirPasso();
+    else { add('msg--sys', '¡Muy bien! Simulação concluída.'); estado.marcar(modulo().id, 'simulou'); agendarRevisoes(modulo()); }
+    inp.focus();
+  }
+  send.addEventListener('click', enviar);
+  inp.addEventListener('keydown', (e) => { if (e.key === 'Enter') enviar(); });
+  $('[data-restart]', box).addEventListener('click', () => { passo = 0; chat.innerHTML = ''; pedirPasso(); });
+  pedirPasso();
+  return box;
+}
+
+/* ===== views ===== */
+function frasesFragment(m) {
+  const tpl = $('#tpl-frase'), frag = document.createDocumentFragment();
+  m.frases_chave.forEach(f => {
+    const el = tpl.content.cloneNode(true);
+    $('[data-es]', el).textContent = f.es;
+    $('[data-pron]', el).textContent = f.pronuncia;
+    $('[data-pt]', el).textContent = f.pt;
+    f.variacoes.forEach(v => { const li = document.createElement('li'); li.textContent = v; $('[data-var]', el).appendChild(li); });
+    $('[data-speak]', el).addEventListener('click', () => speak(f.es));
+    frag.appendChild(el);
+  });
+  return frag;
+}
+
+const Views = {
+  estudar() {
+    const m = modulo(); estado.marcar(m.id, 'estudou');
+    const v = document.createElement('div');
+    v.innerHTML = `
+      <div class="view-head">
+        <p class="eyebrow">Módulo ${String(estado.moduloAtual + 1).padStart(2, '0')}</p>
+        <h1>${m.modulo}</h1><p>${m.objetivo}</p>
+      </div>
+      <h2 style="font-size:var(--fs-lg);margin-bottom:var(--s3)">Frases-chave</h2>
+      <div id="frases"></div>
+      <details class="acc"><summary>Palavras essenciais</summary>
+        <div class="acc__body"><ul class="chips">${m.palavras_essenciais.map(p => `<li class="chip">${p}</li>`).join('')}</ul></div>
+      </details>
+      <details class="acc" open><summary>Padrão gramatical: ${m.padrao_gramatical.tema}</summary>
+        <div class="acc__body"><ul>${m.padrao_gramatical.exemplos.map(e => `<li><code>${e}</code></li>`).join('')}</ul></div>
+      </details>
+      <div class="btn-row"><a class="btn" href="#/praticar">Praticar agora</a></div>`;
+    v.querySelector('#frases').appendChild(frasesFragment(m));
+    return v;
+  },
+  praticar() {
+    const m = modulo();
+    const v = document.createElement('div');
+    v.innerHTML = `<div class="view-head"><p class="eyebrow">${m.modulo}</p><h1>Praticar</h1>
+      <p>Flashcards, ditado e lacunas com correção na hora.</p></div>`;
+    v.appendChild(sec('Flashcards', Flashcard(m.exercicios.flashcards, () => live('Flashcards concluídos'))));
+    v.appendChild(sec('Ditado', Ditado(m.exercicios.ditado)));
+    v.appendChild(sec('Lacunas', Lacunas(m.exercicios.lacunas)));
+    return v;
+  },
+  simulador() {
+    const v = document.createElement('div');
+    v.appendChild(RolePlay(modulo().exercicios.role_play));
+    return v;
+  },
+  revisao() {
+    const m = modulo();
+    const v = document.createElement('div');
+    v.innerHTML = `
+      <div class="view-head"><p class="eyebrow">${m.modulo}</p><h1>Revisão espaçada</h1>
+        <p>Mini-resumo e o que repetir em 4h e em 24h.</p></div>
+      <details class="acc" open><summary>Em 4 horas</summary>
+        <div class="acc__body"><ul>${m.revisao.em_4h.map(x => `<li>${x}</li>`).join('')}</ul></div></details>
+      <details class="acc" open><summary>Em 24 horas</summary>
+        <div class="acc__body"><ul>${m.revisao.em_24h.map(x => `<li>${x}</li>`).join('')}</ul></div></details>
+      <div class="btn-row">
+        <button class="btn" id="ag">Agendar lembrete visual</button>
+        <button class="btn btn--ghost" id="prox">Próximo módulo</button>
+      </div>`;
+    $('#ag', v).addEventListener('click', () => { agendarRevisoes(m); live('Lembrete agendado'); });
+    $('#prox', v).addEventListener('click', () => {
+      estado.moduloAtual = (estado.moduloAtual + 1) % CONTEUDO.modulos.length;
+      $('#seletor-modulo').value = String(estado.moduloAtual); estado.salvar();
+      location.hash = '#/estudar';
+    });
+    return v;
+  }
+};
+
+function sec(titulo, node) {
+  const d = document.createElement('section'); d.style.margin = 'var(--s8) 0';
+  const h = document.createElement('h2'); h.style.fontSize = 'var(--fs-lg)'; h.style.marginBottom = 'var(--s3)'; h.textContent = titulo;
+  d.append(h, node); return d;
+}
+
+/* ===== roteador ===== */
+const ROTAS = ['estudar', 'praticar', 'simulador', 'revisao'];
+function rotaAtual() { const r = location.hash.replace('#/', ''); return ROTAS.includes(r) ? r : 'estudar'; }
+function navegar() {
+  const rota = rotaAtual();
+  document.documentElement.dataset.modulo = modulo().id;
+  $$('.tab').forEach(t => t.setAttribute('aria-selected', String(t.dataset.rota === rota)));
+  const view = $('#view'); view.innerHTML = '';
+  view.appendChild(Views[rota]());
+  $('#principal').focus();
+}
+window.addEventListener('hashchange', navegar);
+
+/* ===== revisão / toaster (sem Notification — apenas o cartão visual do app) ===== */
+function agendarRevisoes(m) {
+  const base = Date.now();
+  const nova = [
+    { moduloId: m.id, tipo: '4h', quando: base + 4 * 3600e3, itens: m.revisao.em_4h },
+    { moduloId: m.id, tipo: '24h', quando: base + 24 * 3600e3, itens: m.revisao.em_24h }
+  ];
+  estado.revisoes = estado.revisoes.filter(r => r.moduloId !== m.id).concat(nova);
+  estado.salvar();
+}
+function checarRevisoes() {
+  const agora = Date.now();
+  const devidas = estado.revisoes.filter(r => r.quando <= agora);
+  if (!devidas.length) return;
+  const r = devidas[0];
+  const m = CONTEUDO.modulos.find(x => x.id === r.moduloId);
+  mostrarToaster(m ? m.modulo : 'Revisão', r);
+  estado.revisoes = estado.revisoes.filter(x => x !== r); estado.salvar();
+}
+function mostrarToaster(titulo, r) {
+  const t = $('#toaster');
+  t.hidden = false;
+  t.innerHTML = `
+    <h3>Revisão (${r.tipo}) · ${titulo}</h3>
+    <ul>${r.itens.map(x => `<li>${x}</li>`).join('')}</ul>
+    <div class="toaster__actions">
+      <button class="btn" data-go>Revisar</button>
+      <button class="btn btn--ghost" data-close>Depois</button>
+    </div>`;
+  $('[data-go]', t).addEventListener('click', () => { t.hidden = true; location.hash = '#/revisao'; });
+  $('[data-close]', t).addEventListener('click', () => { t.hidden = true; });
+}
+
+/* ===== progresso ===== */
+function renderProgresso() {
+  const total = CONTEUDO.modulos.length * 3;
+  let feitos = 0;
+  CONTEUDO.modulos.forEach(m => { const p = estado.progresso[m.id] || {}; feitos += ['estudou', 'praticou', 'simulou'].filter(k => p[k]).length; });
+  const pct = total ? Math.round(feitos / total * 100) : 0;
+  $('#progress-fill').style.width = pct + '%';
+  $('#progress-value').textContent = pct + '%';
+  $('#progress-bar').setAttribute('aria-valuenow', String(pct));
+}
+
+/* ===== tema ===== */
+function initTema() {
+  const escuro = estado.tema ? estado.tema === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  aplicarTema(escuro);
+  $('#btn-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.tema !== 'dark'));
+}
+function aplicarTema(escuro) {
+  document.documentElement.dataset.tema = escuro ? 'dark' : 'light';
+  $('#btn-tema').setAttribute('aria-pressed', String(escuro));
+  estado.tema = escuro ? 'dark' : 'light';
+  estado.salvar();
+}
+
+/* ===== boot ===== */
+async function boot() {
+  await estado.carregar();
+  initTema();
+  const sel = $('#seletor-modulo');
+  sel.innerHTML = CONTEUDO.modulos.map((m, i) => `<option value="${i}">${String(i + 1).padStart(2, '0')} · ${m.modulo}</option>`).join('');
+  sel.value = String(estado.moduloAtual);
+  sel.addEventListener('change', () => { estado.moduloAtual = +sel.value; estado.salvar(); navegar(); });
+  renderProgresso();
+  navegar();
+  checarRevisoes();
+  setInterval(checarRevisoes, 60e3);
+}
+document.addEventListener('DOMContentLoaded', boot);
+</script>
+</body>
+</html>
