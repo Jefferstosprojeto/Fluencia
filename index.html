@@ -8,8 +8,8 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#1B54B8" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0E141B" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#C60B1E" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0F0500" media="(prefers-color-scheme: dark)" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 
   <!-- Fontes (com fallback de sistema nos tokens para funcionar antes do cache) -->
@@ -22,40 +22,42 @@
 <body>
   <a class="skip-link" href="#principal">Ir ao conteúdo</a>
 
-  <!-- Cabeçalho / navegação -->
-  <header class="topbar" role="banner">
-    <div class="topbar__inner">
-      <a class="brand" href="#/estudar" aria-label="Início — Espanhol de Sobrevivência">
-        <span class="brand__mark" aria-hidden="true">¡ES!</span>
-        <span class="brand__text">
-          <b>Espanhol de Sobrevivência</b>
-          <small>A0 → A1 · viagem na Espanha</small>
-        </span>
-      </a>
+  <!-- Wrapper sticky do site — topbar + tabs como irmãos evita conflito de stacking context no mobile -->
+  <div class="siteheader">
+    <header class="topbar" role="banner">
+      <div class="topbar__inner">
+        <a class="brand" href="#/estudar" aria-label="Início — Espanhol de Sobrevivência">
+          <span class="brand__mark" aria-hidden="true">¡ES!</span>
+          <span class="brand__text">
+            <b>Espanhol de Sobrevivência</b>
+            <small>A0 → A1 · viagem na Espanha</small>
+          </span>
+        </a>
 
-      <div class="topbar__tools">
-        <label class="field-inline">
-          <span class="sr-only">Módulo atual</span>
-          <select id="seletor-modulo" class="select" aria-label="Escolher módulo"></select>
-        </label>
-        <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
-          <span class="icon-btn__glyph" aria-hidden="true">◐</span>
-        </button>
+        <div class="topbar__tools">
+          <label class="field-inline">
+            <span class="sr-only">Módulo atual</span>
+            <select id="seletor-modulo" class="select" aria-label="Escolher módulo"></select>
+          </label>
+          <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
+            <span class="icon-btn__glyph" aria-hidden="true">◐</span>
+          </button>
+        </div>
       </div>
-    </div>
 
-    <!-- Barra de progresso por módulos -->
-    <div class="progress" aria-hidden="false">
-      <div class="progress__meta">
-        <span id="progress-label" class="progress__label">Progresso</span>
-        <span id="progress-value" class="progress__value">0%</span>
+      <!-- Barra de progresso por módulos -->
+      <div class="progress" aria-hidden="false">
+        <div class="progress__meta">
+          <span id="progress-label" class="progress__label">Progresso</span>
+          <span id="progress-value" class="progress__value">0%</span>
+        </div>
+        <div class="progress__track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+          <div class="progress__fill" id="progress-fill"></div>
+        </div>
       </div>
-      <div class="progress__track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
-        <div class="progress__fill" id="progress-fill"></div>
-      </div>
-    </div>
+    </header>
 
-    <!-- Abas / roteamento -->
+    <!-- Abas fora do header: evita que position:fixed colida com backdrop-filter/sticky do pai -->
     <nav class="tabs" aria-label="Seções da lição">
       <a class="tab" href="#/estudar"   data-rota="estudar"   data-icon="📖" role="tab" aria-selected="true">Estudar</a>
       <a class="tab" href="#/praticar"  data-rota="praticar"  data-icon="✏️" role="tab" aria-selected="false">Praticar</a>
@@ -63,7 +65,7 @@
       <a class="tab" href="#/simulador" data-rota="simulador" data-icon="💬" role="tab" aria-selected="false">Simulador</a>
       <a class="tab" href="#/revisao"   data-rota="revisao"   data-icon="🔁" role="tab" aria-selected="false">Revisão</a>
     </nav>
-  </header>
+  </div>
 
   <!-- Conteúdo trocado pelo roteador -->
   <main id="principal" class="page" tabindex="-1">

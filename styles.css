@@ -119,9 +119,13 @@ a { color: var(--brand); }
 }
 .skip-link:focus { top: var(--s3); }
 
-/* ---------- topbar ---------- */
-.topbar {
+/* ---------- siteheader + topbar ---------- */
+/* No desktop o wrapper é sticky; no mobile fica static para que
+   os tabs (position:fixed) não herdem o stacking context do pai sticky. */
+.siteheader {
   position: sticky; top: 0; z-index: var(--z-sticky);
+}
+.topbar {
   background: color-mix(in srgb, var(--surface) 92%, transparent);
   backdrop-filter: saturate(1.4) blur(8px);
   border-bottom: 1px solid var(--border);
@@ -445,12 +449,17 @@ a { color: var(--brand); }
   .btn, .icon-btn, .speak, .mic-btn { min-height: 44px; }
 }
 
-/* Bottom nav no mobile: transforma as tabs existentes */
+/* Bottom nav no mobile */
 @media (max-width: 48rem) {
+  /* siteheader vira static → tabs (fixed) não herdam stacking context */
+  .siteheader { position: static; }
+  /* topbar fica sticky por conta própria */
+  .topbar { position: sticky; top: 0; z-index: var(--z-sticky); }
+
   .tabs {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: var(--z-sticky);
     padding: var(--s2) var(--s3) calc(var(--s2) + env(safe-area-inset-bottom, 0px));
-    background: color-mix(in srgb, var(--surface) 95%, transparent);
+    background: color-mix(in srgb, var(--surface) 96%, transparent);
     backdrop-filter: blur(14px) saturate(1.5);
     border-top: 1px solid var(--border);
     display: grid; grid-auto-columns: 1fr; grid-auto-flow: column; gap: 0;
@@ -463,10 +472,7 @@ a { color: var(--brand); }
   }
   .tab::before { content: attr(data-icon); font-size: 1.3rem; line-height: 1; display: block; }
   .tab[aria-selected="true"] { box-shadow: none; }
-  .page {
-    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
-  }
-  .topbar { top: 0; }
+  .page { padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); }
   .welcome { padding-top: var(--s6); }
   .welcome__flag { height: 8rem; margin-bottom: var(--s5); }
 }
