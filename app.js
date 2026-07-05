@@ -674,6 +674,10 @@ async function boot() {
   estado.carregar(); initTema(); initConfig();
   try {
     const { lang, track } = getParams();
+    const TRACK_LABELS = { viagem: 'Viagem', negocios: 'Negócios' };
+    const LANG_LABELS  = { es: 'Espanhol', en: 'Inglês', de: 'Alemão', fr: 'Francês' };
+    const sub = document.getElementById('brand-sub');
+    if (sub) sub.textContent = `A0 → A1 · ${LANG_LABELS[lang] || lang} · ${TRACK_LABELS[track] || track}`;
     CONTEUDO = await (await fetch(`content/${lang}/${track}.json`)).json();
   } catch (e) {
     $('#view').innerHTML = '<div class="feedback is-error" style="margin-top:var(--s8);padding:var(--s5)">Não foi possível carregar o conteúdo.<br>Abra o app via servidor local ou acesse a versão publicada online.</div>';
