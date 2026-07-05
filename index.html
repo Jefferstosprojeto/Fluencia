@@ -139,7 +139,7 @@
     }
     .btn-cta:hover { background: var(--brand-hover); transform: translateY(-1px); }
     [data-tema="dark"] .btn-cta { background: var(--marker); color: #1A0800; }
-    [data-tema="dark"] .btn-cta:hover { background: var(--brand-hover); }
+    [data-tema="dark"] .btn-cta:hover { background: #FFD740; }
 
     /* ---- FOOTER ---- */
     footer {
@@ -164,7 +164,7 @@
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="site-header" role="banner">
     <button class="btn-tema" id="btn-tema" aria-pressed="false" aria-label="Alternar tema">◐ Tema</button>
   </header>
 
@@ -213,7 +213,7 @@
     </div>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <span>© 2026 Fluência</span>
     <a href="privacy.html">Política de privacidade</a>
     <a href="app.html?lang=es&track=viagem">Espanhol Viagem</a>
