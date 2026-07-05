@@ -576,3 +576,13 @@ a { color: var(--brand); }
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
   .flash__card { transition: none; }
 }
+
+/* ===== BACK LINK ===== */
+.home-back {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.25rem; height: 2.25rem; border-radius: var(--r-sm);
+  color: var(--text-muted); text-decoration: none; font-size: var(--fs-lg);
+  transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
+  flex-shrink: 0;
+}
+.home-back:hover { color: var(--text); background: var(--surface-2); }

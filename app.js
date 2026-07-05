@@ -665,10 +665,16 @@ function initConfig() {
 }
 
 /* ---------- 8) boot ---------------------------------------------------- */
+function getParams() {
+  const p = new URLSearchParams(location.search);
+  return { lang: p.get('lang') || 'es', track: p.get('track') || 'viagem' };
+}
+
 async function boot() {
   estado.carregar(); initTema(); initConfig();
   try {
-    CONTEUDO = await (await fetch('conteudo.json')).json();
+    const { lang, track } = getParams();
+    CONTEUDO = await (await fetch(`content/${lang}/${track}.json`)).json();
   } catch (e) {
     $('#view').innerHTML = '<div class="feedback is-error" style="margin-top:var(--s8);padding:var(--s5)">Não foi possível carregar o conteúdo.<br>Abra o app via servidor local ou acesse a versão publicada online.</div>';
     return;

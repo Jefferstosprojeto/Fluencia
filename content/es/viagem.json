@@ -1,0 +1,1755 @@
+{
+  "meta": {
+    "titulo": "Espanhol de Sobrevivência",
+    "nivel": "A0 → A1 funcional (viagem, Espanha)",
+    "pronuncia_legenda": "Castelhano da Espanha. VOGAL MAIÚSCULA = sílaba tônica. 'th' = z/c(e,i) como no inglês 'think'. 'rr' áspero = j / g(e,i). 'y' = ll/y.",
+    "ordem": [
+      "saudacoes",
+      "direcoes",
+      "restaurante",
+      "hotel",
+      "compras",
+      "emergencias"
+    ]
+  },
+  "modulos": [
+    {
+      "id": "saudacoes",
+      "modulo": "Saudações e cortesias",
+      "objetivo": "Cumprimentar, agradecer e pedir ajuda com educação.",
+      "frases_chave": [
+        {
+          "es": "Hola, buenos días.",
+          "pt": "Olá, bom dia.",
+          "pronuncia": "Ó-la, BUÊ-nos DÍ-as",
+          "variacoes": [
+            "Buenas.",
+            "¡Hola! ¿Qué tal?"
+          ]
+        },
+        {
+          "es": "Por favor.",
+          "pt": "Por favor.",
+          "pronuncia": "por fa-BÔR",
+          "variacoes": [
+            "Si es tan amable.",
+            "Porfa. (informal)"
+          ]
+        },
+        {
+          "es": "Muchas gracias.",
+          "pt": "Muito obrigado/a.",
+          "pronuncia": "MÚ-tchas GRÁ-thias",
+          "variacoes": [
+            "Mil gracias.",
+            "Muy amable."
+          ]
+        },
+        {
+          "es": "De nada.",
+          "pt": "De nada.",
+          "pronuncia": "de NÁ-da",
+          "variacoes": [
+            "No hay de qué.",
+            "A usted."
+          ]
+        },
+        {
+          "es": "Perdone, ¿habla inglés?",
+          "pt": "Desculpe, fala inglês?",
+          "pronuncia": "per-DÔ-ne, Á-bla in-GLÊS",
+          "variacoes": [
+            "¿Habla portugués?",
+            "¿Me entiende?"
+          ]
+        },
+        {
+          "es": "No entiendo, más despacio, por favor.",
+          "pt": "Não entendo, mais devagar, por favor.",
+          "pronuncia": "no en-TIÊN-do, mas des-PÁ-thio, por fa-BÔR",
+          "variacoes": [
+            "¿Cómo dice?",
+            "¿Puede repetir?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "sí",
+        "no",
+        "vale",
+        "hola",
+        "adiós",
+        "perdón",
+        "gracias",
+        "señor/señora"
+      ],
+      "padrao_gramatical": {
+        "tema": "Cumprimentar com 'estar': (yo) estoy · (tú) estás · (usted) está",
+        "exemplos": [
+          "¿Cómo estás?",
+          "Estoy bien, gracias.",
+          "¿Y usted, cómo está?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "bom dia",
+            "verso": "buenos días"
+          },
+          {
+            "frente": "boa tarde",
+            "verso": "buenas tardes"
+          },
+          {
+            "frente": "boa noite",
+            "verso": "buenas noches"
+          },
+          {
+            "frente": "como você está",
+            "verso": "cómo está"
+          },
+          {
+            "frente": "tudo bem",
+            "verso": "todo bien"
+          },
+          {
+            "frente": "por favor",
+            "verso": "por favor"
+          },
+          {
+            "frente": "muito obrigado",
+            "verso": "muchas gracias"
+          },
+          {
+            "frente": "de nada",
+            "verso": "de nada"
+          },
+          {
+            "frente": "com licença",
+            "verso": "perdone"
+          },
+          {
+            "frente": "desculpe",
+            "verso": "lo siento"
+          },
+          {
+            "frente": "até logo",
+            "verso": "hasta luego"
+          },
+          {
+            "frente": "até amanhã",
+            "verso": "hasta mañana"
+          },
+          {
+            "frente": "prazer em conhecê-lo",
+            "verso": "mucho gusto"
+          },
+          {
+            "frente": "como se chama",
+            "verso": "cómo se llama"
+          },
+          {
+            "frente": "eu me chamo",
+            "verso": "me llamo"
+          },
+          {
+            "frente": "sim",
+            "verso": "sí"
+          },
+          {
+            "frente": "não",
+            "verso": "no"
+          },
+          {
+            "frente": "senhor",
+            "verso": "señor"
+          },
+          {
+            "frente": "senhora",
+            "verso": "señora"
+          },
+          {
+            "frente": "bem-vindo",
+            "verso": "bienvenido"
+          },
+          {
+            "frente": "buenas",
+            "verso": "olá / oi (informal)"
+          },
+          {
+            "frente": "qué tal",
+            "verso": "como vai"
+          },
+          {
+            "frente": "nos vemos",
+            "verso": "a gente se vê"
+          },
+          {
+            "frente": "encantado",
+            "verso": "encantado (prazer, forma masc.)"
+          },
+          {
+            "frente": "igualmente",
+            "verso": "igualmente"
+          },
+          {
+            "frente": "no pasa nada",
+            "verso": "não tem problema"
+          },
+          {
+            "frente": "con permiso",
+            "verso": "com licença (para passar)"
+          },
+          {
+            "frente": "salud",
+            "verso": "saúde (brinde/espirro)"
+          },
+          {
+            "frente": "buen provecho",
+            "verso": "bom apetite"
+          },
+          {
+            "frente": "lo mismo digo",
+            "verso": "digo o mesmo"
+          },
+          {
+            "frente": "hasta pronto",
+            "verso": "até breve"
+          },
+          {
+            "frente": "qué alegría verte",
+            "verso": "que alegria te ver"
+          },
+          {
+            "frente": "cuídate",
+            "verso": "se cuide"
+          },
+          {
+            "frente": "feliz día",
+            "verso": "tenha um bom dia"
+          },
+          {
+            "frente": "un placer",
+            "verso": "um prazer"
+          },
+          {
+            "frente": "disculpa",
+            "verso": "desculpa (informal)"
+          },
+          {
+            "frente": "vale",
+            "verso": "tá bem / entendido"
+          },
+          {
+            "frente": "claro que sí",
+            "verso": "claro que sim"
+          },
+          {
+            "frente": "por supuesto",
+            "verso": "claro / com certeza"
+          },
+          {
+            "frente": "no hay problema",
+            "verso": "não há problema"
+          }
+        ],
+        "ditado": [
+          "Buenos días.",
+          "¿Cómo está usted?",
+          "Mucho gusto.",
+          "Hasta luego.",
+          "Perdone, señora."
+        ],
+        "lacunas": [
+          {
+            "frase": "____ días, señora.",
+            "resposta": "Buenos"
+          },
+          {
+            "frase": "Muchas ____.",
+            "resposta": "gracias"
+          },
+          {
+            "frase": "¿____ inglés?",
+            "resposta": "Habla"
+          }
+        ],
+        "role_play": {
+          "cenario": "Chegar e pedir ajuda na recepção",
+          "personagens": [
+            "Viajante (aluno)",
+            "Local (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Cortesía",
+            "Pedir ayuda en inglés",
+            "Despedida"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'buenos días' e 'muchas gracias'",
+          "Diferença tú vs usted"
+        ],
+        "em_24h": [
+          "Refazer o role-play de saudação",
+          "Ditado das 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "direcoes",
+      "modulo": "Direções e transporte",
+      "objetivo": "Achar o caminho, comprar bilhete e pegar transporte.",
+      "frases_chave": [
+        {
+          "es": "¿Dónde está la estación?",
+          "pt": "Onde fica a estação?",
+          "pronuncia": "DÔN-de es-TÁ la es-ta-THIÔN",
+          "variacoes": [
+            "¿La estación está por aquí?",
+            "¿Está lejos la estación?"
+          ]
+        },
+        {
+          "es": "¿Cómo llego al centro?",
+          "pt": "Como chego ao centro?",
+          "pronuncia": "KÔ-mo YÊ-go al THÊN-tro",
+          "variacoes": [
+            "¿Para ir al centro?",
+            "¿Puedo ir andando?"
+          ]
+        },
+        {
+          "es": "Un billete para Madrid, por favor.",
+          "pt": "Uma passagem para Madrid, por favor.",
+          "pronuncia": "un bi-YÊ-te PÁ-ra ma-DRÍD",
+          "variacoes": [
+            "Dos billetes, por favor.",
+            "Un billete de ida y vuelta."
+          ]
+        },
+        {
+          "es": "¿A qué hora sale el tren?",
+          "pt": "A que horas sai o trem?",
+          "pronuncia": "a ke Ó-ra SÁ-le el TRÊN",
+          "variacoes": [
+            "¿Cuándo sale el próximo?",
+            "¿De qué andén sale?"
+          ]
+        },
+        {
+          "es": "¿Cuánto cuesta hasta el aeropuerto?",
+          "pt": "Quanto custa até o aeroporto?",
+          "pronuncia": "KUÂN-to KUÊS-ta ÁS-ta el a-e-ro-PUÊR-to",
+          "variacoes": [
+            "¿Me lleva al aeropuerto?",
+            "¿Cuánto es en taxi?"
+          ]
+        },
+        {
+          "es": "Gire a la derecha, por favor.",
+          "pt": "Vire à direita, por favor.",
+          "pronuncia": "RRÍ-re a la de-RÊ-tcha, por fa-BÔR",
+          "variacoes": [
+            "A la izquierda.",
+            "Todo recto."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "estación",
+        "tren",
+        "metro",
+        "autobús",
+        "billete",
+        "andén",
+        "parada",
+        "cerca",
+        "lejos",
+        "derecha/izquierda"
+      ],
+      "padrao_gramatical": {
+        "tema": "Perguntar com ¿Dónde? · ¿Cómo? · ¿Cuánto?",
+        "exemplos": [
+          "¿Dónde está el metro?",
+          "¿Cómo llego al hotel?",
+          "¿Cuánto cuesta el billete?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "onde fica",
+            "verso": "dónde está"
+          },
+          {
+            "frente": "estação de trem",
+            "verso": "estación de tren"
+          },
+          {
+            "frente": "estação de metrô",
+            "verso": "estación de metro"
+          },
+          {
+            "frente": "parada de ônibus",
+            "verso": "parada de autobús"
+          },
+          {
+            "frente": "bilhete",
+            "verso": "billete"
+          },
+          {
+            "frente": "ida e volta",
+            "verso": "ida y vuelta"
+          },
+          {
+            "frente": "só ida",
+            "verso": "solo ida"
+          },
+          {
+            "frente": "à direita",
+            "verso": "a la derecha"
+          },
+          {
+            "frente": "à esquerda",
+            "verso": "a la izquierda"
+          },
+          {
+            "frente": "em frente",
+            "verso": "todo recto"
+          },
+          {
+            "frente": "perto",
+            "verso": "cerca"
+          },
+          {
+            "frente": "longe",
+            "verso": "lejos"
+          },
+          {
+            "frente": "quanto tempo demora",
+            "verso": "cuánto tarda"
+          },
+          {
+            "frente": "posso ir a pé",
+            "verso": "puedo ir andando"
+          },
+          {
+            "frente": "táxi",
+            "verso": "taxi"
+          },
+          {
+            "frente": "aluguel de carro",
+            "verso": "alquiler de coche"
+          },
+          {
+            "frente": "mapa",
+            "verso": "mapa"
+          },
+          {
+            "frente": "saída",
+            "verso": "salida"
+          },
+          {
+            "frente": "entrada",
+            "verso": "entrada"
+          },
+          {
+            "frente": "plataforma",
+            "verso": "andén"
+          },
+          {
+            "frente": "el próximo tren",
+            "verso": "o próximo trem"
+          },
+          {
+            "frente": "hay que hacer trasbordo",
+            "verso": "é preciso fazer baldeação"
+          },
+          {
+            "frente": "la línea uno",
+            "verso": "a linha um"
+          },
+          {
+            "frente": "billete sencillo",
+            "verso": "bilhete simples"
+          },
+          {
+            "frente": "bono de diez viajes",
+            "verso": "cartão de dez viagens"
+          },
+          {
+            "frente": "tarjeta de transporte",
+            "verso": "cartão de transporte"
+          },
+          {
+            "frente": "el semáforo",
+            "verso": "o semáforo"
+          },
+          {
+            "frente": "la rotonda",
+            "verso": "a rotatória"
+          },
+          {
+            "frente": "cruce la calle",
+            "verso": "atravesse a rua"
+          },
+          {
+            "frente": "siga recto",
+            "verso": "siga em frente"
+          },
+          {
+            "frente": "a mano derecha",
+            "verso": "à mão direita"
+          },
+          {
+            "frente": "al final de la calle",
+            "verso": "no final da rua"
+          },
+          {
+            "frente": "coja la segunda calle",
+            "verso": "pegue a segunda rua"
+          },
+          {
+            "frente": "está a cinco minutos",
+            "verso": "fica a cinco minutos"
+          },
+          {
+            "frente": "el vuelo",
+            "verso": "o voo"
+          },
+          {
+            "frente": "la terminal",
+            "verso": "o terminal"
+          },
+          {
+            "frente": "facturar el equipaje",
+            "verso": "despachar a bagagem"
+          },
+          {
+            "frente": "la puerta de embarque",
+            "verso": "o portão de embarque"
+          },
+          {
+            "frente": "el horario",
+            "verso": "o horário"
+          },
+          {
+            "frente": "llegadas y salidas",
+            "verso": "chegadas e partidas"
+          }
+        ],
+        "ditado": [
+          "¿Dónde está el metro?",
+          "A la izquierda.",
+          "Un billete, por favor.",
+          "¿Está lejos de aquí?",
+          "Todo recto."
+        ],
+        "lacunas": [
+          {
+            "frase": "¿____ está la parada?",
+            "resposta": "Dónde"
+          },
+          {
+            "frase": "Un ____ para Sevilla, por favor.",
+            "resposta": "billete"
+          },
+          {
+            "frase": "Gire a la ____.",
+            "resposta": "derecha"
+          }
+        ],
+        "role_play": {
+          "cenario": "Comprar bilhete e pedir direção na estação",
+          "personagens": [
+            "Viajante (aluno)",
+            "Funcionário (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Pedir billete",
+            "Preguntar andén",
+            "Preguntar dirección al centro"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir '¿dónde está...?' com 3 lugares",
+          "Direita/esquerda/reto"
+        ],
+        "em_24h": [
+          "Refazer role-play da estação",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "restaurante",
+      "modulo": "Restaurante e café",
+      "objetivo": "Sentar, pedir e pagar sem gaguejar.",
+      "frases_chave": [
+        {
+          "es": "¿Tiene una mesa para dos?",
+          "pt": "Tem mesa para duas pessoas?",
+          "pronuncia": "TIÊ-ne U-na MÊ-sa PÁ-ra dos",
+          "variacoes": [
+            "¿Hay mesa para dos?",
+            "¿Podemos sentarnos aquí?"
+          ]
+        },
+        {
+          "es": "La carta, por favor.",
+          "pt": "O cardápio, por favor.",
+          "pronuncia": "la KÁR-ta, por fa-BÔR",
+          "variacoes": [
+            "¿Me trae la carta?",
+            "¿Tienen menú del día?"
+          ]
+        },
+        {
+          "es": "Me pone una caña, por favor.",
+          "pt": "Me traz um chope pequeno, por favor.",
+          "pronuncia": "me PÔ-ne U-na KÁ-nya, por fa-BÔR",
+          "variacoes": [
+            "Una caña, cuando pueda.",
+            "¿Me pone un café con leche?"
+          ]
+        },
+        {
+          "es": "Para mí, la tortilla.",
+          "pt": "Para mim, a tortilla (de batata).",
+          "pronuncia": "PÁ-ra mi, la tor-TÍ-ya",
+          "variacoes": [
+            "Yo quiero la tortilla.",
+            "De primero, la tortilla."
+          ]
+        },
+        {
+          "es": "Agua del grifo, por favor.",
+          "pt": "Água da torneira, por favor.",
+          "pronuncia": "Á-gua del GRÍ-fo, por fa-BÔR",
+          "variacoes": [
+            "Una botella de agua.",
+            "Agua sin gas."
+          ]
+        },
+        {
+          "es": "La cuenta, por favor.",
+          "pt": "A conta, por favor.",
+          "pronuncia": "la KUÊN-ta, por fa-BÔR",
+          "variacoes": [
+            "¿Me cobra, por favor?",
+            "¿Cuánto es?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "carta",
+        "menú del día",
+        "cuenta",
+        "caña",
+        "agua del grifo",
+        "propina",
+        "camarero/a",
+        "postre",
+        "para llevar",
+        "la cuenta"
+      ],
+      "padrao_gramatical": {
+        "tema": "Pedir com 'me pone / me da / para mí'",
+        "exemplos": [
+          "Me pone un café, por favor.",
+          "¿Me da la cuenta?",
+          "Para mí, el pescado."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "mesa para dois",
+            "verso": "mesa para dos"
+          },
+          {
+            "frente": "cardápio",
+            "verso": "carta"
+          },
+          {
+            "frente": "menu do dia",
+            "verso": "menú del día"
+          },
+          {
+            "frente": "conta",
+            "verso": "cuenta"
+          },
+          {
+            "frente": "gorjeta",
+            "verso": "propina"
+          },
+          {
+            "frente": "garçom",
+            "verso": "camarero"
+          },
+          {
+            "frente": "água sem gás",
+            "verso": "agua sin gas"
+          },
+          {
+            "frente": "água com gás",
+            "verso": "agua con gas"
+          },
+          {
+            "frente": "vinho tinto",
+            "verso": "vino tinto"
+          },
+          {
+            "frente": "vinho branco",
+            "verso": "vino blanco"
+          },
+          {
+            "frente": "cerveja",
+            "verso": "cerveza"
+          },
+          {
+            "frente": "sobremesa",
+            "verso": "postre"
+          },
+          {
+            "frente": "café com leite",
+            "verso": "café con leche"
+          },
+          {
+            "frente": "para levar",
+            "verso": "para llevar"
+          },
+          {
+            "frente": "estou satisfeito",
+            "verso": "estoy lleno"
+          },
+          {
+            "frente": "está delicioso",
+            "verso": "está riquísimo"
+          },
+          {
+            "frente": "sem glúten",
+            "verso": "sin gluten"
+          },
+          {
+            "frente": "sou vegetariano",
+            "verso": "soy vegetariano"
+          },
+          {
+            "frente": "alérgico a",
+            "verso": "alérgico a"
+          },
+          {
+            "frente": "colher",
+            "verso": "cuchara"
+          },
+          {
+            "frente": "tapa",
+            "verso": "petisco / porção pequena"
+          },
+          {
+            "frente": "ración",
+            "verso": "porção"
+          },
+          {
+            "frente": "jamón ibérico",
+            "verso": "presunto ibérico"
+          },
+          {
+            "frente": "pan con tomate",
+            "verso": "pão com tomate"
+          },
+          {
+            "frente": "el menú del día",
+            "verso": "o menu do dia"
+          },
+          {
+            "frente": "de primero",
+            "verso": "de entrada"
+          },
+          {
+            "frente": "de segundo",
+            "verso": "de prato principal"
+          },
+          {
+            "frente": "está para chuparse los dedos",
+            "verso": "está de lamber os dedos"
+          },
+          {
+            "frente": "la cuenta separada",
+            "verso": "a conta separada"
+          },
+          {
+            "frente": "pagar a medias",
+            "verso": "pagar dividido"
+          },
+          {
+            "frente": "el tenedor",
+            "verso": "o garfo"
+          },
+          {
+            "frente": "el cuchillo",
+            "verso": "a faca"
+          },
+          {
+            "frente": "la servilleta",
+            "verso": "o guardanapo"
+          },
+          {
+            "frente": "sin hielo",
+            "verso": "sem gelo"
+          },
+          {
+            "frente": "muy hecho",
+            "verso": "bem passado"
+          },
+          {
+            "frente": "poco hecho",
+            "verso": "mal passado"
+          },
+          {
+            "frente": "al punto",
+            "verso": "ao ponto"
+          },
+          {
+            "frente": "picar algo",
+            "verso": "beliscar alguma coisa"
+          },
+          {
+            "frente": "barra o mesa",
+            "verso": "balcão ou mesa"
+          },
+          {
+            "frente": "la terraza",
+            "verso": "o terraço / varanda"
+          }
+        ],
+        "ditado": [
+          "La cuenta, por favor.",
+          "Una caña, gracias.",
+          "¿Tienen menú del día?",
+          "Sin hielo, por favor.",
+          "Está riquísimo."
+        ],
+        "lacunas": [
+          {
+            "frase": "____ la cuenta, por favor.",
+            "resposta": "Me da"
+          },
+          {
+            "frase": "Me ____ una caña.",
+            "resposta": "pone"
+          },
+          {
+            "frase": "____ mí, el pescado.",
+            "resposta": "Para"
+          }
+        ],
+        "role_play": {
+          "cenario": "Pedir comida num bar",
+          "personagens": [
+            "Cliente (aluno)",
+            "Camarero (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Bebida",
+            "Plato",
+            "Cuenta"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'la cuenta, por favor'",
+          "Pedir 2 coisas com 'me pone'"
+        ],
+        "em_24h": [
+          "Refazer o role-play do restaurante",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "hotel",
+      "modulo": "Hotel e check-in",
+      "objetivo": "Fazer check-in, resolver o quarto e o wifi.",
+      "frases_chave": [
+        {
+          "es": "Tengo una reserva a nombre de Santos.",
+          "pt": "Tenho uma reserva em nome de Santos.",
+          "pronuncia": "TÊN-go U-na re-SÊR-ba a NÔM-bre de SÂN-tos",
+          "variacoes": [
+            "Reservé una habitación.",
+            "La reserva está a mi nombre."
+          ]
+        },
+        {
+          "es": "¿A qué hora es la salida?",
+          "pt": "A que horas é o check-out?",
+          "pronuncia": "a ke Ó-ra es la sa-LÍ-da",
+          "variacoes": [
+            "¿Cuándo es el check-in?",
+            "¿Hasta qué hora puedo quedarme?"
+          ]
+        },
+        {
+          "es": "¿El desayuno está incluido?",
+          "pt": "O café da manhã está incluído?",
+          "pronuncia": "el de-sa-YÚ-no es-TÁ in-kluí-do",
+          "variacoes": [
+            "¿Incluye desayuno?",
+            "¿A qué hora es el desayuno?"
+          ]
+        },
+        {
+          "es": "¿Cuál es la contraseña del wifi?",
+          "pt": "Qual é a senha do wifi?",
+          "pronuncia": "kual es la kon-tra-SÊ-nya del UÍ-fi",
+          "variacoes": [
+            "¿Me da la clave del wifi?",
+            "¿El wifi es gratis?"
+          ]
+        },
+        {
+          "es": "No funciona el aire acondicionado.",
+          "pt": "O ar-condicionado não funciona.",
+          "pronuncia": "no fun-THIÔ-na el Ái-re a-kon-di-thio-NÁ-do",
+          "variacoes": [
+            "La ducha no funciona.",
+            "La habitación es muy ruidosa."
+          ]
+        },
+        {
+          "es": "¿Pueden guardar mi maleta?",
+          "pt": "Podem guardar minha mala?",
+          "pronuncia": "PUÊ-den guar-DÁR mi ma-LÊ-ta",
+          "variacoes": [
+            "¿Tienen consigna?",
+            "¿Puedo dejar el equipaje aquí?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "reserva",
+        "habitación",
+        "llave/tarjeta",
+        "desayuno",
+        "toalla",
+        "ducha",
+        "aire acondicionado",
+        "recepción",
+        "salida",
+        "maleta"
+      ],
+      "padrao_gramatical": {
+        "tema": "'¿Hay...?' e 'Tengo / Tienen' (haber e tener)",
+        "exemplos": [
+          "¿Hay wifi?",
+          "Tengo una reserva.",
+          "¿Tienen habitaciones libres?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "reserva",
+            "verso": "reserva"
+          },
+          {
+            "frente": "quarto",
+            "verso": "habitación"
+          },
+          {
+            "frente": "chave",
+            "verso": "llave"
+          },
+          {
+            "frente": "toalha",
+            "verso": "toalla"
+          },
+          {
+            "frente": "travesseiro",
+            "verso": "almohada"
+          },
+          {
+            "frente": "cobertor",
+            "verso": "manta"
+          },
+          {
+            "frente": "recepção",
+            "verso": "recepción"
+          },
+          {
+            "frente": "elevador",
+            "verso": "ascensor"
+          },
+          {
+            "frente": "café da manhã",
+            "verso": "desayuno"
+          },
+          {
+            "frente": "arrumar o quarto",
+            "verso": "limpiar la habitación"
+          },
+          {
+            "frente": "sacola de lavanderia",
+            "verso": "bolsa de lavandería"
+          },
+          {
+            "frente": "estacionamento",
+            "verso": "aparcamiento"
+          },
+          {
+            "frente": "cofre",
+            "verso": "caja fuerte"
+          },
+          {
+            "frente": "vista para o mar",
+            "verso": "vista al mar"
+          },
+          {
+            "frente": "quarto de casal",
+            "verso": "habitación doble"
+          },
+          {
+            "frente": "quarto de solteiro",
+            "verso": "habitación individual"
+          },
+          {
+            "frente": "tranquilo",
+            "verso": "tranquilo"
+          },
+          {
+            "frente": "barulhento",
+            "verso": "ruidoso"
+          },
+          {
+            "frente": "check-in antecipado",
+            "verso": "check-in anticipado"
+          },
+          {
+            "frente": "saída tardia",
+            "verso": "salida tardía"
+          },
+          {
+            "frente": "conserje",
+            "verso": "concierge"
+          },
+          {
+            "frente": "botones",
+            "verso": "carregador de malas"
+          },
+          {
+            "frente": "minibar",
+            "verso": "frigobar"
+          },
+          {
+            "frente": "la calefacción",
+            "verso": "o aquecimento"
+          },
+          {
+            "frente": "el enchufe",
+            "verso": "a tomada"
+          },
+          {
+            "frente": "el adaptador",
+            "verso": "o adaptador"
+          },
+          {
+            "frente": "wifi gratis",
+            "verso": "wifi grátis"
+          },
+          {
+            "frente": "servicio de habitaciones",
+            "verso": "serviço de quarto"
+          },
+          {
+            "frente": "no molestar",
+            "verso": "não perturbe"
+          },
+          {
+            "frente": "recepción 24 horas",
+            "verso": "recepção 24 horas"
+          },
+          {
+            "frente": "el ascensor está averiado",
+            "verso": "o elevador está quebrado"
+          },
+          {
+            "frente": "cambiar de habitación",
+            "verso": "trocar de quarto"
+          },
+          {
+            "frente": "hace falta una manta extra",
+            "verso": "falta uma manta extra"
+          },
+          {
+            "frente": "el aire está muy fuerte",
+            "verso": "o ar está muito forte"
+          },
+          {
+            "frente": "el grifo gotea",
+            "verso": "a torneira pinga"
+          },
+          {
+            "frente": "la ducha está fría",
+            "verso": "o chuveiro está frio"
+          },
+          {
+            "frente": "quiero quejarme",
+            "verso": "quero reclamar"
+          },
+          {
+            "frente": "la factura",
+            "verso": "a fatura"
+          },
+          {
+            "frente": "pagar con tarjeta",
+            "verso": "pagar com cartão"
+          },
+          {
+            "frente": "dejar la llave en recepción",
+            "verso": "deixar a chave na recepção"
+          }
+        ],
+        "ditado": [
+          "Tengo una reserva.",
+          "¿Hay wifi gratis?",
+          "Necesito una toalla.",
+          "No funciona la ducha.",
+          "¿A qué hora es el desayuno?"
+        ],
+        "lacunas": [
+          {
+            "frase": "____ una reserva a nombre de Santos.",
+            "resposta": "Tengo"
+          },
+          {
+            "frase": "¿____ wifi en la habitación?",
+            "resposta": "Hay"
+          },
+          {
+            "frase": "¿El desayuno está ____?",
+            "resposta": "incluido"
+          }
+        ],
+        "role_play": {
+          "cenario": "Check-in no hotel",
+          "personagens": [
+            "Hóspede (aluno)",
+            "Recepcionista (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Dar el nombre de la reserva",
+            "Preguntar desayuno y wifi",
+            "Pedir la llave"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'tengo una reserva'",
+          "Perguntar wifi e desayuno"
+        ],
+        "em_24h": [
+          "Refazer o role-play do check-in",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "compras",
+      "modulo": "Compras e pagamentos",
+      "objetivo": "Comprar, provar e pagar sem surpresa.",
+      "frases_chave": [
+        {
+          "es": "¿Cuánto cuesta?",
+          "pt": "Quanto custa?",
+          "pronuncia": "KUÂN-to KUÊS-ta",
+          "variacoes": [
+            "¿Cuánto es?",
+            "¿Qué precio tiene?"
+          ]
+        },
+        {
+          "es": "¿Puedo pagar con tarjeta?",
+          "pt": "Posso pagar com cartão?",
+          "pronuncia": "PUÊ-do pa-GÁR kon tar-RRÊ-ta",
+          "variacoes": [
+            "¿Aceptan tarjeta?",
+            "¿Se puede pagar con móvil?"
+          ]
+        },
+        {
+          "es": "Solo estoy mirando, gracias.",
+          "pt": "Só estou olhando, obrigado.",
+          "pronuncia": "SÔ-lo es-TÔI mi-RÂN-do, GRÁ-thias",
+          "variacoes": [
+            "Estoy mirando, gracias.",
+            "Gracias, solo miro."
+          ]
+        },
+        {
+          "es": "¿Tiene una talla más grande?",
+          "pt": "Tem um tamanho maior?",
+          "pronuncia": "TIÊ-ne U-na TÁ-ya mas GRÂN-de",
+          "variacoes": [
+            "¿Lo tiene en otra talla?",
+            "¿Tiene una más pequeña?"
+          ]
+        },
+        {
+          "es": "¿Me lo puedo probar?",
+          "pt": "Posso experimentar?",
+          "pronuncia": "me lo PUÊ-do pro-BÁR",
+          "variacoes": [
+            "¿Dónde están los probadores?",
+            "¿Puedo probármelo?"
+          ]
+        },
+        {
+          "es": "¿Me da una bolsa, por favor?",
+          "pt": "Me dá uma sacola, por favor?",
+          "pronuncia": "me da U-na BÔL-sa, por fa-BÔR",
+          "variacoes": [
+            "¿Me lo envuelve?",
+            "¿Me da el recibo?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "precio",
+        "tarjeta",
+        "efectivo",
+        "talla",
+        "probador",
+        "descuento",
+        "oferta",
+        "bolsa",
+        "recibo",
+        "caja"
+      ],
+      "padrao_gramatical": {
+        "tema": "Pedir permissão com 'poder': ¿Puedo...? · ¿Se puede...?",
+        "exemplos": [
+          "¿Puedo pagar con tarjeta?",
+          "¿Me lo puedo probar?",
+          "¿Se puede pagar en efectivo?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "preço",
+            "verso": "precio"
+          },
+          {
+            "frente": "desconto",
+            "verso": "descuento"
+          },
+          {
+            "frente": "promoção",
+            "verso": "oferta"
+          },
+          {
+            "frente": "dinheiro",
+            "verso": "efectivo"
+          },
+          {
+            "frente": "troco",
+            "verso": "cambio"
+          },
+          {
+            "frente": "cartão de crédito",
+            "verso": "tarjeta de crédito"
+          },
+          {
+            "frente": "provador",
+            "verso": "probador"
+          },
+          {
+            "frente": "tamanho",
+            "verso": "talla"
+          },
+          {
+            "frente": "cor",
+            "verso": "color"
+          },
+          {
+            "frente": "muito caro",
+            "verso": "muy caro"
+          },
+          {
+            "frente": "mais barato",
+            "verso": "más barato"
+          },
+          {
+            "frente": "recibo",
+            "verso": "recibo"
+          },
+          {
+            "frente": "sacola",
+            "verso": "bolsa"
+          },
+          {
+            "frente": "devolução",
+            "verso": "devolución"
+          },
+          {
+            "frente": "loja",
+            "verso": "tienda"
+          },
+          {
+            "frente": "shopping",
+            "verso": "centro comercial"
+          },
+          {
+            "frente": "mercado",
+            "verso": "mercado"
+          },
+          {
+            "frente": "feira",
+            "verso": "mercadillo"
+          },
+          {
+            "frente": "horário de funcionamento",
+            "verso": "horario de apertura"
+          },
+          {
+            "frente": "fechado",
+            "verso": "cerrado"
+          },
+          {
+            "frente": "rebajas",
+            "verso": "liquidação / saldos"
+          },
+          {
+            "frente": "dos por uno",
+            "verso": "leve dois pague um"
+          },
+          {
+            "frente": "talla única",
+            "verso": "tamanho único"
+          },
+          {
+            "frente": "me queda bien",
+            "verso": "fica bem em mim"
+          },
+          {
+            "frente": "me queda grande",
+            "verso": "fica grande em mim"
+          },
+          {
+            "frente": "me queda pequeño",
+            "verso": "fica pequeno em mim"
+          },
+          {
+            "frente": "el probador está al fondo",
+            "verso": "o provador é no fundo"
+          },
+          {
+            "frente": "pagar en cuotas",
+            "verso": "pagar parcelado"
+          },
+          {
+            "frente": "el cambio",
+            "verso": "o troco"
+          },
+          {
+            "frente": "no tengo suelto",
+            "verso": "não tenho trocado"
+          },
+          {
+            "frente": "quiero devolver esto",
+            "verso": "quero devolver isso"
+          },
+          {
+            "frente": "¿tiene el ticket?",
+            "verso": "tem o recibo?"
+          },
+          {
+            "frente": "lo dejo, gracias",
+            "verso": "deixo, obrigado (não vou levar)"
+          },
+          {
+            "frente": "me lo llevo",
+            "verso": "vou levar isto"
+          },
+          {
+            "frente": "hecho a mano",
+            "verso": "feito à mão"
+          },
+          {
+            "frente": "producto local",
+            "verso": "produto local"
+          },
+          {
+            "frente": "recuerdo",
+            "verso": "lembrança / souvenir"
+          },
+          {
+            "frente": "artesanía",
+            "verso": "artesanato"
+          },
+          {
+            "frente": "impuestos incluidos",
+            "verso": "impostos incluídos"
+          },
+          {
+            "frente": "libre de impuestos",
+            "verso": "isento de impostos"
+          }
+        ],
+        "ditado": [
+          "¿Cuánto cuesta esto?",
+          "¿Tiene otra talla?",
+          "Solo estoy mirando.",
+          "¿Puedo pagar con tarjeta?",
+          "Quiero devolver esto."
+        ],
+        "lacunas": [
+          {
+            "frase": "¿Cuánto ____?",
+            "resposta": "cuesta"
+          },
+          {
+            "frase": "¿____ pagar con tarjeta?",
+            "resposta": "Puedo"
+          },
+          {
+            "frase": "¿Tiene una ____ más grande?",
+            "resposta": "talla"
+          }
+        ],
+        "role_play": {
+          "cenario": "Comprar numa loja de roupa",
+          "personagens": [
+            "Cliente (aluno)",
+            "Vendedor (você)"
+          ],
+          "roteiro": [
+            "Saludo",
+            "Preguntar precio",
+            "Pedir otra talla / probar",
+            "Pagar con tarjeta"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir '¿cuánto cuesta?' e '¿puedo pagar con tarjeta?'",
+          "Pedir outra talla"
+        ],
+        "em_24h": [
+          "Refazer o role-play da loja",
+          "Ditar as 4 frases"
+        ]
+      }
+    },
+    {
+      "id": "emergencias",
+      "modulo": "Emergências e ajuda",
+      "objetivo": "Pedir socorro, achar médico e explicar o problema.",
+      "frases_chave": [
+        {
+          "es": "Necesito ayuda, por favor.",
+          "pt": "Preciso de ajuda, por favor.",
+          "pronuncia": "ne-the-SÍ-to a-YÚ-da, por fa-BÔR",
+          "variacoes": [
+            "¡Socorro!",
+            "Es una emergencia."
+          ]
+        },
+        {
+          "es": "Llame a una ambulancia.",
+          "pt": "Chame uma ambulância.",
+          "pronuncia": "YÁ-me a U-na am-bu-LÂN-thia",
+          "variacoes": [
+            "Llame al 112.",
+            "Llame a la policía."
+          ]
+        },
+        {
+          "es": "Necesito un médico.",
+          "pt": "Preciso de um médico.",
+          "pronuncia": "ne-the-SÍ-to un MÊ-di-ko",
+          "variacoes": [
+            "¿Dónde hay una farmacia?",
+            "No me encuentro bien."
+          ]
+        },
+        {
+          "es": "Me he perdido.",
+          "pt": "Me perdi.",
+          "pronuncia": "me e per-DÍ-do",
+          "variacoes": [
+            "No sé dónde estoy.",
+            "¿Me puede ayudar?"
+          ]
+        },
+        {
+          "es": "Me han robado la cartera.",
+          "pt": "Roubaram minha carteira.",
+          "pronuncia": "me an ro-BÁ-do la kar-TÊ-ra",
+          "variacoes": [
+            "He perdido el pasaporte.",
+            "Me falta el móvil."
+          ]
+        },
+        {
+          "es": "¿Dónde está el hospital más cercano?",
+          "pt": "Onde fica o hospital mais próximo?",
+          "pronuncia": "DÔN-de es-TÁ el os-pi-TÁL mas ther-KÁ-no",
+          "variacoes": [
+            "¿Hay una farmacia de guardia?",
+            "Me duele mucho aquí."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "ayuda",
+        "médico",
+        "farmacia",
+        "policía",
+        "ambulancia",
+        "112",
+        "pasaporte",
+        "me duele",
+        "hospital",
+        "emergencia"
+      ],
+      "padrao_gramatical": {
+        "tema": "Pedir ajuda com 'Necesito...' e 'Me duele...'",
+        "exemplos": [
+          "Necesito ayuda.",
+          "Necesito un médico.",
+          "Me duele la cabeza."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          {
+            "frente": "ajuda",
+            "verso": "ayuda"
+          },
+          {
+            "frente": "socorro",
+            "verso": "socorro"
+          },
+          {
+            "frente": "emergência",
+            "verso": "emergencia"
+          },
+          {
+            "frente": "médico",
+            "verso": "médico"
+          },
+          {
+            "frente": "hospital",
+            "verso": "hospital"
+          },
+          {
+            "frente": "farmácia",
+            "verso": "farmacia"
+          },
+          {
+            "frente": "polícia",
+            "verso": "policía"
+          },
+          {
+            "frente": "ambulância",
+            "verso": "ambulancia"
+          },
+          {
+            "frente": "bombeiros",
+            "verso": "bomberos"
+          },
+          {
+            "frente": "acidente",
+            "verso": "accidente"
+          },
+          {
+            "frente": "perdido",
+            "verso": "perdido"
+          },
+          {
+            "frente": "roubo",
+            "verso": "robo"
+          },
+          {
+            "frente": "carteira",
+            "verso": "cartera"
+          },
+          {
+            "frente": "passaporte",
+            "verso": "pasaporte"
+          },
+          {
+            "frente": "dói aqui",
+            "verso": "me duele aquí"
+          },
+          {
+            "frente": "alergia",
+            "verso": "alergia"
+          },
+          {
+            "frente": "remédio",
+            "verso": "medicamento"
+          },
+          {
+            "frente": "seguro de viagem",
+            "verso": "seguro de viaje"
+          },
+          {
+            "frente": "número de emergência",
+            "verso": "número de emergencia"
+          },
+          {
+            "frente": "estou bem",
+            "verso": "estoy bien"
+          },
+          {
+            "frente": "se me ha perdido el pasaporte",
+            "verso": "perdi o passaporte"
+          },
+          {
+            "frente": "me han robado la mochila",
+            "verso": "roubaram minha mochila"
+          },
+          {
+            "frente": "llame a la policía",
+            "verso": "chame a polícia"
+          },
+          {
+            "frente": "necesito un intérprete",
+            "verso": "preciso de um intérprete"
+          },
+          {
+            "frente": "tengo fiebre",
+            "verso": "estou com febre"
+          },
+          {
+            "frente": "me siento mareado",
+            "verso": "estou tonto / enjoado"
+          },
+          {
+            "frente": "tengo náuseas",
+            "verso": "estou com náuseas"
+          },
+          {
+            "frente": "se ha desmayado",
+            "verso": "desmaiou"
+          },
+          {
+            "frente": "hay un incendio",
+            "verso": "há um incêndio"
+          },
+          {
+            "frente": "llame a los bomberos",
+            "verso": "chame os bombeiros"
+          },
+          {
+            "frente": "¿dónde está la comisaría?",
+            "verso": "onde fica a delegacia?"
+          },
+          {
+            "frente": "quiero denunciar un robo",
+            "verso": "quero denunciar um roubo"
+          },
+          {
+            "frente": "mi seguro cubre esto",
+            "verso": "meu seguro cobre isso"
+          },
+          {
+            "frente": "necesito receta médica",
+            "verso": "preciso de receita médica"
+          },
+          {
+            "frente": "es alérgico a la penicilina",
+            "verso": "é alérgico a penicilina"
+          },
+          {
+            "frente": "no puedo respirar bien",
+            "verso": "não consigo respirar bem"
+          },
+          {
+            "frente": "se ha caído",
+            "verso": "ele/ela caiu"
+          },
+          {
+            "frente": "se ha cortado",
+            "verso": "se cortou / se machucou"
+          },
+          {
+            "frente": "avise a mi familia",
+            "verso": "avise minha família"
+          },
+          {
+            "frente": "estoy perdido, ¿me ayuda?",
+            "verso": "estou perdido, pode me ajudar?"
+          }
+        ],
+        "ditado": [
+          "Necesito ayuda.",
+          "Llame a un médico.",
+          "Me he perdido.",
+          "Me duele aquí.",
+          "¿Dónde está la farmacia?"
+        ],
+        "lacunas": [
+          {
+            "frase": "____ un médico.",
+            "resposta": "Necesito"
+          },
+          {
+            "frase": "Llame a una ____.",
+            "resposta": "ambulancia"
+          },
+          {
+            "frase": "Me ____ la cabeza.",
+            "resposta": "duele"
+          }
+        ],
+        "role_play": {
+          "cenario": "Pedir socorro na rua",
+          "personagens": [
+            "Viajante (aluno)",
+            "Pessoa que ajuda (você)"
+          ],
+          "roteiro": [
+            "Pedir ayuda",
+            "Explicar el problema",
+            "Pedir médico o policía",
+            "Agradecer"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e naturalidade. Reescreva a frase de forma nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir 'necesito ayuda' e 'necesito un médico'",
+          "Guardar o número 112"
+        ],
+        "em_24h": [
+          "Refazer o role-play de emergência",
+          "Ditar as 4 frases"
+        ]
+      }
+    }
+  ]
+}

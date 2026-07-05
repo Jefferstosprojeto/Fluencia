@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR" data-tema="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Espanhol de Sobrevivência — A0 → A1 para a Espanha</title>
+  <meta name="description" content="PWA para aprender o espanhol essencial de viagem: frases-chave, flashcards, ditado, lacunas e simulador de conversa." />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#C60B1E" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0F0500" media="(prefers-color-scheme: dark)" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <!-- Fontes (com fallback de sistema nos tokens para funcionar antes do cache) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#principal">Ir ao conteúdo</a>
+
+  <!-- Wrapper sticky do site — topbar + tabs como irmãos evita conflito de stacking context no mobile -->
+  <div class="siteheader">
+    <header class="topbar" role="banner">
+      <div class="topbar__inner">
+        <a class="home-back" href="index.html" aria-label="Voltar à página inicial">←</a>
+        <a class="brand" href="#/estudar" aria-label="Início — Espanhol de Sobrevivência">
+          <span class="brand__mark" aria-hidden="true">¡ES!</span>
+          <span class="brand__text">
+            <b>Espanhol de Sobrevivência</b>
+            <small>A0 → A1 · viagem na Espanha</small>
+          </span>
+        </a>
+
+        <div class="topbar__tools">
+          <label class="field-inline">
+            <span class="sr-only">Módulo atual</span>
+            <select id="seletor-modulo" class="select" aria-label="Escolher módulo"></select>
+          </label>
+          <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
+            <span class="icon-btn__glyph" aria-hidden="true">◐</span>
+          </button>
+          <button id="btn-config" class="icon-btn" type="button" aria-label="Configurar API Anthropic" title="Configurar API Anthropic">
+            <span class="icon-btn__glyph" aria-hidden="true">⚙</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de progresso por módulos -->
+      <div class="progress" aria-hidden="false">
+        <div class="progress__meta">
+          <span id="progress-label" class="progress__label">Progresso</span>
+          <span id="progress-value" class="progress__value">0%</span>
+        </div>
+        <div class="progress__track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+          <div class="progress__fill" id="progress-fill"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Abas fora do header: evita que position:fixed colida com backdrop-filter/sticky do pai -->
+    <nav class="tabs" aria-label="Seções da lição">
+      <a class="tab" href="#/estudar"   data-rota="estudar"   data-icon="📖" role="tab" aria-selected="true">Estudar</a>
+      <a class="tab" href="#/praticar"  data-rota="praticar"  data-icon="✏️" role="tab" aria-selected="false">Praticar</a>
+      <a class="tab" href="#/fluencia"  data-rota="fluencia"  data-icon="🎤" role="tab" aria-selected="false">Fluência</a>
+      <a class="tab" href="#/simulador" data-rota="simulador" data-icon="💬" role="tab" aria-selected="false">Simulador</a>
+      <a class="tab" href="#/revisao"   data-rota="revisao"   data-icon="🔁" role="tab" aria-selected="false">Revisão</a>
+    </nav>
+  </div>
+
+  <!-- Conteúdo trocado pelo roteador -->
+  <main id="principal" class="page" tabindex="-1">
+    <section id="view" class="view" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>Feito para viajar leve. Funciona offline depois da primeira visita.</p>
+  </footer>
+
+  <!-- Região de anúncios para leitores de tela (feedback de exercícios) -->
+  <p id="live" class="sr-only" aria-live="assertive"></p>
+
+  <!-- Toaster de revisão (4h / 24h) -->
+  <div id="toaster" class="toaster" role="status" aria-live="polite" hidden></div>
+
+  <!-- Modelos de conteúdo reutilizados pelo JS -->
+  <template id="tpl-frase">
+    <article class="frase">
+      <div class="frase__es">
+        <mark class="frase__mark" data-es></mark>
+        <button class="speak" type="button" data-speak aria-label="Ouvir em espanhol">
+          <span aria-hidden="true">🔊</span>
+        </button>
+      </div>
+      <p class="frase__pron" data-pron></p>
+      <p class="frase__pt" data-pt></p>
+      <details class="frase__var">
+        <summary>2 variações naturais</summary>
+        <ul data-var></ul>
+      </details>
+    </article>
+  </template>
+
+  <!-- Dialog de configuração da chave API -->
+  <dialog id="dlg-config" class="config-dlg" aria-labelledby="dlg-config-title">
+    <form method="dialog" class="config-dlg__form">
+      <h2 id="dlg-config-title" class="config-dlg__title">⚙ API Anthropic</h2>
+      <p class="config-dlg__desc">Cole a sua chave para ativar avaliação real no Simulador. Fica guardada só no teu browser — nunca é enviada a terceiros.</p>
+      <label for="inp-key" class="config-dlg__label">Chave API (sk-ant-…)</label>
+      <input id="inp-key" class="input" type="password" placeholder="sk-ant-api03-..." autocomplete="off" />
+      <p id="config-status" class="config-dlg__status" hidden></p>
+      <div class="btn-row">
+        <button class="btn" type="submit">Guardar</button>
+        <button class="btn btn--ghost" type="button" id="btn-config-clear">Remover chave</button>
+        <button class="btn btn--ghost" type="button" id="btn-config-close">Fechar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="prompts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
