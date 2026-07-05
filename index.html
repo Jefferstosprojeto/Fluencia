@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Espanhol de Sobrevivência — A0 → A1 para a Espanha</title>
-  <meta name="description" content="PWA para aprender o espanhol essencial de viagem: frases-chave, flashcards, ditado, lacunas e simulador de conversa." />
+  <title>Fluência — Sobrevive em qualquer língua</title>
+  <meta name="description" content="Aprende espanhol para viagem e negócios em módulos práticos. PWA offline, sem registo." />
+
+  <!-- OG / Social -->
+  <meta property="og:title" content="Fluência — Sobrevive em qualquer língua" />
+  <meta property="og:description" content="Espanhol de sobrevivência para viagem e negócios. Grátis, offline, sem registo." />
+  <meta property="og:type" content="website" />
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
@@ -12,114 +17,252 @@
   <meta name="theme-color" content="#0F0500" media="(prefers-color-scheme: dark)" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 
-  <!-- Fontes (com fallback de sistema nos tokens para funcionar antes do cache) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFBF0; --surface: #FFFFFF; --surface-2: #FFF7E0;
+      --text: #1A0800; --text-muted: #7A5C3A; --border: #EAD9A8;
+      --brand: #C60B1E; --brand-hover: #9A0818;
+      --marker: #FFC400; --marker-soft: #FFF3C4;
+      --success: #166534; --success-bg: #DCFCE7;
+      --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --r-md: 10px; --r-lg: 16px; --r-pill: 999px;
+      --sh-md: 0 4px 14px rgba(198,11,30,.10);
+      --t-base: 220ms; --ease: cubic-bezier(.22,1,.36,1);
+    }
+    [data-tema="dark"] {
+      --bg: #0F0500; --surface: #1A0A00; --surface-2: #2A1500;
+      --text: #F5F0E8; --text-muted: #C8A882; --border: #3D2000;
+      --brand: #FFC400; --brand-hover: #FFD740;
+      --marker: #FFC400; --marker-soft: #3D2A00;
+    }
+
+    body {
+      font-family: var(--font-body); background: var(--bg); color: var(--text);
+      min-height: 100dvh; display: flex; flex-direction: column;
+    }
+
+    /* ---- HEADER ---- */
+    .site-header {
+      display: flex; justify-content: flex-end; padding: 1rem 1.5rem;
+    }
+    .btn-tema {
+      background: none; border: 1px solid var(--border); border-radius: var(--r-pill);
+      color: var(--text-muted); padding: .4rem .9rem; cursor: pointer; font-size: .85rem;
+      transition: border-color var(--t-base) var(--ease);
+    }
+    .btn-tema:hover { border-color: var(--brand); color: var(--brand); }
+
+    /* ---- HERO ---- */
+    .hero {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 2rem 1.5rem 3rem; text-align: center; gap: 2rem;
+    }
+    .logo {
+      width: 4.5rem; height: 4.5rem; border-radius: 1.25rem;
+      background: var(--brand); display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #fff;
+      box-shadow: var(--sh-md);
+    }
+    [data-tema="dark"] .logo { background: var(--marker); color: #1A0800; }
+    .hero__title {
+      font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -.02em;
+    }
+    .hero__title mark {
+      background: var(--marker-soft); color: var(--brand);
+      border-radius: 4px; padding: 0 .15em;
+    }
+    [data-tema="dark"] .hero__title mark { color: var(--marker); }
+    .hero__sub { color: var(--text-muted); font-size: 1.05rem; max-width: 26rem; }
+
+    /* ---- SELETOR DE LÍNGUA ---- */
+    .lang-section { width: 100%; max-width: 36rem; }
+    .lang-section h2 {
+      font-family: var(--font-display); font-size: .8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted);
+      margin-bottom: .75rem; text-align: left;
+    }
+    .lang-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: .75rem;
+    }
+    @media (min-width: 480px) { .lang-grid { grid-template-columns: repeat(4, 1fr); } }
+    .lang-card {
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      padding: .9rem .5rem; border-radius: var(--r-lg); border: 2px solid var(--border);
+      background: var(--surface); cursor: pointer; font-family: var(--font-body);
+      font-size: .9rem; font-weight: 500; color: var(--text-muted);
+      transition: border-color var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
+      position: relative;
+    }
+    .lang-card .flag { font-size: 1.6rem; }
+    .lang-card.is-active { border-color: var(--brand); color: var(--text); background: var(--surface); box-shadow: var(--sh-md); }
+    [data-tema="dark"] .lang-card.is-active { border-color: var(--marker); }
+    .lang-card:disabled { opacity: .45; cursor: not-allowed; }
+    .lang-card .badge {
+      position: absolute; top: .4rem; right: .4rem;
+      font-size: .6rem; font-weight: 600; padding: .1rem .4rem;
+      background: var(--marker-soft); color: var(--brand); border-radius: var(--r-pill);
+    }
+    [data-tema="dark"] .lang-card .badge { color: var(--marker); }
+
+    /* ---- SELETOR DE TRACK ---- */
+    .track-section { width: 100%; max-width: 36rem; }
+    .track-section h2 {
+      font-family: var(--font-display); font-size: .8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted);
+      margin-bottom: .75rem; text-align: left;
+    }
+    .track-tabs { display: flex; gap: .5rem; }
+    .track-btn {
+      flex: 1; padding: .75rem 1rem; border-radius: var(--r-md);
+      border: 2px solid var(--border); background: var(--surface);
+      font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-muted);
+      cursor: pointer; transition: border-color var(--t-base) var(--ease), color var(--t-base) var(--ease);
+    }
+    .track-btn.is-active { border-color: var(--brand); color: var(--brand); }
+    [data-tema="dark"] .track-btn.is-active { border-color: var(--marker); color: var(--marker); }
+
+    /* ---- CTA ---- */
+    .cta-wrap { width: 100%; max-width: 36rem; }
+    .btn-cta {
+      display: block; width: 100%; padding: 1rem; border-radius: var(--r-lg);
+      background: var(--brand); color: #fff; font-family: var(--font-display);
+      font-size: 1.1rem; font-weight: 700; text-decoration: none; text-align: center;
+      transition: background var(--t-base) var(--ease), transform var(--t-base) var(--ease);
+    }
+    .btn-cta:hover { background: var(--brand-hover); transform: translateY(-1px); }
+    [data-tema="dark"] .btn-cta { background: var(--marker); color: #1A0800; }
+    [data-tema="dark"] .btn-cta:hover { background: var(--brand-hover); }
+
+    /* ---- FOOTER ---- */
+    footer {
+      padding: 1.5rem; text-align: center; font-size: .8rem; color: var(--text-muted);
+      border-top: 1px solid var(--border); display: flex; justify-content: center;
+      align-items: center; gap: 1.5rem; flex-wrap: wrap;
+    }
+    footer a { color: inherit; text-decoration: none; }
+    footer a:hover { color: var(--brand); }
+
+    /* ---- AdSense placeholder (substituir pelo snippet real) ---- */
+    .ad-slot {
+      width: 100%; max-width: 36rem; min-height: 60px;
+      border: 1px dashed var(--border); border-radius: var(--r-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: .75rem; background: var(--surface-2);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 1ms !important; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#principal">Ir ao conteúdo</a>
+  <header class="site-header">
+    <button class="btn-tema" id="btn-tema" aria-pressed="false" aria-label="Alternar tema">◐ Tema</button>
+  </header>
 
-  <!-- Wrapper sticky do site — topbar + tabs como irmãos evita conflito de stacking context no mobile -->
-  <div class="siteheader">
-    <header class="topbar" role="banner">
-      <div class="topbar__inner">
-        <a class="brand" href="#/estudar" aria-label="Início — Espanhol de Sobrevivência">
-          <span class="brand__mark" aria-hidden="true">¡ES!</span>
-          <span class="brand__text">
-            <b>Espanhol de Sobrevivência</b>
-            <small>A0 → A1 · viagem na Espanha</small>
-          </span>
-        </a>
+  <main class="hero">
+    <div class="logo" aria-hidden="true">FL</div>
 
-        <div class="topbar__tools">
-          <label class="field-inline">
-            <span class="sr-only">Módulo atual</span>
-            <select id="seletor-modulo" class="select" aria-label="Escolher módulo"></select>
-          </label>
-          <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
-            <span class="icon-btn__glyph" aria-hidden="true">◐</span>
-          </button>
-          <button id="btn-config" class="icon-btn" type="button" aria-label="Configurar API Anthropic" title="Configurar API Anthropic">
-            <span class="icon-btn__glyph" aria-hidden="true">⚙</span>
-          </button>
-        </div>
-      </div>
+    <div>
+      <h1 class="hero__title">Sobrevive em<br><mark>qualquer língua</mark></h1>
+      <p class="hero__sub">Frases essenciais, simulador com IA e revisão espaçada — do zero ao funcional em dias.</p>
+    </div>
 
-      <!-- Barra de progresso por módulos -->
-      <div class="progress" aria-hidden="false">
-        <div class="progress__meta">
-          <span id="progress-label" class="progress__label">Progresso</span>
-          <span id="progress-value" class="progress__value">0%</span>
-        </div>
-        <div class="progress__track" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
-          <div class="progress__fill" id="progress-fill"></div>
-        </div>
-      </div>
-    </header>
+    <!-- AdSense slot topo (substituir pelo código real após aprovação) -->
+    <div class="ad-slot" aria-hidden="true">Anúncio</div>
 
-    <!-- Abas fora do header: evita que position:fixed colida com backdrop-filter/sticky do pai -->
-    <nav class="tabs" aria-label="Seções da lição">
-      <a class="tab" href="#/estudar"   data-rota="estudar"   data-icon="📖" role="tab" aria-selected="true">Estudar</a>
-      <a class="tab" href="#/praticar"  data-rota="praticar"  data-icon="✏️" role="tab" aria-selected="false">Praticar</a>
-      <a class="tab" href="#/fluencia"  data-rota="fluencia"  data-icon="🎤" role="tab" aria-selected="false">Fluência</a>
-      <a class="tab" href="#/simulador" data-rota="simulador" data-icon="💬" role="tab" aria-selected="false">Simulador</a>
-      <a class="tab" href="#/revisao"   data-rota="revisao"   data-icon="🔁" role="tab" aria-selected="false">Revisão</a>
-    </nav>
-  </div>
-
-  <!-- Conteúdo trocado pelo roteador -->
-  <main id="principal" class="page" tabindex="-1">
-    <section id="view" class="view" aria-live="polite"></section>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <p>Feito para viajar leve. Funciona offline depois da primeira visita.</p>
-  </footer>
-
-  <!-- Região de anúncios para leitores de tela (feedback de exercícios) -->
-  <p id="live" class="sr-only" aria-live="assertive"></p>
-
-  <!-- Toaster de revisão (4h / 24h) -->
-  <div id="toaster" class="toaster" role="status" aria-live="polite" hidden></div>
-
-  <!-- Modelos de conteúdo reutilizados pelo JS -->
-  <template id="tpl-frase">
-    <article class="frase">
-      <div class="frase__es">
-        <mark class="frase__mark" data-es></mark>
-        <button class="speak" type="button" data-speak aria-label="Ouvir em espanhol">
-          <span aria-hidden="true">🔊</span>
+    <section class="lang-section" aria-labelledby="lang-title">
+      <h2 id="lang-title">Língua</h2>
+      <div class="lang-grid" role="group" aria-labelledby="lang-title">
+        <button class="lang-card is-active" data-lang="es" aria-pressed="true">
+          <span class="flag" aria-hidden="true">🇪🇸</span>Espanhol
+        </button>
+        <button class="lang-card" data-lang="en" disabled aria-pressed="false" aria-disabled="true">
+          <span class="flag" aria-hidden="true">🇬🇧</span>Inglês
+          <span class="badge" aria-hidden="true">em breve</span>
+        </button>
+        <button class="lang-card" data-lang="de" disabled aria-pressed="false" aria-disabled="true">
+          <span class="flag" aria-hidden="true">🇩🇪</span>Alemão
+          <span class="badge" aria-hidden="true">em breve</span>
+        </button>
+        <button class="lang-card" data-lang="fr" disabled aria-pressed="false" aria-disabled="true">
+          <span class="flag" aria-hidden="true">🇫🇷</span>Francês
+          <span class="badge" aria-hidden="true">em breve</span>
         </button>
       </div>
-      <p class="frase__pron" data-pron></p>
-      <p class="frase__pt" data-pt></p>
-      <details class="frase__var">
-        <summary>2 variações naturais</summary>
-        <ul data-var></ul>
-      </details>
-    </article>
-  </template>
+    </section>
 
-  <!-- Dialog de configuração da chave API -->
-  <dialog id="dlg-config" class="config-dlg" aria-labelledby="dlg-config-title">
-    <form method="dialog" class="config-dlg__form">
-      <h2 id="dlg-config-title" class="config-dlg__title">⚙ API Anthropic</h2>
-      <p class="config-dlg__desc">Cole a sua chave para ativar avaliação real no Simulador. Fica guardada só no teu browser — nunca é enviada a terceiros.</p>
-      <label for="inp-key" class="config-dlg__label">Chave API (sk-ant-…)</label>
-      <input id="inp-key" class="input" type="password" placeholder="sk-ant-api03-..." autocomplete="off" />
-      <p id="config-status" class="config-dlg__status" hidden></p>
-      <div class="btn-row">
-        <button class="btn" type="submit">Guardar</button>
-        <button class="btn btn--ghost" type="button" id="btn-config-clear">Remover chave</button>
-        <button class="btn btn--ghost" type="button" id="btn-config-close">Fechar</button>
+    <section class="track-section" aria-labelledby="track-title">
+      <h2 id="track-title">Área</h2>
+      <div class="track-tabs" role="group" aria-labelledby="track-title">
+        <button class="track-btn is-active" data-track="viagem" aria-pressed="true">✈️ Viagem</button>
+        <button class="track-btn" data-track="negocios" aria-pressed="false">💼 Negócios</button>
       </div>
-    </form>
-  </dialog>
+    </section>
 
-  <script src="prompts.js"></script>
-  <script src="app.js"></script>
+    <div class="cta-wrap">
+      <a id="btn-start" class="btn-cta" href="app.html?lang=es&track=viagem">Começar agora →</a>
+    </div>
+  </main>
+
+  <footer>
+    <span>© 2026 Fluência</span>
+    <a href="privacy.html">Política de privacidade</a>
+    <a href="app.html?lang=es&track=viagem">Espanhol Viagem</a>
+    <a href="app.html?lang=es&track=negocios">Espanhol Negócios</a>
+  </footer>
+
+  <script>
+    // Tema
+    const tema = localStorage.getItem('fl:tema');
+    const escuro = tema ? tema === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    if (escuro) document.documentElement.dataset.tema = 'dark';
+
+    document.getElementById('btn-tema').addEventListener('click', () => {
+      const dark = document.documentElement.dataset.tema !== 'dark';
+      document.documentElement.dataset.tema = dark ? 'dark' : 'light';
+      localStorage.setItem('fl:tema', dark ? 'dark' : 'light');
+    });
+
+    // Seletor de língua
+    let lang = 'es', track = 'viagem';
+
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+      if (btn.disabled) return;
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-lang]').forEach(b => {
+          b.classList.remove('is-active'); b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active'); btn.setAttribute('aria-pressed', 'true');
+        lang = btn.dataset.lang;
+        actualizarCTA();
+      });
+    });
+
+    // Seletor de track
+    document.querySelectorAll('[data-track]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-track]').forEach(b => {
+          b.classList.remove('is-active'); b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active'); btn.setAttribute('aria-pressed', 'true');
+        track = btn.dataset.track;
+        actualizarCTA();
+      });
+    });
+
+    function actualizarCTA() {
+      const a = document.getElementById('btn-start');
+      a.href = `app.html?lang=${lang}&track=${track}`;
+    }
+  </script>
 </body>
 </html>
