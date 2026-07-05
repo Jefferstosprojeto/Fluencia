@@ -76,38 +76,56 @@ const estado = {
 let CONTEUDO = { modulos: [] };
 const modulo = () => CONTEUDO.modulos[estado.moduloAtual];
 
-/* ---------- 3) motor (Anthropic API direta ou avaliador local) ---------- */
+/* ---------- 3) motor — fallback em 3 níveis ----------------------------- */
+/* 1) Supabase proxy (padrão, sem chave visível ao utilizador)
+   2) Chave Anthropic do utilizador em localStorage
+   3) Avaliador local heurístico (offline, nunca quebra a lição)            */
 const Motor = {
+  proxyUrl: 'SUPABASE_PROXY_URL', // substituir após: supabase functions deploy ai-proxy
   modelos: { opus: 'claude-opus-4-8', sonnet: 'claude-sonnet-5', fable: 'claude-fable-5' },
 
   getKey() { return localStorage.getItem('es:api-key') || ''; },
 
   async avaliarTurno({ cenario, roteiroPasso, falaAluno }) {
-    const key = this.getKey();
-    if (!key) return avaliarLocal({ roteiroPasso, falaAluno });
-    try {
-      const r = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          'x-api-key': key,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true'
-        },
-        body: JSON.stringify({
-          model: this.modelos.sonnet,
-          max_tokens: 300,
-          system: PROMPTS.simulador(cenario),
-          messages: [{ role: 'user', content: JSON.stringify({ roteiroPasso, falaAluno }) }]
-        })
-      });
-      if (!r.ok) throw new Error(`API ${r.status}`);
-      const j = await r.json();
-      const texto = (j.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
-      return JSON.parse(texto);
-    } catch (e) {
-      return avaliarLocal({ roteiroPasso, falaAluno, aviso: 'Motor offline — avaliação local.' });
+    // Nível 1: proxy Supabase
+    if (this.proxyUrl && !this.proxyUrl.startsWith('SUPABASE')) {
+      try {
+        const r = await fetch(this.proxyUrl, {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ falaAluno, roteiroPasso, cenario, lang: 'es' })
+        });
+        if (r.ok) return await r.json();
+      } catch (_) { /* continua para nível 2 */ }
     }
+    // Nível 2: chave do utilizador em localStorage
+    const key = this.getKey();
+    if (key) {
+      try {
+        const r = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            'x-api-key': key,
+            'anthropic-version': '2023-06-01',
+            'anthropic-dangerous-direct-browser-access': 'true'
+          },
+          body: JSON.stringify({
+            model: this.modelos.sonnet,
+            max_tokens: 300,
+            system: PROMPTS.simulador(cenario),
+            messages: [{ role: 'user', content: JSON.stringify({ roteiroPasso, falaAluno }) }]
+          })
+        });
+        if (r.ok) {
+          const j = await r.json();
+          const texto = (j.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+          return JSON.parse(texto);
+        }
+      } catch (_) { /* continua para nível 3 */ }
+    }
+    // Nível 3: avaliador local
+    return avaliarLocal({ roteiroPasso, falaAluno });
   }
 };
 
@@ -626,10 +644,14 @@ function initConfig() {
   const btn  = $('#btn-config');
 
   const atualizarBtn = () => {
-    const ativa = !!Motor.getKey();
-    btn.title = ativa ? '🟢 API ativa — clique para configurar' : 'Configurar API Anthropic';
-    btn.querySelector('.icon-btn__glyph').textContent = ativa ? '🟢' : '⚙';
-    btn.setAttribute('aria-label', ativa ? 'API Anthropic ativa — configurar' : 'Configurar API Anthropic');
+    const proxyActivo = !!Motor.proxyUrl && !Motor.proxyUrl.startsWith('SUPABASE');
+    const temChave = !!Motor.getKey();
+    btn.title = proxyActivo
+      ? '🟢 IA activa via Fluência'
+      : temChave ? '🔑 IA via chave pessoal — configurar'
+      : 'Configurar chave API pessoal';
+    btn.querySelector('.icon-btn__glyph').textContent = proxyActivo ? '🟢' : temChave ? '🔑' : '⚙';
+    btn.setAttribute('aria-label', btn.title);
   };
 
   btn.addEventListener('click', () => {
