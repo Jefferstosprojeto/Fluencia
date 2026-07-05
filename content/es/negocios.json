@@ -1,0 +1,944 @@
+{
+  "meta": {
+    "titulo": "Espanhol de Negócios",
+    "nivel": "B1 funcional (contexto corporativo)",
+    "pronuncia_legenda": "Espanhol neutro (Espanha + América Latina). VOGAL MAIÚSCULA = sílaba tônica. 'th' = z/c(e,i) como no inglês 'think'. 'rr' = r vibrante forte. 'y' = ll/y. Usar 'usted' em role-play de negócios.",
+    "ordem": [
+      "presentaciones",
+      "reuniones",
+      "negociacion",
+      "comunicacion-escrita",
+      "telefono",
+      "almuerzo-negocios",
+      "viaje-corporativo"
+    ]
+  },
+  "modulos": [
+    {
+      "id": "presentaciones",
+      "modulo": "Apresentações Profissionais",
+      "objetivo": "Apresentar-se, descrever empresa e cargo, trocar cartões e propor reunião numa feira de negócios.",
+      "frases_chave": [
+        {
+          "es": "Buenos días, me llamo Santos y represento a la empresa DataSync.",
+          "pt": "Bom dia, chamo-me Santos e represento a empresa DataSync.",
+          "pronuncia": "BUÊ-nos DÍ-as, me YÁ-mo SÂN-tos i rre-pre-SÊN-to a la em-PRÊ-sa",
+          "variacoes": [
+            "Permítame presentarme: soy Santos, director comercial de DataSync.",
+            "Mi nombre es Santos, de DataSync — encantado de conocerle."
+          ]
+        },
+        {
+          "es": "Mucho gusto, le entrego mi tarjeta de visita.",
+          "pt": "Muito prazer, entrego-lhe o meu cartão de visita.",
+          "pronuncia": "MÚ-tcho GÚS-to, le en-TRÊ-go mi tar-RRÊ-ta de bi-SÍ-ta",
+          "variacoes": [
+            "Aquí tiene mi tarjeta — y con mucho gusto recibo la suya.",
+            "Tenga mi tarjeta de contacto, por favor."
+          ]
+        },
+        {
+          "es": "¿A qué se dedica su empresa?",
+          "pt": "A que se dedica a sua empresa?",
+          "pronuncia": "a ke se de-DÍ-ka su em-PRÊ-sa",
+          "variacoes": [
+            "¿En qué sector opera su compañía?",
+            "¿Cuál es el enfoque principal de su organización?"
+          ]
+        },
+        {
+          "es": "Nos especializamos en soluciones de análisis de datos para el sector financiero.",
+          "pt": "Especializamo-nos em soluções de análise de dados para o setor financeiro.",
+          "pronuncia": "nos es-pe-thia-li-SÁ-mos en so-lu-THIÔ-nes de a-NÁ-li-sis de DÁ-tos",
+          "variacoes": [
+            "Ofrecemos consultoría en transformación digital para grandes empresas.",
+            "Trabajamos con clientes del sector financiero y tecnológico."
+          ]
+        },
+        {
+          "es": "¿Podría concertar una reunión para la próxima semana?",
+          "pt": "Poderia agendar uma reunião para a próxima semana?",
+          "pronuncia": "po-DRÍ-a kon-ther-TÁR U-na rre-u-NIÔN PÁ-ra la PRÔK-si-ma se-MÁ-na",
+          "variacoes": [
+            "¿Cuándo le viene bien para que nos reunamos?",
+            "¿Tendría disponibilidad la semana que viene?"
+          ]
+        },
+        {
+          "es": "Ha sido un placer conocerle; espero que podamos colaborar pronto.",
+          "pt": "Foi um prazer conhecê-lo/la; espero que possamos colaborar em breve.",
+          "pronuncia": "a SÍ-do un pla-THÊR ko-no-THÊR-le; es-PÊ-ro ke po-DÁ-mos ko-la-bo-RÁR PRÔN-to",
+          "variacoes": [
+            "Encantado de haberle conocido — le escribiré esta semana.",
+            "Fue un gusto; quedo a su disposición."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "tarjeta de visita",
+        "empresa",
+        "cargo",
+        "sector",
+        "reunión",
+        "colaborar",
+        "presentarse",
+        "delegación",
+        "socio",
+        "contacto"
+      ],
+      "padrao_gramatical": {
+        "tema": "Condicional de cortesia: '¿Podría + infinitivo?' — forma elegante para propor ou pedir algo a um interlocutor de negócios",
+        "exemplos": [
+          "¿Podría concertar una reunión?",
+          "¿Podría enviarme su propuesta?",
+          "¿Podría presentarme a su equipo directivo?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "cartão de visita", "verso": "tarjeta de visita" },
+          { "frente": "cargo / função", "verso": "cargo / puesto" },
+          { "frente": "prazer em conhecê-lo", "verso": "mucho gusto / encantado" },
+          { "frente": "agendar reunião", "verso": "concertar una reunión" },
+          { "frente": "representante", "verso": "representante" },
+          { "frente": "sócio comercial", "verso": "socio comercial" },
+          { "frente": "setor financeiro", "verso": "sector financiero" },
+          { "frente": "diretor comercial", "verso": "director comercial" },
+          { "frente": "colaboração", "verso": "colaboración" },
+          { "frente": "empresa / companhia", "verso": "empresa / compañía" }
+        ],
+        "ditado": [
+          "Buenos días, me llamo Santos de DataSync.",
+          "¿A qué se dedica su empresa?",
+          "Le entrego mi tarjeta de visita.",
+          "¿Podría concertar una reunión la próxima semana?"
+        ],
+        "lacunas": [
+          { "frase": "Permítame ____, soy Santos de DataSync.", "resposta": "presentarme" },
+          { "frase": "Le entrego mi ____ de visita.", "resposta": "tarjeta" },
+          { "frase": "¿Podría ____ una reunión para la próxima semana?", "resposta": "concertar" },
+          { "frase": "Ha sido un ____ conocerle.", "resposta": "placer" }
+        ],
+        "role_play": {
+          "cenario": "Feira de negócios internacional — dois profissionais encontram-se no stand pela primeira vez e têm 5 minutos",
+          "personagens": [
+            "Profissional visitante (aluno)",
+            "Expositor no stand (você)"
+          ],
+          "roteiro": [
+            "Cumprimentar e apresentar nome, empresa e cargo com clareza",
+            "Trocar cartões e perguntar sobre a empresa do interlocutor",
+            "Descrever os próprios serviços e identificar possíveis sinergias",
+            "Propor reunião de seguimento e despedir-se com comprometimento concreto"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e formalidade. Reescreva a frase de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Repetir a fórmula completa: 'Buenos días, me llamo... y represento a...'",
+          "Praticar troca de cartão: 'Mucho gusto, le entrego mi tarjeta'"
+        ],
+        "em_24h": [
+          "Refazer o role-play da feira sem notas durante 3 minutos",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "reuniones",
+      "modulo": "Reuniões e Conferências",
+      "objetivo": "Abrir e conduzir reuniões, concordar, discordar com elegância, pedir esclarecimento e agendar seguimento.",
+      "frases_chave": [
+        {
+          "es": "Si les parece bien, vamos a dar inicio a la reunión.",
+          "pt": "Se lhes parece bem, vamos dar início à reunião.",
+          "pronuncia": "si les pa-RÊ-the biên, BÁ-mos a dar i-NÍ-thio a la rre-u-NIÔN",
+          "variacoes": [
+            "¿Podemos empezar? Creo que ya estamos todos.",
+            "Propongo que comencemos — tenemos la agenda lista."
+          ]
+        },
+        {
+          "es": "Estoy completamente de acuerdo con su propuesta.",
+          "pt": "Estou completamente de acordo com a sua proposta.",
+          "pronuncia": "es-TÔI kom-ple-ta-MÊN-te de a-KUÊR-do kon su pro-PUÊS-ta",
+          "variacoes": [
+            "Comparto su punto de vista; creo que es el camino correcto.",
+            "Me parece una propuesta muy sólida — la apoyo."
+          ]
+        },
+        {
+          "es": "Con todo el respeto, quisiera plantear una perspectiva diferente.",
+          "pt": "Com todo o respeito, gostaria de apresentar uma perspetiva diferente.",
+          "pronuncia": "kon TÔ-do el rres-PÊ-to, ki-SIÊR-a plan-te-ÁR U-na pers-PÊK-ti-ba di-fe-RÊN-te",
+          "variacoes": [
+            "Entiendo su punto; sin embargo, veo las cosas de otro modo.",
+            "Me gustaría añadir algo antes de cerrar este punto."
+          ]
+        },
+        {
+          "es": "¿Podría aclarar ese punto con más detalle, por favor?",
+          "pt": "Poderia esclarecer esse ponto com mais detalhe, por favor?",
+          "pronuncia": "po-DRÍ-a a-kla-RÁR ê-se PÚN-to kon mas de-TÁ-ye, por fa-BÔR",
+          "variacoes": [
+            "¿A qué se refiere exactamente con eso?",
+            "¿Podría elaborar un poco más ese argumento?"
+          ]
+        },
+        {
+          "es": "Propongo que lo dejemos para la próxima reunión y sigamos con el orden del día.",
+          "pt": "Proponho que deixemos isso para a próxima reunião e continuemos com a ordem do dia.",
+          "pronuncia": "pro-PÔN-go ke lo de-RRÊ-mos PÁ-ra la PRÔK-si-ma rre-u-NIÔN",
+          "variacoes": [
+            "Quisiera aplazar este punto — hay temas más urgentes.",
+            "Sugiero que lo tratemos en la siguiente sesión."
+          ]
+        },
+        {
+          "es": "¿Podemos fijar la próxima reunión para el jueves a las diez?",
+          "pt": "Podemos marcar a próxima reunião para quinta-feira às dez?",
+          "pronuncia": "po-DÊ-mos fi-RRÂR la PRÔK-si-ma rre-u-NIÔN PÁ-ra el RRUÊ-bes a las diêth",
+          "variacoes": [
+            "¿Cuándo les viene bien para vernos de nuevo?",
+            "¿Quedamos para el jueves por la mañana?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "orden del día",
+        "acta",
+        "acuerdo",
+        "propuesta",
+        "aplazar",
+        "turno de palabra",
+        "convocatoria",
+        "conclusión",
+        "seguimiento",
+        "moderador"
+      ],
+      "padrao_gramatical": {
+        "tema": "'Quisiera + infinitivo' — condicional de cortesia para propor sem impor; mais formal do que 'quiero'",
+        "exemplos": [
+          "Quisiera plantear una duda.",
+          "Quisiera aplazar este punto para la próxima sesión.",
+          "Quisiera retomar el tema anterior antes de cerrar."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "ordem do dia", "verso": "orden del día" },
+          { "frente": "ata de reunião", "verso": "acta de reunión" },
+          { "frente": "adiar", "verso": "aplazar" },
+          { "frente": "concordar", "verso": "estar de acuerdo" },
+          { "frente": "discordar", "verso": "no estar de acuerdo" },
+          { "frente": "turno de fala", "verso": "turno de palabra" },
+          { "frente": "seguimento", "verso": "seguimiento" },
+          { "frente": "convocatória", "verso": "convocatoria" },
+          { "frente": "conclusão", "verso": "conclusión" },
+          { "frente": "dar início à reunião", "verso": "dar inicio a la reunión" }
+        ],
+        "ditado": [
+          "¿Podemos empezar la reunión? Ya estamos todos.",
+          "Estoy de acuerdo con su propuesta.",
+          "Quisiera plantear una perspectiva diferente.",
+          "¿Podemos fijar la próxima reunión para el jueves?"
+        ],
+        "lacunas": [
+          { "frase": "¿Podemos ____? Ya estamos todos.", "resposta": "empezar" },
+          { "frase": "Estoy de ____ con su propuesta.", "resposta": "acuerdo" },
+          { "frase": "¿Podría ____ ese punto, por favor?", "resposta": "aclarar" },
+          { "frase": "Quisiera ____ este punto para la próxima sesión.", "resposta": "aplazar" }
+        ],
+        "role_play": {
+          "cenario": "Reunião de equipa multidisciplinar — decisão sobre orçamento de projeto com prazo apertado e posições divergentes",
+          "personagens": [
+            "Gestor de projeto (aluno)",
+            "Diretor financeiro — cético quanto ao orçamento (você)"
+          ],
+          "roteiro": [
+            "Abrir a reunião, apresentar a ordem do dia e dar contexto urgente",
+            "Apresentar a proposta orçamental e justificar cada linha de custo",
+            "Lidar com objeção do diretor financeiro com cortesia e contra-argumento sólido",
+            "Fechar com acordo parcial ou compromisso de revisão e marcar próxima reunião"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e formalidade. Reescreva a frase de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Praticar 'quisiera plantear' com 3 contextos distintos",
+          "Rever a fórmula de discordância educada: 'con todo el respeto...'"
+        ],
+        "em_24h": [
+          "Refazer o role-play da reunião de orçamento sem apoio",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "negociacion",
+      "modulo": "Negociação e Propostas",
+      "objetivo": "Apresentar propostas de preço, negociar condições, responder a contrapropostas e fechar o acordo com firmeza e elegância.",
+      "frases_chave": [
+        {
+          "es": "Nuestra propuesta inicial es de cincuenta mil euros anuales.",
+          "pt": "A nossa proposta inicial é de cinquenta mil euros anuais.",
+          "pronuncia": "NUÊS-tra pro-PUÊS-ta i-ni-THIÂL es de THÍN-kuên-ta mil ÊU-ros a-NUÁ-les",
+          "variacoes": [
+            "Les ofrecemos un precio base de cincuenta mil euros al año.",
+            "El presupuesto que presentamos asciende a cincuenta mil euros."
+          ]
+        },
+        {
+          "es": "Quisiera que revisáramos las condiciones de pago.",
+          "pt": "Gostaria que revisássemos as condições de pagamento.",
+          "pronuncia": "ki-SIÊR-a ke rre-bi-SÁ-ra-mos las kon-di-THIÔ-nes de PÁ-go",
+          "variacoes": [
+            "¿Sería posible ajustar los plazos de pago?",
+            "Me gustaría hablar sobre las condiciones financieras del contrato."
+          ]
+        },
+        {
+          "es": "Ese precio está fuera de nuestro presupuesto — no podemos ir más allá.",
+          "pt": "Esse preço está fora do nosso orçamento — não podemos ir além disso.",
+          "pronuncia": "ê-se PRÊ-thio es-TÁ FUÊ-ra de NUÊS-tro pre-su-PUÊS-to — no po-DÊ-mos ir mas a-YÁ",
+          "variacoes": [
+            "Ese es nuestro límite presupuestario — no hay margen para bajar más.",
+            "Lamentablemente esa cifra no encaja con nuestra planificación."
+          ]
+        },
+        {
+          "es": "¿Qué nos ofrecen a cambio si ajustamos el precio?",
+          "pt": "O que nos oferecem em troca se ajustarmos o preço?",
+          "pronuncia": "ke nos o-FRÊ-then a KÂM-bio si a-RRUS-TÁ-mos el PRÊ-thio",
+          "variacoes": [
+            "¿Cuál sería la contrapartida por esta concesión?",
+            "Si bajamos el precio, ¿qué garantías nos ofrecen?"
+          ]
+        },
+        {
+          "es": "Podríamos aceptar ese precio si el contrato es por dos años.",
+          "pt": "Poderíamos aceitar esse preço se o contrato for por dois anos.",
+          "pronuncia": "po-DRÍ-a-mos ak-thep-TÁR ê-se PRÊ-thio si el kon-TRÁ-to es por dos Á-nyos",
+          "variacoes": [
+            "Si nos aseguran dos años, podemos ajustar nuestra tarifa.",
+            "Aceptaríamos con la condición de un contrato bienal garantizado."
+          ]
+        },
+        {
+          "es": "Tenemos trato — formalizamos el acuerdo por escrito esta semana.",
+          "pt": "Temos acordo — formalizamos o acordo por escrito esta semana.",
+          "pronuncia": "te-NÊ-mos TRÁ-to — for-ma-li-SÁ-mos el a-KUÊR-do por es-KRÍ-to ÊS-ta se-MÁ-na",
+          "variacoes": [
+            "¡Trato hecho! Le enviamos el borrador del contrato hoy.",
+            "Llegamos a un entendimiento — quedamos en firmar antes del viernes."
+          ]
+        },
+        {
+          "es": "Necesitamos consultar esto con nuestra dirección antes de comprometernos.",
+          "pt": "Precisamos consultar isto com a nossa direção antes de nos comprometermos.",
+          "pronuncia": "ne-the-si-TÁ-mos kon-sul-TÁR ÊS-to kon NUÊS-tra di-rek-THIÔN ÂN-tes de kom-pro-me-TÊR-nos",
+          "variacoes": [
+            "Déjenos una semana para validar esto internamente.",
+            "Necesitamos luz verde de nuestra junta directiva antes de firmar."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "contrato",
+        "precio",
+        "plazo",
+        "condiciones",
+        "descuento",
+        "margen",
+        "contraoferta",
+        "firma",
+        "acuerdo",
+        "presupuesto"
+      ],
+      "padrao_gramatical": {
+        "tema": "'Podríamos + infinitivo si...' — condicional para propor concessões com elegância na negociação",
+        "exemplos": [
+          "Podríamos aceptar si el plazo es menor.",
+          "Podríamos bajar el precio si ampliamos el contrato.",
+          "¿Sería posible incluir el soporte técnico en el precio?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "contrato", "verso": "contrato" },
+          { "frente": "orçamento / proposta", "verso": "presupuesto / propuesta" },
+          { "frente": "condições de pagamento", "verso": "condiciones de pago" },
+          { "frente": "desconto", "verso": "descuento" },
+          { "frente": "contraoferta", "verso": "contraoferta" },
+          { "frente": "temos acordo!", "verso": "¡tenemos trato!" },
+          { "frente": "prazo de entrega", "verso": "plazo de entrega" },
+          { "frente": "margem de lucro", "verso": "margen de beneficio" },
+          { "frente": "assinar o contrato", "verso": "firmar el contrato" },
+          { "frente": "cláusula", "verso": "cláusula" }
+        ],
+        "ditado": [
+          "Nuestra propuesta inicial es de cincuenta mil euros.",
+          "No podemos ir más allá de ese precio.",
+          "¿Qué nos ofrecen a cambio?",
+          "Tenemos trato — firmamos esta semana."
+        ],
+        "lacunas": [
+          { "frase": "Quisiera que revisáramos las ____ de pago.", "resposta": "condiciones" },
+          { "frase": "No podemos ir más ____ de ese precio.", "resposta": "allá" },
+          { "frase": "Podríamos ____ si el contrato es por dos años.", "resposta": "aceptar" },
+          { "frase": "Necesitamos ____ esto con nuestra dirección.", "resposta": "consultar" }
+        ],
+        "role_play": {
+          "cenario": "Negociação de contrato de serviços de TI — comprador exige 20% de desconto, fornecedor tem margem máxima de 10%",
+          "personagens": [
+            "Vendedor / fornecedor (aluno)",
+            "Diretor de compras — pressiona por desconto (você)"
+          ],
+          "roteiro": [
+            "Apresentar a proposta de preço com justificativa de valor e diferenciação",
+            "Responder à exigência de desconto com uma contraproposta condicionada",
+            "Negociar cláusulas contratuais (prazo, suporte, SLA) como moeda de troca",
+            "Fechar o acordo ou sair com dignidade — 'precisamos consultar a direção'"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e formalidade. Reescreva a frase de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Praticar 'podríamos aceptar si...' com 3 condições diferentes",
+          "Memorizar o fecho: 'Tenemos trato — firmamos esta semana'"
+        ],
+        "em_24h": [
+          "Refazer o role-play de negociação completo sem apoio",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "comunicacion-escrita",
+      "modulo": "Comunicação Escrita",
+      "objetivo": "Redigir e ditar emails formais e mensagens profissionais com estrutura correcta, saudações adequadas e fecho cortês.",
+      "frases_chave": [
+        {
+          "es": "En referencia a su correo del martes, quisiera confirmar los detalles de la reunión.",
+          "pt": "Em referência ao seu email de terça-feira, gostaria de confirmar os detalhes da reunião.",
+          "pronuncia": "en rre-fe-RÊN-thia a su ko-RRÊ-o del MÁR-tes, ki-SIÊR-a kon-fir-MÁR",
+          "variacoes": [
+            "Con respecto a su mensaje anterior, adjunto la información solicitada.",
+            "En relación con lo tratado anteriormente, le envío el informe."
+          ]
+        },
+        {
+          "es": "Le escribo para confirmar nuestra reunión del jueves a las diez.",
+          "pt": "Escrevo-lhe para confirmar a nossa reunião de quinta-feira às dez.",
+          "pronuncia": "le es-KRÍ-bo PÁ-ra kon-fir-MÁR NUÊS-tra rre-u-NIÔN del RRUÊ-bes a las diêth",
+          "variacoes": [
+            "El motivo de este correo es confirmar la cita del jueves.",
+            "Me pongo en contacto para ratificar la reunión de mañana."
+          ]
+        },
+        {
+          "es": "Le envío adjunto el informe solicitado en el formato acordado.",
+          "pt": "Envio-lhe em anexo o relatório solicitado no formato acordado.",
+          "pronuncia": "le en-BÍ-o ad-RRÚN-to el in-FÔR-me so-li-thi-TÁ-do",
+          "variacoes": [
+            "Adjunto encontrará el documento que me solicitó.",
+            "En el archivo adjunto incluyo el análisis requerido."
+          ]
+        },
+        {
+          "es": "Quedo a su entera disposición para cualquier consulta adicional.",
+          "pt": "Fico à sua inteira disposição para qualquer dúvida adicional.",
+          "pronuncia": "KÊ-do a su en-TÊ-ra dis-po-si-THIÔN PÁ-ra kual-KIÊR kon-SÚL-ta",
+          "variacoes": [
+            "No dude en contactarme si necesita más información.",
+            "Estoy disponible para aclarar cualquier punto que precise."
+          ]
+        },
+        {
+          "es": "Disculpe las molestias ocasionadas y gracias por su comprensión.",
+          "pt": "Peço desculpa pelos inconvenientes causados e obrigado pela sua compreensão.",
+          "pronuncia": "dis-KÚL-pe las mo-LÊS-tias o-ka-sio-NÁ-das i GRÁ-thias por su kom-pren-SIÔN",
+          "variacoes": [
+            "Sentimos los inconvenientes y le agradecemos su paciencia.",
+            "Le pedimos disculpas por el retraso — ya está completamente resuelto."
+          ]
+        },
+        {
+          "es": "Quedamos a la espera de su confirmación antes del viernes.",
+          "pt": "Aguardamos a sua confirmação antes de sexta-feira.",
+          "pronuncia": "ke-DÁ-mos a la es-PÊ-ra de su kon-fir-ma-THIÔN ÂN-tes del biÊR-nes",
+          "variacoes": [
+            "Esperamos su respuesta a la mayor brevedad posible.",
+            "En espera de noticias suyas antes del viernes."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "correo electrónico",
+        "adjunto",
+        "asunto",
+        "destinatario",
+        "remitente",
+        "reenviar",
+        "borrador",
+        "acusar recibo",
+        "hilo",
+        "firma digital"
+      ],
+      "padrao_gramatical": {
+        "tema": "Subjuntivo em fórmulas formais de email: 'No dude en...' / 'Le ruego que...' — tom institucional",
+        "exemplos": [
+          "No dude en contactarme si lo necesita.",
+          "Espero que haya recibido mi mensaje anterior.",
+          "Le ruego que confirme su asistencia antes del miércoles."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "em anexo", "verso": "adjunto" },
+          { "frente": "assunto do email", "verso": "asunto del correo" },
+          { "frente": "rascunho", "verso": "borrador" },
+          { "frente": "confirmar receção", "verso": "acusar recibo" },
+          { "frente": "encaminhar email", "verso": "reenviar el correo" },
+          { "frente": "aguardamos resposta", "verso": "quedamos a la espera" },
+          { "frente": "à sua disposição", "verso": "a su disposición" },
+          { "frente": "destinatário", "verso": "destinatario" },
+          { "frente": "remetente", "verso": "remitente" },
+          { "frente": "fio / thread", "verso": "hilo del correo" }
+        ],
+        "ditado": [
+          "Le escribo para confirmar nuestra reunión del jueves.",
+          "Le envío adjunto el informe solicitado.",
+          "Quedo a su disposición para cualquier consulta.",
+          "Quedamos a la espera de su respuesta antes del viernes."
+        ],
+        "lacunas": [
+          { "frase": "Le envío ____ el informe solicitado.", "resposta": "adjunto" },
+          { "frase": "En ____ a su correo del martes...", "resposta": "referencia" },
+          { "frase": "Quedo a su ____ para cualquier consulta.", "resposta": "disposición" },
+          { "frase": "No dude en ____ si necesita más información.", "resposta": "contactarme" }
+        ],
+        "role_play": {
+          "cenario": "Ditar um email profissional — resposta a cliente com queixa sobre atraso na entrega de relatório",
+          "personagens": [
+            "Gestor de conta (aluno — dita o email)",
+            "Assistente / revisor de estilo (você — regista e sugere melhorias)"
+          ],
+          "roteiro": [
+            "Abrir o email com saudação formal e referência ao email do cliente",
+            "Reconhecer o problema e apresentar a causa de forma profissional sem desculpas excessivas",
+            "Propor solução concreta com prazo definitivo de resolução",
+            "Fechar com pedido de desculpa formal, fórmula de cortesia e assinatura completa"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre tom e formalidade. Reescreva o trecho de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Memorizar a abertura: 'En referencia a su correo del..., quisiera...'",
+          "Praticar o fecho duplo: 'Quedo a su disposición / Quedamos a la espera'"
+        ],
+        "em_24h": [
+          "Ditar um email completo de 5 linhas sem apoio visual",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "telefono",
+      "modulo": "Telefone e Videochamada",
+      "objetivo": "Fazer e atender chamadas profissionais, transferir, deixar recado e gerir problemas técnicos com fluência.",
+      "frases_chave": [
+        {
+          "es": "Buenos días, le llama Santos de DataSync. ¿Podría hablar con el señor García?",
+          "pt": "Bom dia, liga Santos da DataSync. Poderia falar com o senhor García?",
+          "pronuncia": "BUÊ-nos DÍ-as, le YÁ-ma SÂN-tos de da-ta-SINK. po-DRÍ-a a-BLÂR kon el se-NYÔR gar-THÍ-a",
+          "variacoes": [
+            "Hola, llamo en nombre de DataSync — ¿está disponible el señor García?",
+            "Buenos días, ¿podría ponerme con el departamento de compras?"
+          ]
+        },
+        {
+          "es": "Un momento, no cuelgue — le paso con el señor García.",
+          "pt": "Um momento, não desligue — transfiro-o para o senhor García.",
+          "pronuncia": "un mo-MÊN-to, no KUÊL-ge — le PÁ-so kon el se-NYÔR gar-THÍ-a",
+          "variacoes": [
+            "Ahora mismo le transfiero — espere un instante, por favor.",
+            "Le pongo en espera mientras le localizo."
+          ]
+        },
+        {
+          "es": "El señor García no está disponible en este momento. ¿Quisiera dejarle un mensaje?",
+          "pt": "O senhor García não está disponível neste momento. Gostaria de deixar uma mensagem?",
+          "pronuncia": "el se-NYÔR gar-THÍ-a no es-TÁ dis-po-NÍ-ble en ÊS-te mo-MÊN-to. ki-SIÊR-a de-RRÂR-le un men-SÁ-rre",
+          "variacoes": [
+            "En este momento está en reunión. ¿Le digo algo?",
+            "No le puedo localizar ahora — ¿quiere que le transmita un mensaje?"
+          ]
+        },
+        {
+          "es": "Por favor, dígale que le llamó Santos y que le devuelva la llamada.",
+          "pt": "Por favor, diga-lhe que ligou Santos e que lhe devolva a chamada.",
+          "pronuncia": "por fa-BÔR, DÍ-ga-le ke le ya-MÔ SÂN-tos i ke le de-BUÊL-ba la ya-MÁ-da",
+          "variacoes": [
+            "Que me llame cuando pueda — es sobre la reunión de mañana.",
+            "Si es posible, que me llame antes de las cinco de la tarde."
+          ]
+        },
+        {
+          "es": "Disculpe, la conexión no es buena — ¿me oye bien?",
+          "pt": "Desculpe, a ligação não está boa — está a ouvir-me bem?",
+          "pronuncia": "dis-KÚL-pe, la ko-nek-THIÔN no es BUÊ-na — me Ô-ye biên",
+          "variacoes": [
+            "Creo que se corta la llamada — ¿me escucha?",
+            "Hay mucho ruido en la línea; ¿podría repetir lo último?"
+          ]
+        },
+        {
+          "es": "¿Podría repetir más despacio, por favor? No le he entendido bien.",
+          "pt": "Poderia repetir mais devagar, por favor? Não percebi bem.",
+          "pronuncia": "po-DRÍ-a rre-pe-TÍR mas des-PÁ-thio, por fa-BÔR? no le e en-ten-DÍ-do biên",
+          "variacoes": [
+            "¿Podría deletrear su apellido, por favor?",
+            "Le escucho con dificultad — ¿puede hablar un poco más despacio?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "llamada",
+        "extensión",
+        "transferir",
+        "mensaje",
+        "buzón de voz",
+        "disponible",
+        "devolver la llamada",
+        "videollamada",
+        "línea",
+        "espera"
+      ],
+      "padrao_gramatical": {
+        "tema": "'¿Podría...?' ao telefone — sempre mais formal e respeitoso do que '¿Puede?'; imprescindível em chamadas de negócios",
+        "exemplos": [
+          "¿Podría hablar con el señor García?",
+          "¿Podría repetir más despacio?",
+          "¿Podría pasarme con el departamento de ventas?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "ligar para alguém", "verso": "llamar a alguien" },
+          { "frente": "atender a chamada", "verso": "contestar la llamada" },
+          { "frente": "transferir / passar", "verso": "transferir / pasar" },
+          { "frente": "deixar mensagem", "verso": "dejar un mensaje" },
+          { "frente": "caixa de voz", "verso": "buzón de voz" },
+          { "frente": "devolver a chamada", "verso": "devolver la llamada" },
+          { "frente": "está em reunião", "verso": "está en reunión" },
+          { "frente": "extensão", "verso": "extensión" },
+          { "frente": "videochamada", "verso": "videollamada" },
+          { "frente": "linha com ruído", "verso": "línea con ruido" }
+        ],
+        "ditado": [
+          "Buenos días, le llama Santos de DataSync.",
+          "¿Podría hablar con el señor García?",
+          "Quisiera dejarle un mensaje, por favor.",
+          "La conexión no es buena — ¿me oye bien?"
+        ],
+        "lacunas": [
+          { "frase": "Un momento, le ____ con el señor García.", "resposta": "paso" },
+          { "frase": "¿Quisiera ____ un mensaje?", "resposta": "dejarle" },
+          { "frase": "Por favor, ____ que le llamó Santos.", "resposta": "dígale" },
+          { "frase": "¿Podría repetir más ____, por favor?", "resposta": "despacio" }
+        ],
+        "role_play": {
+          "cenario": "Chamada de negócios — tentativa de marcar reunião urgente com decisor que está indisponível e linha com problemas técnicos",
+          "personagens": [
+            "Profissional externo que liga (aluno)",
+            "Assistente / rececionista — pouco cooperativo (você)"
+          ],
+          "roteiro": [
+            "Apresentar-se e pedir para falar com o decisor por nome e departamento",
+            "Lidar com a indisponibilidade e deixar mensagem clara e completa",
+            "Gerir um problema de ligação com cortesia e pedir repetição",
+            "Confirmar número de contacto, urgência e prazo esperado para retorno"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e formalidade. Reescreva a frase de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Praticar a sequência: 'Buenos días, le llama... ¿podría hablar con...?'",
+          "Memorizar: 'Dígale que le llamó Santos y que le devuelva la llamada'"
+        ],
+        "em_24h": [
+          "Refazer o role-play do telefone completo sem notas",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "almuerzo-negocios",
+      "modulo": "Almoço de Negócios",
+      "objetivo": "Gerir hospitalidade corporativa — convite, brindes, restrições alimentares, pagar a conta e retomar tópicos de negócios com naturalidade.",
+      "frases_chave": [
+        {
+          "es": "¿Le apetecería que aprovecháramos para almorzar y seguir hablando del proyecto?",
+          "pt": "Gostaria de aproveitarmos o almoço para continuar a falar do projeto?",
+          "pronuncia": "le a-pe-the-RÍ-a ke a-pro-be-TCHÂ-ra-mos PÁ-ra al-mor-THÂR i se-GÍR a-BLÂN-do",
+          "variacoes": [
+            "¿Podemos combinar un almuerzo de trabajo para esta semana?",
+            "¿Le gustaría que continuáramos la conversación durante el almuerzo?"
+          ]
+        },
+        {
+          "es": "¡Quisiera proponer un brindis por esta colaboración y por el éxito del proyecto!",
+          "pt": "Gostaria de propor um brinde por esta colaboração e pelo sucesso do projeto!",
+          "pronuncia": "ki-SIÊR-a pro-po-NÊR un BRÍN-dis por ÊS-ta ko-la-bo-ra-THIÔN",
+          "variacoes": [
+            "¡Por el futuro de esta alianza — salud!",
+            "¡Brindemos por nuestra colaboración — salud!"
+          ]
+        },
+        {
+          "es": "La invitación corre por nuestra cuenta — insisto, por favor.",
+          "pt": "O convite fica por nossa conta — insisto, por favor.",
+          "pronuncia": "la in-bi-ta-THIÔN KÔ-rre por NUÊS-tra KUÊN-ta — in-SÍS-to, por fa-BÔR",
+          "variacoes": [
+            "Permítame invitarle — es un placer recibirle en nuestra ciudad.",
+            "Hoy pagamos nosotros — ya nos invitará usted la próxima vez."
+          ]
+        },
+        {
+          "es": "Le comento que soy alérgico al marisco, si no es inconveniente.",
+          "pt": "Digo-lhe que sou alérgico ao marisco, se não for inconveniente.",
+          "pronuncia": "le ko-MÊN-to ke SOI a-LÊR-rri-ko al ma-RÍS-ko, si no es in-kon-be-NIÊN-te",
+          "variacoes": [
+            "Sigo una dieta vegetariana — ¿sería posible tenerlo en cuenta?",
+            "No puedo tomar gluten, si se puede arreglar algo."
+          ]
+        },
+        {
+          "es": "¿Qué recomienda usted? Confío en su criterio.",
+          "pt": "O que recomenda o senhor/a senhora? Confio no seu critério.",
+          "pronuncia": "ke rre-ko-MIÊN-da us-TÊD? kon-FÍ-o en su kri-TÊ-rio",
+          "variacoes": [
+            "¿Cuál es la especialidad de la casa que no debo perderme?",
+            "¿Qué pide usted? Le sigo la recomendación."
+          ]
+        },
+        {
+          "es": "Ha sido una comida estupenda — gracias por su hospitalidad.",
+          "pt": "Foi um almoço excelente — obrigado pela sua hospitalidade.",
+          "pronuncia": "a SÍ-do U-na ko-MÍ-da es-tu-PÊN-da — GRÁ-thias por su os-pi-ta-li-DÁD",
+          "variacoes": [
+            "El restaurante es magnífico — una elección perfecta.",
+            "Ha sido un placer compartir la mesa y seguir avanzando."
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "almuerzo",
+        "brindis",
+        "cuenta",
+        "especialidad",
+        "alérgico",
+        "vegetariano",
+        "postre",
+        "propina",
+        "hospitalidad",
+        "reserva"
+      ],
+      "padrao_gramatical": {
+        "tema": "Subjuntivo em atenuadores de cortesia: 'si no es inconveniente' / 'si sería posible' — suavizar pedidos delicados",
+        "exemplos": [
+          "Soy alérgico al gluten, si no es inconveniente.",
+          "¿Podría pedir algo sin marisco, si es posible?",
+          "¿Podríamos sentarnos en una mesa más tranquila, si hay disponibilidad?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "almoço de negócios", "verso": "almuerzo de negocios" },
+          { "frente": "brinde", "verso": "brindis" },
+          { "frente": "conta do restaurante", "verso": "cuenta del restaurante" },
+          { "frente": "especialidade da casa", "verso": "especialidad de la casa" },
+          { "frente": "alérgico a", "verso": "alérgico a" },
+          { "frente": "gorjeta", "verso": "propina" },
+          { "frente": "hospitalidade", "verso": "hospitalidad" },
+          { "frente": "sem glúten", "verso": "sin gluten" },
+          { "frente": "vegetariano", "verso": "vegetariano" },
+          { "frente": "restrição alimentar", "verso": "restricción alimentaria" }
+        ],
+        "ditado": [
+          "¡Brindemos por esta colaboración — salud!",
+          "La invitación corre por nuestra cuenta.",
+          "Soy alérgico al marisco, si no es inconveniente.",
+          "Ha sido una comida estupenda — gracias por su hospitalidad."
+        ],
+        "lacunas": [
+          { "frase": "La invitación corre por nuestra ____.", "resposta": "cuenta" },
+          { "frase": "¿Qué ____ usted? Confío en su criterio.", "resposta": "recomienda" },
+          { "frase": "Soy alérgico al marisco, si no es ____.", "resposta": "inconveniente" },
+          { "frase": "Ha sido una comida ____.", "resposta": "estupenda" }
+        ],
+        "role_play": {
+          "cenario": "Almoço de negócios com cliente importante — gerir menu, restrição alimentar do cliente, brinde e fechar detalhes de contrato durante a refeição",
+          "personagens": [
+            "Anfitrião (aluno — recebe o cliente)",
+            "Cliente convidado — exigente quanto à comida (você)"
+          ],
+          "roteiro": [
+            "Receber o cliente, propor mesa e perguntar sobre preferências ou restrições alimentares",
+            "Recomendar pratos ao empregado e fazer o brinde formal com frase elaborada",
+            "Retomar assunto de negócios de forma natural durante a refeição sem forçar",
+            "Pedir a conta, insistir em pagar e despedir-se com próximo passo marcado"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre naturalidade e hospitalidade. Reescreva de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Memorizar o brinde completo: '¡Quisiera proponer un brindis por...'",
+          "Praticar atenuadores: 'si no es inconveniente / si sería posible'"
+        ],
+        "em_24h": [
+          "Refazer o role-play do almoço de negócios sem apoio",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "viaje-corporativo",
+      "modulo": "Viagem Corporativa",
+      "objetivo": "Gerir check-in em hotel corporativo, transporte, bagagem e documentação fiscal para nota de despesas.",
+      "frases_chave": [
+        {
+          "es": "Tengo una reserva corporativa a nombre de la empresa DataSync.",
+          "pt": "Tenho uma reserva corporativa em nome da empresa DataSync.",
+          "pronuncia": "TÊN-go U-na rre-SÊR-ba kor-po-ra-TÍ-ba a NÔM-bre de la em-PRÊ-sa",
+          "variacoes": [
+            "La habitación está reservada a cargo de nuestra empresa.",
+            "Somos clientes corporativos — la reserva está a nombre de DataSync."
+          ]
+        },
+        {
+          "es": "¿Podría facturar la estancia directamente a la empresa con el número de IVA?",
+          "pt": "Poderia faturar a estadia diretamente à empresa com o número de IVA?",
+          "pronuncia": "po-DRÍ-a fak-tu-RÁR la es-TÂN-thia di-rek-ta-MÊN-te a la em-PRÊ-sa kon el NÚ-me-ro de i-be-á",
+          "variacoes": [
+            "Necesitamos factura oficial con el CIF de la empresa.",
+            "¿Pueden emitir la factura a nombre de la empresa, por favor?"
+          ]
+        },
+        {
+          "es": "Necesito un recibo detallado para mi nota de gastos.",
+          "pt": "Preciso de um recibo detalhado para a minha nota de despesas.",
+          "pronuncia": "ne-the-SÍ-to un rre-THÍ-bo de-ta-YÁ-do PÁ-ra mi NÔ-ta de GÁS-tos",
+          "variacoes": [
+            "¿Me da la factura desglosada por conceptos?",
+            "El departamento de finanzas necesita todos los justificantes."
+          ]
+        },
+        {
+          "es": "¿Tienen servicio de traslado al aeropuerto? ¿Cuánto cuesta?",
+          "pt": "Têm serviço de transfer para o aeroporto? Quanto custa?",
+          "pronuncia": "TIÊN-en ser-BI-thio de tras-LÁ-do al a-e-ro-PUÊR-to? KUÂN-to KUÊS-ta",
+          "variacoes": [
+            "¿El transfer al aeropuerto está incluido en la tarifa corporativa?",
+            "¿Pueden pedirme un taxi al aeropuerto para las seis de la mañana?"
+          ]
+        },
+        {
+          "es": "¿Podrían guardarme el equipaje hasta las seis de la tarde?",
+          "pt": "Poderiam guardar-me a bagagem até às seis da tarde?",
+          "pronuncia": "po-DRÍ-an guar-DÁR-me el e-ki-PÁ-rre ÁS-ta las seis de la TÁR-de",
+          "variacoes": [
+            "¿Tienen servicio de guardaequipajes para el día de la salida?",
+            "¿Pueden custodiar mis maletas mientras hago unas reuniones?"
+          ]
+        },
+        {
+          "es": "El vuelo sale a las ocho — ¿a qué hora me recomienda salir del hotel?",
+          "pt": "O voo parte às oito — a que horas me recomenda sair do hotel?",
+          "pronuncia": "el BUÊ-lo SÁ-le a las Ô-tcho — a ke Ô-ra me rre-ko-MIÊN-da sa-LÍR del o-TÊL",
+          "variacoes": [
+            "Necesito llegar al aeropuerto con dos horas de antelación.",
+            "¿Cuánto tiempo se tarda en llegar al aeropuerto a esta hora?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "factura",
+        "estancia",
+        "equipaje",
+        "traslado",
+        "nota de gastos",
+        "IVA",
+        "reembolso",
+        "check-in",
+        "check-out",
+        "tarifa corporativa"
+      ],
+      "padrao_gramatical": {
+        "tema": "'¿Podrían...?' — plural de cortesia para pedidos ao hotel ou prestador de serviços; mais deferente do que '¿Pueden?'",
+        "exemplos": [
+          "¿Podrían guardarme el equipaje?",
+          "¿Podrían prepararme la factura para mañana?",
+          "¿Podrían llamarme un taxi para las seis?"
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "fatura detalhada", "verso": "factura detallada" },
+          { "frente": "nota de despesas", "verso": "nota de gastos" },
+          { "frente": "reembolso", "verso": "reembolso" },
+          { "frente": "transfer para o aeroporto", "verso": "traslado al aeropuerto" },
+          { "frente": "guardar bagagem", "verso": "guardar el equipaje" },
+          { "frente": "reserva corporativa", "verso": "reserva corporativa" },
+          { "frente": "NIF / número de IVA", "verso": "CIF / número de IVA" },
+          { "frente": "tarifa empresarial", "verso": "tarifa corporativa" },
+          { "frente": "check-out antecipado", "verso": "check-out anticipado" },
+          { "frente": "serviço de quarto", "verso": "servicio de habitaciones" }
+        ],
+        "ditado": [
+          "Tengo una reserva corporativa a nombre de DataSync.",
+          "Necesito un recibo detallado para mi nota de gastos.",
+          "¿Podría facturar la estancia directamente a la empresa?",
+          "¿Podrían guardarme el equipaje hasta las seis de la tarde?"
+        ],
+        "lacunas": [
+          { "frase": "Necesito un ____ detallado para mi nota de gastos.", "resposta": "recibo" },
+          { "frase": "¿Podría ____ la estancia directamente a la empresa?", "resposta": "facturar" },
+          { "frase": "¿Tienen servicio de ____ al aeropuerto?", "resposta": "traslado" },
+          { "frase": "¿Podrían ____ el equipaje hasta las seis?", "resposta": "guardarme" }
+        ],
+        "role_play": {
+          "cenario": "Check-in num hotel corporativo — viagem de negócios com necessidade de fatura para a empresa e transfer para o aeroporto na manhã seguinte às 6h",
+          "personagens": [
+            "Viajante de negócios (aluno)",
+            "Rececionista do hotel — ocupada e pouco proativa (você)"
+          ],
+          "roteiro": [
+            "Fazer check-in confirmando a reserva corporativa e método de pagamento da empresa",
+            "Solicitar fatura detalhada com dados fiscais completos da empresa",
+            "Reservar transfer para o aeroporto às 6h e confirmar hora de wake-up call",
+            "Solicitar guarda de bagagem para o dia de check-out e agradecer"
+          ],
+          "avaliacao_regra": "Após cada resposta: 1 linha sobre clareza e formalidade. Reescreva a frase de forma 100% nativa e dê 1 dica de pronúncia."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Memorizar: '¿Podrían guardarme el equipaje?' e '¿Podría facturar a la empresa?'",
+          "Praticar pedido de fatura com dados completos da empresa"
+        ],
+        "em_24h": [
+          "Refazer o role-play do check-in corporativo sem apoio",
+          "Ditar as 4 frases do ditado"
+        ]
+      }
+    }
+  ]
+}
