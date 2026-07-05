@@ -1,7 +1,7 @@
 /* Espanhol de Sobrevivência · service-worker.js
    Estratégia: precache do shell na instalação; runtime "stale-while-revalidate".
    Suba o número da versão para invalidar o cache antigo. */
-const VERSAO = 'fluencia-v6';
+const VERSAO = 'fluencia-v7';
 const SHELL = [
   './',
   './index.html',
