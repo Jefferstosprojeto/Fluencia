@@ -76,28 +76,35 @@ const estado = {
 let CONTEUDO = { modulos: [] };
 const modulo = () => CONTEUDO.modulos[estado.moduloAtual];
 
-/* ---------- 3) motor (hook de modelo, contrato JSON único) ------------- */
-/* Troque o "engine" sem mudar o resto do app. Detalhes no README / Bloco 8. */
+/* ---------- 3) motor (Anthropic API direta ou avaliador local) ---------- */
 const Motor = {
-  engine: 'local',                 // 'local' | 'opus' | 'sonnet' | 'fable'
-  endpoint: '/api/motor',          // proxy que injeta a chave e chama a Anthropic API
   modelos: { opus: 'claude-opus-4-8', sonnet: 'claude-sonnet-5', fable: 'claude-fable-5' },
 
-  // Contrato de avaliação de turno — TODO engine devolve exatamente estes campos.
+  getKey() { return localStorage.getItem('es:api-key') || ''; },
+
   async avaliarTurno({ cenario, roteiroPasso, falaAluno }) {
-    if (this.engine === 'local') return avaliarLocal({ roteiroPasso, falaAluno });
+    const key = this.getKey();
+    if (!key) return avaliarLocal({ roteiroPasso, falaAluno });
     try {
-      const r = await fetch(this.endpoint, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
+      const r = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
         body: JSON.stringify({
-          model: this.modelos[this.engine],
+          model: this.modelos.sonnet,
+          max_tokens: 300,
           system: PROMPTS.simulador(cenario),
-          input: { cenario, roteiroPasso, falaAluno }
+          messages: [{ role: 'user', content: JSON.stringify({ roteiroPasso, falaAluno }) }]
         })
       });
-      if (!r.ok) throw new Error('motor indisponível');
-      const j = await r.json();           // espera { avaliacao, reescrita, dica, proximaFala }
-      return j;
+      if (!r.ok) throw new Error(`API ${r.status}`);
+      const j = await r.json();
+      const texto = (j.content || []).filter(b => b.type === 'text').map(b => b.text).join('');
+      return JSON.parse(texto);
     } catch (e) {
       return avaliarLocal({ roteiroPasso, falaAluno, aviso: 'Motor offline — avaliação local.' });
     }
@@ -611,9 +618,55 @@ function aplicarTema(escuro) {
   localStorage.setItem('es:tema', escuro ? 'dark' : 'light');
 }
 
+/* ---------- config API ------------------------------------------------- */
+function initConfig() {
+  const dlg  = $('#dlg-config');
+  const inp  = $('#inp-key');
+  const stat = $('#config-status');
+  const btn  = $('#btn-config');
+
+  const atualizarBtn = () => {
+    const ativa = !!Motor.getKey();
+    btn.title = ativa ? '🟢 API ativa — clique para configurar' : 'Configurar API Anthropic';
+    btn.querySelector('.icon-btn__glyph').textContent = ativa ? '🟢' : '⚙';
+    btn.setAttribute('aria-label', ativa ? 'API Anthropic ativa — configurar' : 'Configurar API Anthropic');
+  };
+
+  btn.addEventListener('click', () => {
+    inp.value = Motor.getKey() ? '••••••••••••••••' : '';
+    stat.hidden = true;
+    dlg.showModal();
+    inp.focus();
+  });
+  $('#btn-config-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+
+  $('#btn-config-clear').addEventListener('click', () => {
+    localStorage.removeItem('es:api-key');
+    inp.value = '';
+    stat.hidden = false;
+    stat.className = 'config-dlg__status is-error';
+    stat.textContent = 'Chave removida. Simulador em modo local.';
+    atualizarBtn();
+  });
+
+  dlg.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = inp.value.trim();
+    if (!val || val.startsWith('•')) return;
+    localStorage.setItem('es:api-key', val);
+    stat.hidden = false;
+    stat.className = 'config-dlg__status is-ok';
+    stat.textContent = '✓ Chave guardada! Simulador com IA real ativado.';
+    atualizarBtn();
+  });
+
+  atualizarBtn();
+}
+
 /* ---------- 8) boot ---------------------------------------------------- */
 async function boot() {
-  estado.carregar(); initTema();
+  estado.carregar(); initTema(); initConfig();
   try {
     CONTEUDO = await (await fetch('conteudo.json')).json();
   } catch (e) {

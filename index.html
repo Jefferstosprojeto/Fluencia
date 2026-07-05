@@ -42,6 +42,9 @@
           <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
             <span class="icon-btn__glyph" aria-hidden="true">◐</span>
           </button>
+          <button id="btn-config" class="icon-btn" type="button" aria-label="Configurar API Anthropic" title="Configurar API Anthropic">
+            <span class="icon-btn__glyph" aria-hidden="true">⚙</span>
+          </button>
         </div>
       </div>
 
@@ -99,6 +102,22 @@
       </details>
     </article>
   </template>
+
+  <!-- Dialog de configuração da chave API -->
+  <dialog id="dlg-config" class="config-dlg" aria-labelledby="dlg-config-title">
+    <form method="dialog" class="config-dlg__form">
+      <h2 id="dlg-config-title" class="config-dlg__title">⚙ API Anthropic</h2>
+      <p class="config-dlg__desc">Cole a sua chave para ativar avaliação real no Simulador. Fica guardada só no teu browser — nunca é enviada a terceiros.</p>
+      <label for="inp-key" class="config-dlg__label">Chave API (sk-ant-…)</label>
+      <input id="inp-key" class="input" type="password" placeholder="sk-ant-api03-..." autocomplete="off" />
+      <p id="config-status" class="config-dlg__status" hidden></p>
+      <div class="btn-row">
+        <button class="btn" type="submit">Guardar</button>
+        <button class="btn btn--ghost" type="button" id="btn-config-clear">Remover chave</button>
+        <button class="btn btn--ghost" type="button" id="btn-config-close">Fechar</button>
+      </div>
+    </form>
+  </dialog>
 
   <script src="prompts.js"></script>
   <script src="app.js"></script>

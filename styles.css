@@ -549,6 +549,28 @@ a { color: var(--brand); }
 }
 @media (pointer: coarse) { .flash__swipe-hint { display: block; } }
 
+/* ===== DIALOG de configuração da API ===================================== */
+.config-dlg {
+  border: 1px solid var(--border); border-radius: var(--r-lg);
+  background: var(--surface); color: var(--text);
+  padding: var(--s8); max-width: 28rem; width: calc(100% - var(--s8));
+  box-shadow: var(--sh-lg); z-index: var(--z-modal);
+}
+.config-dlg::backdrop { background: rgba(0,0,0,.55); backdrop-filter: blur(3px); }
+.config-dlg__title {
+  font-family: var(--font-display); font-size: var(--fs-lg); font-weight: 700; margin-bottom: var(--s3);
+}
+.config-dlg__desc {
+  font-size: var(--fs-sm); color: var(--text-muted); margin-bottom: var(--s5); line-height: var(--lh-loose);
+}
+.config-dlg__label { display: block; font-size: var(--fs-sm); font-weight: 600; margin-bottom: var(--s2); }
+.config-dlg__form .input { margin-bottom: var(--s4); }
+.config-dlg__status {
+  font-size: var(--fs-sm); padding: var(--s2) var(--s3); border-radius: var(--r-sm); margin-bottom: var(--s3);
+}
+.config-dlg__status.is-ok    { background: var(--success-bg); color: var(--success); }
+.config-dlg__status.is-error { background: var(--error-bg);   color: var(--error);   }
+
 /* ---------- movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; }
