@@ -10,7 +10,8 @@
       "comunicacion-escrita",
       "telefono",
       "almuerzo-negocios",
-      "viaje-corporativo"
+      "viaje-corporativo",
+      "tecnologia-it"
     ]
   },
   "modulos": [
@@ -937,6 +938,144 @@
         "em_24h": [
           "Refazer o role-play do check-in corporativo sem apoio",
           "Ditar as 4 frases do ditado"
+        ]
+      }
+    },
+    {
+      "id": "tecnologia-it",
+      "modulo": "Tecnologia e Informática",
+      "objetivo": "Comunicar em espanhol em reuniões técnicas de TI, reportar incidências, discutir arquitectura de sistemas e apresentar soluções a clientes.",
+      "frases_chave": [
+        {
+          "es": "El servidor de producción está caído y estamos investigando la causa raíz.",
+          "pt": "O servidor de produção está em baixo e estamos a investigar a causa raiz.",
+          "pronuncia": "el ser-VI-dor de pro-duk-THIÓN es-TÁ KA-í-do i es-TA-mos in-ves-ti-GÂN-do",
+          "variacoes": [
+            "Hemos detectado una interrupción en el entorno de producción y el equipo ya está trabajando en ello.",
+            "El sistema está experimentando una caída — estimamos restablecer el servicio en dos horas."
+          ]
+        },
+        {
+          "es": "¿Podría compartir su pantalla para que podamos ver el error en contexto?",
+          "pt": "Poderia partilhar o ecrã para que possamos ver o erro em contexto?",
+          "pronuncia": "po-DRÍ-a kom-par-TÍR su pan-TÁ-ya PA-ra ke po-DÂ-mos VER el e-ROR",
+          "variacoes": [
+            "Si me permite acceso remoto, podré diagnosticar el problema directamente.",
+            "¿Puede enviarme los logs del sistema para analizar qué está fallando?"
+          ]
+        },
+        {
+          "es": "Vamos a desplegar la nueva versión en el entorno de pruebas antes de pasar a producción.",
+          "pt": "Vamos fazer o deploy da nova versão no ambiente de testes antes de ir para produção.",
+          "pronuncia": "VA-mos a des-ple-GÁR la NUÊ-va ver-SIÓN en el en-TOR-no de PRUê-bas",
+          "variacoes": [
+            "El despliegue está programado para el viernes a las veintidós horas, fuera del horario pico.",
+            "Necesitamos aprobar el pipeline de integración continua antes de hacer el lanzamiento."
+          ]
+        },
+        {
+          "es": "La arquitectura que proponemos es una solución en la nube con alta disponibilidad.",
+          "pt": "A arquitectura que propomos é uma solução em cloud com alta disponibilidade.",
+          "pronuncia": "la ar-ki-tek-TÚ-ra ke pro-PO-ne-mos es u-na so-lu-THIÓN en la NÚ-be",
+          "variacoes": [
+            "Recomendamos migrar a una infraestructura serverless para reducir costes operativos.",
+            "La solución contempla redundancia geográfica y recuperación ante desastres automática."
+          ]
+        },
+        {
+          "es": "Hemos abierto un ticket de alta prioridad y el equipo de soporte ya está asignado.",
+          "pt": "Abrimos um ticket de alta prioridade e a equipa de suporte já está alocada.",
+          "pronuncia": "É-mos a-BIER-to un TÍ-ket de ÁL-ta prio-ri-DÁD",
+          "variacoes": [
+            "La incidencia está registrada con código crítico — el SLA garantiza respuesta en cuatro horas.",
+            "El equipo de guardia ya fue notificado y está analizando los logs del sistema."
+          ]
+        },
+        {
+          "es": "Necesitamos revisar el acuerdo de nivel de servicio antes de firmar el contrato.",
+          "pt": "Precisamos de rever o acordo de nível de serviço antes de assinar o contrato.",
+          "pronuncia": "ne-the-si-TA-mos re-vi-SAR el a-KUER-do de ni-VEL de ser-VI-thio",
+          "variacoes": [
+            "El SLA actual no cubre los tiempos de respuesta que el cliente necesita — hay que renegociarlo.",
+            "¿Cuáles son los requisitos de disponibilidad mínima que necesita su sistema?"
+          ]
+        }
+      ],
+      "palavras_essenciais": [
+        "el servidor", "la nube", "el despliegue", "la base de datos",
+        "el firewall", "la copia de seguridad", "el rendimiento", "la escalabilidad",
+        "la incidencia", "el ticket", "el registro / los logs", "el tiempo de inactividad",
+        "la red", "el ancho de banda", "la VPN", "la ciberseguridad",
+        "el repositorio", "la integración continua", "el microservicio", "el contenedor"
+      ],
+      "padrao_gramatical": {
+        "tema": "Condicional técnico de recomendação: 'Recomendaríamos / Sería conveniente / Habría que...' — tom profissional sem impor",
+        "exemplos": [
+          "Recomendaríamos implementar un sistema de caché para mejorar el rendimiento.",
+          "Sería conveniente realizar una auditoría de seguridad antes del lanzamiento.",
+          "Habría que revisar los permisos de acceso a la base de datos de producción."
+        ]
+      },
+      "exercicios": {
+        "flashcards": [
+          { "frente": "servidor", "verso": "el servidor" },
+          { "frente": "nuvem / cloud", "verso": "la nube" },
+          { "frente": "base de dados", "verso": "la base de datos" },
+          { "frente": "cópia de segurança", "verso": "la copia de seguridad" },
+          { "frente": "implantação / deploy", "verso": "el despliegue" },
+          { "frente": "firewall", "verso": "el cortafuegos / el firewall" },
+          { "frente": "desempenho", "verso": "el rendimiento" },
+          { "frente": "disponibilidade", "verso": "la disponibilidad" },
+          { "frente": "tempo de inatividade", "verso": "el tiempo de inactividad" },
+          { "frente": "rede", "verso": "la red" },
+          { "frente": "largura de banda", "verso": "el ancho de banda" },
+          { "frente": "VPN", "verso": "la VPN / la red privada virtual" },
+          { "frente": "repositório de código", "verso": "el repositorio de código" },
+          { "frente": "integração contínua", "verso": "la integración continua" },
+          { "frente": "contentor (Docker)", "verso": "el contenedor" },
+          { "frente": "microsserviço", "verso": "el microservicio" },
+          { "frente": "cibersegurança", "verso": "la ciberseguridad" },
+          { "frente": "incidência / chamado", "verso": "la incidencia / el ticket" },
+          { "frente": "registros do sistema", "verso": "los registros / los logs" },
+          { "frente": "acordo de nível de serviço", "verso": "el acuerdo de nivel de servicio (SLA)" },
+          { "frente": "escalabilidade", "verso": "la escalabilidad" },
+          { "frente": "recuperação de desastres", "verso": "la recuperación ante desastres" },
+          { "frente": "ambiente de testes", "verso": "el entorno de pruebas" },
+          { "frente": "ambiente de produção", "verso": "el entorno de producción" },
+          { "frente": "API / interface de programação", "verso": "la API / la interfaz de programación" }
+        ],
+        "ditado": [
+          "El sistema de copias de seguridad se ejecuta automáticamente cada noche a las dos de la madrugada.",
+          "Necesitamos aumentar el ancho de banda para soportar el crecimiento del tráfico previsto.",
+          "El equipo de ciberseguridad detectó un intento de acceso no autorizado al servidor principal.",
+          "Vamos a migrar la base de datos a la nube durante el fin de semana para minimizar el impacto."
+        ],
+        "lacunas": [
+          { "frase": "El ___ de producción cayó por un fallo en la actualización del sistema operativo.", "resposta": "servidor" },
+          { "frase": "Abrimos una ___ de alta prioridad y el equipo ya está investigando la causa raíz.", "resposta": "incidencia" },
+          { "frase": "Recomendaríamos implementar un sistema de ___ para mejorar el rendimiento de la aplicación.", "resposta": "caché" },
+          { "frase": "El ___ garantiza un tiempo de respuesta máximo de cuatro horas para incidencias críticas.", "resposta": "SLA" }
+        ],
+        "role_play": {
+          "cenario": "Reunião técnica com um cliente hispânico: tens de apresentar uma solução de migração para cloud, responder a perguntas sobre segurança e disponibilidade, e acordar um plano de implementação.",
+          "personagens": ["Consultor IT (aluno)", "Director técnico do cliente"],
+          "roteiro": [
+            "Apresenta-te como consultor e descreve brevemente a arquitectura cloud proposta (redundância, SLA, segurança).",
+            "O cliente pergunta sobre o tempo de inatividade previsto durante a migração e sobre a cópia de segurança dos dados.",
+            "Explica o plano de rollback e como a integração contínua vai garantir zero downtime no deploy.",
+            "Fecha acordando os próximos passos: ambiente de testes, aprovação do SLA e data do go-live."
+          ],
+          "avaliacao_regra": "Após cada fala: avalia uso de terminologia técnica em espanhol (1 linha), reescreve a frase de forma nativa, dá 1 dica de pronúncia de termo técnico."
+        }
+      },
+      "revisao": {
+        "em_4h": [
+          "Memorizar os 10 termos essenciais de infraestrutura: servidor, nube, despliegue, base de datos, firewall, copia de seguridad, red, ancho de banda, VPN, logs",
+          "Praticar a frase de reportar incidência: 'Hemos abierto un ticket de alta prioridad...'"
+        ],
+        "em_24h": [
+          "Refazer o role-play da reunião técnica sem apoio",
+          "Fazer os 25 flashcards de terminologia IT cronometrados"
         ]
       }
     }
