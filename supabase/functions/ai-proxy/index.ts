@@ -42,6 +42,11 @@ serve(async (req) => {
   }
 
   const { falaAluno, roteiroPasso, cenario } = body;
+  if (!falaAluno || !roteiroPasso || !cenario) {
+    return new Response(JSON.stringify({ error: 'missing required fields: falaAluno, roteiroPasso, cenario' }), {
+      status: 400, headers: { ...CORS, 'content-type': 'application/json' }
+    });
+  }
   const key = Deno.env.get('ANTHROPIC_API_KEY');
   if (!key) {
     return new Response(JSON.stringify({ error: 'server misconfigured' }), {
@@ -49,7 +54,8 @@ serve(async (req) => {
     });
   }
 
-  const system = `És um falante nativo no cenário: "${cenario}".
+  const cenarioSafe = String(cenario).slice(0, 200);
+  const system = `És um falante nativo no cenário: "${cenarioSafe}".
 Após CADA fala do utilizador, responde SOMENTE com JSON válido:
 { "avaliacao": "1 linha sobre clareza/naturalidade/formalidade",
   "reescrita": "a frase reescrita 100% nativa",
@@ -94,8 +100,8 @@ Após CADA fala do utilizador, responde SOMENTE com JSON válido:
       headers: { ...CORS, 'content-type': 'application/json' }
     });
   } catch (e) {
-    console.error('ai-proxy error:', e);
-    return new Response(JSON.stringify({ error: String(e) }), {
+    console.error('ai-proxy upstream error:', e);
+    return new Response(JSON.stringify({ error: 'upstream error' }), {
       status: 502, headers: { ...CORS, 'content-type': 'application/json' }
     });
   }
