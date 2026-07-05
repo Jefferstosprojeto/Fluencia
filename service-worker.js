@@ -1,18 +1,18 @@
 /* Espanhol de Sobrevivência · service-worker.js
    Estratégia: precache do shell na instalação; runtime "stale-while-revalidate".
    Suba o número da versão para invalidar o cache antigo. */
-const VERSAO = 'es-sobrevivencia-v5';
+const VERSAO = 'fluencia-v6';
 const SHELL = [
   './',
   './index.html',
+  './app.html',
   './styles.css',
   './app.js',
   './prompts.js',
-  './conteudo.json',
-  './design-tokens.json',
+  './content/es/viagem.json',
+  './content/es/negocios.json',
   './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './privacy.html',
 ];
 
 self.addEventListener('install', (e) => {
