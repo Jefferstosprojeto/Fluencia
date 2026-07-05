@@ -1,0 +1,8 @@
+project_id = "fluencia"
+
+[api]
+enabled = true
+port = 54321
+
+[functions]
+verify_jwt = false
