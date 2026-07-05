@@ -433,7 +433,13 @@ function frasesFragment(m) {
     $('[data-es]', el).textContent = f.es;
     $('[data-pron]', el).textContent = f.pronuncia;
     $('[data-pt]', el).textContent = f.pt;
-    f.variacoes.forEach(v => { const li = document.createElement('li'); li.textContent = v; $('[data-var]', el).appendChild(li); });
+    f.variacoes.forEach(v => {
+      const li = document.createElement('li');
+      li.className = 'var-row';
+      li.innerHTML = `<span>${v}</span><button class="btn-var-speak" aria-label="Ouvir variação">🔊</button>`;
+      li.querySelector('.btn-var-speak').addEventListener('click', () => speak(v));
+      $('[data-var]', el).appendChild(li);
+    });
     $('[data-speak]', el).addEventListener('click', () => speak(f.es));
     frag.appendChild(el);
   });
