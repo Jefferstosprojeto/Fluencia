@@ -5,18 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Política de Privacidade — Fluência</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1.5rem; line-height: 1.7; color: #1a0800; }
+    body {
+      font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1.5rem;
+      line-height: 1.7; color: #F1F2F8;
+      background: radial-gradient(ellipse 120% 80% at 50% -10%, #12172A, #0A0E1A);
+    }
     h1 { font-size: 1.75rem; margin-bottom: .5rem; }
     h2 { font-size: 1.1rem; margin-top: 2rem; margin-bottom: .5rem; }
     p, li { margin-bottom: .75rem; }
-    a { color: #c60b1e; }
-    @media (prefers-color-scheme: dark) {
-      body { background: #0f0500; color: #f5f0e8; }
-      a { color: #ffc400; }
-    }
+    a { color: #8477EE; }
+    .glass-orb { position: fixed; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: -1; }
+    .glass-orb--1 { width: 20rem; height: 20rem; top: -6rem; left: -6rem; background: #6C5CE7; opacity: .25; }
+    .glass-orb--2 { width: 16rem; height: 16rem; bottom: -6rem; right: -4rem; background: #4FC1CE; opacity: .18; }
   </style>
 </head>
 <body>
+  <div class="glass-orb glass-orb--1" aria-hidden="true"></div>
+  <div class="glass-orb glass-orb--2" aria-hidden="true"></div>
+
   <a href="index.html">← Fluência</a>
   <h1>Política de Privacidade</h1>
   <p><strong>Última actualização:</strong> Julho 2026</p>
