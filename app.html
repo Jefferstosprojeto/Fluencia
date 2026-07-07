@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR" data-tema="light">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -8,8 +8,7 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#C60B1E" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0F0500" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#0A0E1A" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 
   <!-- Fontes (com fallback de sistema nos tokens para funcionar antes do cache) -->
@@ -20,6 +19,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="glass-orb glass-orb--1" aria-hidden="true"></div>
+  <div class="glass-orb glass-orb--2" aria-hidden="true"></div>
+  <div class="glass-orb glass-orb--3" aria-hidden="true"></div>
+
   <a class="skip-link" href="#principal">Ir ao conteúdo</a>
 
   <!-- Wrapper sticky do site — topbar + tabs como irmãos evita conflito de stacking context no mobile -->
@@ -40,9 +43,6 @@
             <span class="sr-only">Módulo atual</span>
             <select id="seletor-modulo" class="select" aria-label="Escolher módulo"></select>
           </label>
-          <button id="btn-tema" class="icon-btn" type="button" aria-pressed="false" aria-label="Alternar tema claro e escuro">
-            <span class="icon-btn__glyph" aria-hidden="true">◐</span>
-          </button>
           <button id="btn-config" class="icon-btn" type="button" aria-label="Configurar API Anthropic" title="Configurar API Anthropic">
             <span class="icon-btn__glyph" aria-hidden="true">⚙</span>
           </button>
