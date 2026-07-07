@@ -629,19 +629,6 @@ function telaBoasVindas(onStart) {
   return v;
 }
 
-/* ---------- tema ------------------------------------------------------- */
-function initTema() {
-  const salvo = localStorage.getItem('es:tema');
-  const escuro = salvo ? salvo === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-  aplicarTema(escuro);
-  $('#btn-tema').addEventListener('click', () => aplicarTema(document.documentElement.dataset.tema !== 'dark'));
-}
-function aplicarTema(escuro) {
-  document.documentElement.dataset.tema = escuro ? 'dark' : 'light';
-  $('#btn-tema').setAttribute('aria-pressed', String(escuro));
-  localStorage.setItem('es:tema', escuro ? 'dark' : 'light');
-}
-
 /* ---------- config API ------------------------------------------------- */
 function initConfig() {
   const dlg  = $('#dlg-config');
@@ -699,7 +686,7 @@ function getParams() {
 }
 
 async function boot() {
-  estado.carregar(); initTema(); initConfig();
+  estado.carregar(); initConfig();
   try {
     const { lang, track } = getParams();
     const TRACK_LABELS = { viagem: 'Viagem', negocios: 'Negócios' };
