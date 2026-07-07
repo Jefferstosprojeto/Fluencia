@@ -2,8 +2,14 @@
 
 ## Contexto
 
-O Fluência usa hoje o sistema de design "Señal" (`design-tokens.json`, `styles.css`): marca cobalto
-(#1B54B8) + marcador açafrão (#F2A413), inspirado em sinalização de estrada, com suporte dark/light.
+O `styles.css` (fonte real do visual actual — é o que `index.html`/`app.html`/`privacy.html`
+carregam) implementa hoje a paleta "Bandeira Espanha": vermelho `#C60B1E` (`--brand`) + dourado
+`#FFC400` (`--marker`), com suporte dark/light via `[data-tema="dark"]`.
+
+`design-tokens.json` descreve um sistema diferente ("Señal", cobalto `#1B54B8` + açafrão `#F2A413`)
+que **não está ligado a nenhum ficheiro** (nenhum `.html`/`.js` faz `fetch`/`import` dele) — é
+documentação desactualizada, não a fonte de verdade. Este plano actualiza os dois para a mesma
+paleta glass, eliminando a divergência.
 
 Este documento especifica um redesenho visual completo (incluindo cores) para um tema **glassmorphism
 dark-only**, substituindo directamente o tema actual (não é um tema experimental à parte).
