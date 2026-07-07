@@ -6,14 +6,14 @@
 
 **Architecture:** Token-level CSS custom property swap (`styles.css`, `design-tokens.json`) plus purely decorative `.glass-orb` elements for depth, applied consistently across the three static HTML entry points. `app.js`'s theme-toggle code is removed since the app becomes dark-only (no more `[data-tema]` branching anywhere). No build step, no new dependencies, no HTML structure changes to anything `app.js` queries (tabs, forms, dialog, templates).
 
-**Tech Stack:** Plain HTML/CSS/JS (no framework, no build — per `Fluencia/CLAUDE.md`). Validation via Python (`json`) and Node (already on PATH) as ad-hoc checks; there is no test runner in this project, so "tests" below are static validation + a manual browser walkthrough, matching this project's existing verification practice (see `Fluencia/README.md`).
+**Tech Stack:** Plain HTML/CSS/JS (no framework, no build — per `/CLAUDE.md`). Validation via Python (`json`) and Node (already on PATH) as ad-hoc checks; there is no test runner in this project, so "tests" below are static validation + a manual browser walkthrough, matching this project's existing verification practice (see `/README.md`).
 
 ## Global Constraints
 
-- No framework, no build — edit files directly (`Fluencia/CLAUDE.md`).
-- Contrast AA required: ≥4.5:1 normal text, ≥3:1 large text/UI (`Fluencia/CLAUDE.md`).
-- When any shell file changes (`index.html`, `app.html`, `styles.css`, `app.js`, `service-worker.js`), bump `VERSAO` in `service-worker.js` (`Fluencia/CLAUDE.md`).
-- Any content JSON change must validate with `python3 -c "import json; json.load(open('<file>'))"` (`Fluencia/CLAUDE.md`) — applies here to `design-tokens.json`.
+- No framework, no build — edit files directly (`/CLAUDE.md`).
+- Contrast AA required: ≥4.5:1 normal text, ≥3:1 large text/UI (`/CLAUDE.md`).
+- When any shell file changes (`index.html`, `app.html`, `styles.css`, `app.js`, `service-worker.js`), bump `VERSAO` in `service-worker.js` (`/CLAUDE.md`).
+- Any content JSON change must validate with `python -c "import json; json.load(open('<file>'))"` (`/CLAUDE.md`) — applies here to `design-tokens.json`.
 - 21st.dev components are reference-only inspiration (frosted surface + blur + border highlight + glow) — no React/Tailwind code is imported; everything is hand-translated to vanilla CSS (per approved spec).
 - Dark-only: no `prefers-color-scheme`/`[data-tema]` branching remains anywhere after this plan.
 - `prefers-reduced-motion: reduce` must still be respected (already handled in `styles.css`; nothing in this plan adds new motion that needs gating — orbs are static).
@@ -23,7 +23,7 @@
 ### Task 1: Rewrite `design-tokens.json` with the glass palette
 
 **Files:**
-- Modify: `Fluencia/design-tokens.json` (full replacement of the `meta` and `color` sections; `typography`, `spacing`, `radius`, `z`, `motion` sections keep their existing values except `shadow`, which changes)
+- Modify: `design-tokens.json` (full replacement of the `meta` and `color` sections; `typography`, `spacing`, `radius`, `z`, `motion` sections keep their existing values except `shadow`, which changes)
 
 **Interfaces:**
 - Consumes: nothing (this file is not `fetch`/`import`ed by any `.html`/`.js` in the project — confirmed via `grep -rn "design-tokens" *.html *.js` returning no matches). It is documentation of the palette that `styles.css` hand-codes.
@@ -31,7 +31,7 @@
 
 - [ ] **Step 1: Replace the file content**
 
-Replace the entire contents of `Fluencia/design-tokens.json` with:
+Replace the entire contents of `design-tokens.json` with:
 
 ```json
 {
@@ -159,13 +159,12 @@ Replace the entire contents of `Fluencia/design-tokens.json` with:
 
 - [ ] **Step 2: Validate JSON**
 
-Run: `python3 -c "import json; json.load(open('Fluencia/design-tokens.json'))"`
+Run: `python -c "import json; json.load(open('design-tokens.json'))"`
 Expected: no output, exit code 0.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-cd Fluencia
 git add design-tokens.json
 git commit -m "Update design-tokens.json to glassmorphism dark-only palette"
 ```
@@ -175,7 +174,7 @@ git commit -m "Update design-tokens.json to glassmorphism dark-only palette"
 ### Task 2: Rewrite `styles.css` with glass tokens, surfaces, and orbs
 
 **Files:**
-- Modify: `Fluencia/styles.css` (full file replacement)
+- Modify: `styles.css` (full file replacement)
 
 **Interfaces:**
 - Consumes: hex/rgba values from Task 1 (`design-tokens.json`) — must match exactly.
@@ -184,7 +183,7 @@ git commit -m "Update design-tokens.json to glassmorphism dark-only palette"
 
 - [ ] **Step 1: Replace the file content**
 
-Replace the entire contents of `Fluencia/styles.css` with:
+Replace the entire contents of `styles.css` with:
 
 ```css
 /* =========================================================================
@@ -776,19 +775,18 @@ a { color: var(--brand); }
 
 Run:
 ```bash
-node -e "const css=require('fs').readFileSync('Fluencia/styles.css','utf8'); const o=(css.match(/{/g)||[]).length; const c=(css.match(/}/g)||[]).length; if(o!==c) throw new Error('unbalanced braces: '+o+' vs '+c); console.log('OK', o, c);"
+node -e "const css=require('fs').readFileSync('styles.css','utf8'); const o=(css.match(/{/g)||[]).length; const c=(css.match(/}/g)||[]).length; if(o!==c) throw new Error('unbalanced braces: '+o+' vs '+c); console.log('OK', o, c);"
 ```
 Expected: `OK <N> <N>` (equal counts), exit code 0.
 
 - [ ] **Step 3: Grep-verify no `[data-tema` selectors remain**
 
-Run: `grep -c "data-tema" Fluencia/styles.css`
+Run: `grep -c "data-tema" styles.css`
 Expected: `0` (grep exits 1 with no match, which is correct here).
 
 - [ ] **Step 4: Commit**
 
 ```bash
-cd Fluencia
 git add styles.css
 git commit -m "Rewrite styles.css as glassmorphism dark-only theme"
 ```
@@ -798,7 +796,7 @@ git commit -m "Rewrite styles.css as glassmorphism dark-only theme"
 ### Task 3: Rewrite `index.html` (landing) for the glass theme
 
 **Files:**
-- Modify: `Fluencia/index.html` (full file replacement — inline `<style>` block, body markup, and inline `<script>` all change)
+- Modify: `index.html` (full file replacement — inline `<style>` block, body markup, and inline `<script>` all change)
 
 **Interfaces:**
 - Consumes: `.glass-orb` class names from Task 2 (only used as inline reference — `index.html` does not load `styles.css`, it has its own `<style>` block, so `.glass-orb` and the color tokens are redefined locally here with the same values as Task 1/2 for visual consistency).
@@ -807,7 +805,7 @@ git commit -m "Rewrite styles.css as glassmorphism dark-only theme"
 
 - [ ] **Step 1: Replace the file content**
 
-Replace the entire contents of `Fluencia/index.html` with:
+Replace the entire contents of `index.html` with:
 
 ```html
 <!doctype html>
@@ -1064,14 +1062,13 @@ Replace the entire contents of `Fluencia/index.html` with:
 
 Run:
 ```bash
-node -e "const h=require('fs').readFileSync('Fluencia/index.html','utf8'); const o=(h.match(/<style>/g)||[]).length; const c=(h.match(/<\/style>/g)||[]).length; if(o!==c) throw new Error('style tag mismatch'); if(h.includes('btn-tema')) throw new Error('btn-tema still present'); if(h.includes('data-tema')) throw new Error('data-tema still present'); console.log('OK');"
+node -e "const h=require('fs').readFileSync('index.html','utf8'); const o=(h.match(/<style>/g)||[]).length; const c=(h.match(/<\/style>/g)||[]).length; if(o!==c) throw new Error('style tag mismatch'); if(h.includes('btn-tema')) throw new Error('btn-tema still present'); if(h.includes('data-tema')) throw new Error('data-tema still present'); console.log('OK');"
 ```
 Expected: `OK`, exit code 0.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-cd Fluencia
 git add index.html
 git commit -m "Rewrite index.html for glassmorphism dark-only theme, drop theme toggle"
 ```
@@ -1081,7 +1078,7 @@ git commit -m "Rewrite index.html for glassmorphism dark-only theme, drop theme 
 ### Task 4: Update `app.html` — glass meta/orbs, remove theme toggle button
 
 **Files:**
-- Modify: `Fluencia/app.html`
+- Modify: `app.html`
 
 **Interfaces:**
 - Consumes: `.glass-orb` classes from Task 2's `styles.css` (already loaded via `<link rel="stylesheet" href="styles.css" />`, no new `<link>` needed).
@@ -1089,7 +1086,7 @@ git commit -m "Rewrite index.html for glassmorphism dark-only theme, drop theme 
 
 - [ ] **Step 1: Replace `<html>` tag and theme-color meta**
 
-In `Fluencia/app.html`, find:
+In `app.html`, find:
 ```html
 <html lang="pt-BR" data-tema="light">
 ```
@@ -1143,14 +1140,13 @@ Replace with:
 
 Run:
 ```bash
-grep -c "btn-tema\|data-tema" Fluencia/app.html
+grep -c "btn-tema\|data-tema" app.html
 ```
 Expected: `0` (grep exits 1 with no matches — correct here).
 
 - [ ] **Step 5: Commit**
 
 ```bash
-cd Fluencia
 git add app.html
 git commit -m "app.html: glass orbs, single theme-color, remove theme toggle button"
 ```
@@ -1160,7 +1156,7 @@ git commit -m "app.html: glass orbs, single theme-color, remove theme toggle but
 ### Task 5: Update `app.js` — remove theme-toggle logic
 
 **Files:**
-- Modify: `Fluencia/app.js:632-643` (the `/* ---------- tema ------------------------------------------------------- */` block) and `Fluencia/app.js:702` (the `init()` call site)
+- Modify: `app.js:632-643` (the `/* ---------- tema ------------------------------------------------------- */` block) and `app.js:702` (the `init()` call site)
 
 **Interfaces:**
 - Consumes: nothing new.
@@ -1168,7 +1164,7 @@ git commit -m "app.html: glass orbs, single theme-color, remove theme toggle but
 
 - [ ] **Step 1: Remove the `initTema`/`aplicarTema` functions**
 
-Find in `Fluencia/app.js`:
+Find in `app.js`:
 ```js
 /* ---------- tema ------------------------------------------------------- */
 function initTema() {
@@ -1192,7 +1188,7 @@ Replace with:
 
 - [ ] **Step 2: Remove the `initTema()` call**
 
-Find in `Fluencia/app.js` (around line 702):
+Find in `app.js` (around line 702):
 ```js
   estado.carregar(); initTema(); initConfig();
 ```
@@ -1206,7 +1202,7 @@ Replace with:
 Run:
 ```bash
 node -e "
-const js = require('fs').readFileSync('Fluencia/app.js', 'utf8');
+const js = require('fs').readFileSync('app.js', 'utf8');
 if (js.includes('initTema') || js.includes('aplicarTema') || js.includes('btn-tema') || js.includes('es:tema')) {
   throw new Error('theme toggle code still present');
 }
@@ -1221,7 +1217,6 @@ Expected: `OK <N> <N>`, exit code 0.
 - [ ] **Step 4: Commit**
 
 ```bash
-cd Fluencia
 git add app.js
 git commit -m "app.js: remove theme-toggle logic (app is now dark-only)"
 ```
@@ -1231,7 +1226,7 @@ git commit -m "app.js: remove theme-toggle logic (app is now dark-only)"
 ### Task 6: Rewrite `privacy.html` for the glass palette
 
 **Files:**
-- Modify: `Fluencia/privacy.html` (inline `<style>` block gets new tokens + `.glass-orb` rules; two decorative `<div>`s are added right after `<body>`; the rest of the body content is untouched)
+- Modify: `privacy.html` (inline `<style>` block gets new tokens + `.glass-orb` rules; two decorative `<div>`s are added right after `<body>`; the rest of the body content is untouched)
 
 **Interfaces:**
 - Consumes: the same hex values as Task 1/2 (hand-copied, since this page has no `<link>` to `styles.css`).
@@ -1239,7 +1234,7 @@ git commit -m "app.js: remove theme-toggle logic (app is now dark-only)"
 
 - [ ] **Step 1: Replace the `<style>` block**
 
-Find in `Fluencia/privacy.html`:
+Find in `privacy.html`:
 ```html
   <style>
     body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1.5rem; line-height: 1.7; color: #1a0800; }
@@ -1275,7 +1270,7 @@ Replace with:
 
 - [ ] **Step 2: Add glass orbs right after `<body>`**
 
-Find in `Fluencia/privacy.html`:
+Find in `privacy.html`:
 ```html
 <body>
   <a href="index.html">← Fluência</a>
@@ -1291,16 +1286,15 @@ Replace with:
 
 - [ ] **Step 3: Verify no leftover light-mode hex codes and orbs present**
 
-Run: `grep -c "#1a0800\|#c60b1e\|prefers-color-scheme" Fluencia/privacy.html`
+Run: `grep -c "#1a0800\|#c60b1e\|prefers-color-scheme" privacy.html`
 Expected: `0` (grep exits 1 with no matches — correct here).
 
-Run: `grep -q "glass-orb--2" Fluencia/privacy.html && echo FOUND`
+Run: `grep -q "glass-orb--2" privacy.html && echo FOUND`
 Expected: `FOUND`.
 
 - [ ] **Step 4: Commit**
 
 ```bash
-cd Fluencia
 git add privacy.html
 git commit -m "privacy.html: apply glassmorphism dark palette"
 ```
@@ -1310,15 +1304,15 @@ git commit -m "privacy.html: apply glassmorphism dark palette"
 ### Task 7: Bump service worker cache version
 
 **Files:**
-- Modify: `Fluencia/service-worker.js:4`
+- Modify: `service-worker.js:4`
 
 **Interfaces:**
 - Consumes: nothing.
-- Produces: forces every client to fetch the new `index.html`/`app.html`/`styles.css`/`app.js`/`privacy.html` instead of serving stale cached copies (per `Fluencia/CLAUDE.md`: "Ao alterar qualquer ficheiro do shell: incrementar VERSAO").
+- Produces: forces every client to fetch the new `index.html`/`app.html`/`styles.css`/`app.js`/`privacy.html` instead of serving stale cached copies (per `/CLAUDE.md`: "Ao alterar qualquer ficheiro do shell: incrementar VERSAO").
 
 - [ ] **Step 1: Bump the version**
 
-Find in `Fluencia/service-worker.js`:
+Find in `service-worker.js`:
 ```js
 const VERSAO = 'fluencia-v7';
 ```
@@ -1329,13 +1323,12 @@ const VERSAO = 'fluencia-v8';
 
 - [ ] **Step 2: Verify**
 
-Run: `grep "const VERSAO" Fluencia/service-worker.js`
+Run: `grep "const VERSAO" service-worker.js`
 Expected: `const VERSAO = 'fluencia-v8';`
 
 - [ ] **Step 3: Commit**
 
 ```bash
-cd Fluencia
 git add service-worker.js
 git commit -m "Bump service worker cache version to v8 for glass theme rollout"
 ```
@@ -1350,14 +1343,13 @@ git commit -m "Bump service worker cache version to v8 for glass theme rollout"
 
 - [ ] **Step 1: Validate `design-tokens.json` one more time (final state)**
 
-Run: `python3 -c "import json; json.load(open('Fluencia/design-tokens.json'))"`
+Run: `python -c "import json; json.load(open('design-tokens.json'))"`
 Expected: no output, exit code 0.
 
 - [ ] **Step 2: Serve locally**
 
 Run (from the `Fluencia` directory, in the background or a separate terminal):
 ```bash
-cd Fluencia
 python -m http.server 8080
 ```
 
