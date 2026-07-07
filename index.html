@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR" data-tema="light">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -13,8 +13,7 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#C60B1E" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#0F0500" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#0A0E1A" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,39 +24,36 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #FFFBF0; --surface: #FFFFFF; --surface-2: #FFF7E0;
-      --text: #1A0800; --text-muted: #7A5C3A; --border: #EAD9A8;
-      --brand: #C60B1E; --brand-hover: #9A0818;
-      --marker: #FFC400; --marker-soft: #FFF3C4;
-      --success: #166534; --success-bg: #DCFCE7;
+      --bg-1: #0A0E1A; --bg-2: #12172A;
+      --surface: rgba(24,30,50,.55); --surface-2: rgba(24,30,50,.35);
+      --text: #F1F2F8; --text-muted: #A7ADC4; --border: rgba(255,255,255,.14);
+      --brand: #6C5CE7; --brand-hover: #8477EE;
+      --marker: #F4B430; --marker-soft: rgba(244,180,48,.16);
       --font-display: "Bricolage Grotesque", system-ui, sans-serif;
       --font-body: "Inter", system-ui, sans-serif;
       --r-md: 10px; --r-lg: 16px; --r-pill: 999px;
-      --sh-md: 0 4px 14px rgba(198,11,30,.10);
+      --sh-md: 0 8px 24px rgba(0,0,0,.45);
+      --blur: blur(20px) saturate(1.3);
       --t-base: 220ms; --ease: cubic-bezier(.22,1,.36,1);
-    }
-    [data-tema="dark"] {
-      --bg: #0F0500; --surface: #1A0A00; --surface-2: #2A1500;
-      --text: #F5F0E8; --text-muted: #C8A882; --border: #3D2000;
-      --brand: #FFC400; --brand-hover: #FFD740;
-      --marker: #FFC400; --marker-soft: #3D2A00;
     }
 
     body {
-      font-family: var(--font-body); background: var(--bg); color: var(--text);
+      font-family: var(--font-body);
+      background: radial-gradient(ellipse 120% 80% at 50% -10%, var(--bg-2), var(--bg-1));
+      color: var(--text);
       min-height: 100dvh; display: flex; flex-direction: column;
     }
+
+    /* ---- glass orbs (decorativos) ---- */
+    .glass-orb { position: fixed; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: -1; }
+    .glass-orb--1 { width: 26rem; height: 26rem; top: -8rem; left: -6rem; background: var(--brand); opacity: .30; }
+    .glass-orb--2 { width: 22rem; height: 22rem; bottom: -6rem; right: -4rem; background: #4FC1CE; opacity: .22; }
+    .glass-orb--3 { width: 18rem; height: 18rem; top: 40%; right: 15%; background: var(--marker); opacity: .16; }
 
     /* ---- HEADER ---- */
     .site-header {
       display: flex; justify-content: flex-end; padding: 1rem 1.5rem;
     }
-    .btn-tema {
-      background: none; border: 1px solid var(--border); border-radius: var(--r-pill);
-      color: var(--text-muted); padding: .4rem .9rem; cursor: pointer; font-size: .85rem;
-      transition: border-color var(--t-base) var(--ease);
-    }
-    .btn-tema:hover { border-color: var(--brand); color: var(--brand); }
 
     /* ---- HERO ---- */
     .hero {
@@ -70,16 +66,14 @@
       font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; color: #fff;
       box-shadow: var(--sh-md);
     }
-    [data-tema="dark"] .logo { background: var(--marker); color: #1A0800; }
     .hero__title {
       font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3.5rem);
       font-weight: 700; line-height: 1.1; letter-spacing: -.02em;
     }
     .hero__title mark {
-      background: var(--marker-soft); color: var(--brand);
+      background: var(--marker-soft); color: var(--marker);
       border-radius: 4px; padding: 0 .15em;
     }
-    [data-tema="dark"] .hero__title mark { color: var(--marker); }
     .hero__sub { color: var(--text-muted); font-size: 1.05rem; max-width: 26rem; }
 
     /* ---- SELETOR DE LÍNGUA ---- */
@@ -96,21 +90,19 @@
     .lang-card {
       display: flex; flex-direction: column; align-items: center; gap: .4rem;
       padding: .9rem .5rem; border-radius: var(--r-lg); border: 2px solid var(--border);
-      background: var(--surface); cursor: pointer; font-family: var(--font-body);
+      background: var(--surface); backdrop-filter: var(--blur); cursor: pointer; font-family: var(--font-body);
       font-size: .9rem; font-weight: 500; color: var(--text-muted);
       transition: border-color var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease);
       position: relative;
     }
     .lang-card .flag { font-size: 1.6rem; }
-    .lang-card.is-active { border-color: var(--brand); color: var(--text); background: var(--surface); box-shadow: var(--sh-md); }
-    [data-tema="dark"] .lang-card.is-active { border-color: var(--marker); }
+    .lang-card.is-active { border-color: var(--brand); color: var(--text); box-shadow: var(--sh-md); }
     .lang-card:disabled { opacity: .45; cursor: not-allowed; }
     .lang-card .badge {
       position: absolute; top: .4rem; right: .4rem;
       font-size: .6rem; font-weight: 600; padding: .1rem .4rem;
-      background: var(--marker-soft); color: var(--brand); border-radius: var(--r-pill);
+      background: var(--marker-soft); color: var(--marker); border-radius: var(--r-pill);
     }
-    [data-tema="dark"] .lang-card .badge { color: var(--marker); }
 
     /* ---- SELETOR DE TRACK ---- */
     .track-section { width: 100%; max-width: 36rem; }
@@ -122,12 +114,11 @@
     .track-tabs { display: flex; gap: .5rem; }
     .track-btn {
       flex: 1; padding: .75rem 1rem; border-radius: var(--r-md);
-      border: 2px solid var(--border); background: var(--surface);
+      border: 2px solid var(--border); background: var(--surface); backdrop-filter: var(--blur);
       font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-muted);
       cursor: pointer; transition: border-color var(--t-base) var(--ease), color var(--t-base) var(--ease);
     }
     .track-btn.is-active { border-color: var(--brand); color: var(--brand); }
-    [data-tema="dark"] .track-btn.is-active { border-color: var(--marker); color: var(--marker); }
 
     /* ---- CTA ---- */
     .cta-wrap { width: 100%; max-width: 36rem; }
@@ -138,8 +129,6 @@
       transition: background var(--t-base) var(--ease), transform var(--t-base) var(--ease);
     }
     .btn-cta:hover { background: var(--brand-hover); transform: translateY(-1px); }
-    [data-tema="dark"] .btn-cta { background: var(--marker); color: #1A0800; }
-    [data-tema="dark"] .btn-cta:hover { background: #FFD740; }
 
     /* ---- FOOTER ---- */
     footer {
@@ -164,9 +153,11 @@
   </style>
 </head>
 <body>
-  <header class="site-header" role="banner">
-    <button class="btn-tema" id="btn-tema" aria-pressed="false" aria-label="Alternar tema">◐ Tema</button>
-  </header>
+  <div class="glass-orb glass-orb--1" aria-hidden="true"></div>
+  <div class="glass-orb glass-orb--2" aria-hidden="true"></div>
+  <div class="glass-orb glass-orb--3" aria-hidden="true"></div>
+
+  <header class="site-header" role="banner"></header>
 
   <main class="hero">
     <div class="logo" aria-hidden="true">FL</div>
@@ -221,17 +212,6 @@
   </footer>
 
   <script>
-    // Tema
-    const tema = localStorage.getItem('fl:tema');
-    const escuro = tema ? tema === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-    if (escuro) document.documentElement.dataset.tema = 'dark';
-
-    document.getElementById('btn-tema').addEventListener('click', () => {
-      const dark = document.documentElement.dataset.tema !== 'dark';
-      document.documentElement.dataset.tema = dark ? 'dark' : 'light';
-      localStorage.setItem('fl:tema', dark ? 'dark' : 'light');
-    });
-
     // Seletor de língua
     let lang = 'es', track = 'viagem';
 
