@@ -50,11 +50,6 @@
     .glass-orb--2 { width: 22rem; height: 22rem; bottom: -6rem; right: -4rem; background: #4FC1CE; opacity: .22; }
     .glass-orb--3 { width: 18rem; height: 18rem; top: 40%; right: 15%; background: var(--marker); opacity: .16; }
 
-    /* ---- HEADER ---- */
-    .site-header {
-      display: flex; justify-content: flex-end; padding: 1rem 1.5rem;
-    }
-
     /* ---- HERO ---- */
     .hero {
       flex: 1; display: flex; flex-direction: column; align-items: center;
@@ -118,7 +113,7 @@
       font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--text-muted);
       cursor: pointer; transition: border-color var(--t-base) var(--ease), color var(--t-base) var(--ease);
     }
-    .track-btn.is-active { border-color: var(--brand); color: var(--brand); }
+    .track-btn.is-active { border-color: var(--brand); color: var(--brand-hover); }
 
     /* ---- CTA ---- */
     .cta-wrap { width: 100%; max-width: 36rem; }
@@ -137,7 +132,7 @@
       align-items: center; gap: 1.5rem; flex-wrap: wrap;
     }
     footer a { color: inherit; text-decoration: none; }
-    footer a:hover { color: var(--brand); }
+    footer a:hover { color: var(--brand-hover); }
 
     /* ---- AdSense placeholder (substituir pelo snippet real) ---- */
     .ad-slot {
@@ -156,8 +151,6 @@
   <div class="glass-orb glass-orb--1" aria-hidden="true"></div>
   <div class="glass-orb glass-orb--2" aria-hidden="true"></div>
   <div class="glass-orb glass-orb--3" aria-hidden="true"></div>
-
-  <header class="site-header" role="banner"></header>
 
   <main class="hero">
     <div class="logo" aria-hidden="true">FL</div>

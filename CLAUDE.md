@@ -10,7 +10,7 @@ GitHub Pages: https://jefferstosprojeto.github.io/fluencia/
 index.html          Homepage: seletor de língua + track → app.html?lang=&track=
 app.html            Shell do app: abas, progresso, roteador hash
 app.js              Motor (3 níveis: Supabase proxy > chave user > local), componentes, roteador
-styles.css          Design system (tokens CSS, dark/light, paleta Bandeira Espanha)
+styles.css          Design system (tokens CSS, dark-only, paleta glassmorphism índigo/âmbar)
 prompts.js          Prompts para gerar/avaliar conteúdo com Claude
 service-worker.js   Offline-first (precache + stale-while-revalidate) — ver VERSAO
 manifest.json       PWA instalável (start_url: ./index.html)
@@ -30,7 +30,7 @@ supabase/
 - Ao alterar qualquer ficheiro do shell: incrementar VERSAO em service-worker.js.
 - JSON de conteúdo: validar com python3 -c "import json; json.load(open('content/es/viagem.json'))"
 - Contraste AA obrigatório (≥ 4.5:1).
-- Marca-texto açafrão (--marker: #FFC400) é o elemento-assinatura: não trocar.
+- Marca-texto âmbar (--marker: #F4B430) é o elemento-assinatura: não trocar.
 
 ## Motor — prioridade de avaliação
 

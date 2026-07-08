@@ -33,7 +33,7 @@
   --accent-hotel:       #A79BD9; --accent-hotel-soft:       rgba(167,155,217,.16);
   --accent-compras:     #E85D8A; --accent-compras-soft:     rgba(232,93,138,.16);
   --accent-emergencias: #FF6B5E; --accent-emergencias-soft: rgba(255,107,94,.16);
-  --accent: var(--brand); --accent-soft: var(--brand-soft);
+  --accent: var(--brand-hover); --accent-soft: var(--brand-soft);
 
   /* Tipografia */
   --font-display: "Bricolage Grotesque", "Space Grotesk", system-ui, sans-serif;
@@ -88,7 +88,7 @@ body {
   min-height: 100vh;
 }
 h1, h2, h3 { font-family: var(--font-display); line-height: var(--lh-tight); margin: 0; }
-a { color: var(--brand); }
+a { color: var(--brand-hover); }
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 2px;
@@ -274,7 +274,7 @@ a { color: var(--brand); }
 }
 .btn:hover { background: var(--brand-hover); border-color: var(--brand-hover); box-shadow: var(--sh-sm); }
 .btn:active { transform: translateY(1px); }
-.btn--ghost { background: transparent; color: var(--brand); }
+.btn--ghost { background: transparent; color: var(--brand-hover); }
 .btn--ghost:hover { background: var(--brand-soft); }
 .btn:disabled, .btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
 .btn-row { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s4); }
@@ -466,7 +466,7 @@ a { color: var(--brand); }
   padding: var(--s3) var(--s4); backdrop-filter: var(--blur);
   transition: border-color var(--t-fast), color var(--t-fast);
 }
-.mic-btn:hover { border-color: var(--brand); color: var(--brand); }
+.mic-btn:hover { border-color: var(--brand); color: var(--brand-hover); }
 .mic-btn.is-recording {
   background: var(--error-bg); color: var(--error); border-color: var(--error);
   animation: pulse-rec 1.2s ease-in-out infinite;
@@ -580,4 +580,4 @@ a { color: var(--brand); }
   transition: color var(--t-fast) var(--ease), background var(--t-fast) var(--ease);
   flex-shrink: 0;
 }
-.btn-var-speak:hover { color: var(--brand); background: var(--surface-2); }
+.btn-var-speak:hover { color: var(--brand-hover); background: var(--surface-2); }
